@@ -1,0 +1,143 @@
+{
+  "evidence_id": "EVD-004",
+  "status": "Completed",
+  "result": "DEEPFAKE DETECTED",
+  "score": 0.5663,
+  "model_name": "Wav2Vec2 audio spoof classifier (ONNX int4)",
+  "explanation": "Synthetic audio indicators detected with a model score of 0.5663 (threshold: 0.5500).",
+  "verdict": {
+    "title": "SYNTHETIC AUDIO INDICATORS DETECTED",
+    "subtitle": "The model identified audio patterns associated with synthetic or spoofed speech.",
+    "classification": "DEEPFAKE DETECTED",
+    "conclusion": "The analyzed audio produced a synthetic-audio score above the configured detection threshold. The sample has been flagged for further verification.",
+    "summary": "The model produced a synthetic-audio score of 0.5663. This exceeds the configured detection threshold of 0.5500 by 0.0163, so the sample was flagged for further verification."
+  },
+  "scores": {
+    "synthetic_score": 0.5663,
+    "genuine_score": 0.4337,
+    "threshold_detected": 0.55,
+    "threshold_not_detected": 0.45,
+    "score_margin": 0.0163,
+    "margin_description": "+0.0163 above threshold (0.5500)",
+    "classification_rule": "Flagged if score >= 0.5500; Not flagged if score <= 0.4500; Inconclusive if 0.4500 < score < 0.5500",
+    "interpretation": "This score represents the model's output (or duration-weighted aggregate across segments) and is not a calibrated probability of audio manipulation."
+  },
+  "why_verdict": {
+    "evaluated": "Wav2Vec2 evaluated 16 kHz acoustic feature representations from the audio waveform.",
+    "score": 0.5663,
+    "threshold": 0.55,
+    "decision": "DEEPFAKE DETECTED",
+    "reason": "The model returned a synthetic-audio score of 0.5663. The configured detection threshold is 0.5500. The score exceeds the threshold by 0.0163. Under the current decision rules, this sample was flagged for synthetic-audio indicators.",
+    "what_it_means": "The classifier identified patterns that its trained model associates with synthetic or spoofed audio.",
+    "what_it_does_not_prove": "- It does not independently prove that the audio was AI-generated.\n- It does not identify the tool used to generate the audio.\n- It does not establish the identity of the speaker.\n- It does not prove malicious intent.\n- It does not establish when or how the audio was manipulated."
+  },
+  "audio_properties": {
+    "original_filename": "test audio two.wav",
+    "format": "WAV",
+    "audio_codec": "PCM",
+    "duration_seconds": 7.25,
+    "original_sample_rate": 48000,
+    "processing_sample_rate": 16000,
+    "original_channels": 2,
+    "processed_channels": 1,
+    "samples_processed": 348160,
+    "audio_extracted_from_video": false,
+    "decoding_status": "Successful (Native PCM WAV (16-bit))",
+    "errors_or_warnings": []
+  },
+  "signal_quality": {
+    "rms_energy": 0.109,
+    "peak_amplitude": 0.7115,
+    "clipping_count": 0,
+    "clipping_percentage": 0.0,
+    "silence_detected": false,
+    "low_energy_detected": false,
+    "disclaimer": "Signal-quality measurements describe the audio recording characteristics. They are not direct indicators of whether audio is authentic or AI-generated."
+  },
+  "segmentation": {
+    "segmentation_used": false,
+    "segment_duration_seconds": 15.0,
+    "overlap_seconds": 1.0,
+    "total_segments": 1,
+    "successful_segments": 1,
+    "failed_segments": 0,
+    "total_audio_duration": 7.25,
+    "total_analyzed_duration": 7.25,
+    "audio_coverage_percentage": 100.0,
+    "aggregation_method": "duration_weighted",
+    "aggregate_score": 0.5663,
+    "min_segment_score": 0.5663,
+    "max_segment_score": 0.5663,
+    "mean_segment_score": 0.5663,
+    "duration_weighted_score": 0.5663,
+    "segment_score_distribution": [
+      0.5663
+    ],
+    "segment_verdicts": [
+      "SYNTHETIC AUDIO INDICATORS DETECTED"
+    ],
+    "failed_segment_errors": [],
+    "segment_results": [
+      {
+        "segment_index": 1,
+        "start_time": 0.0,
+        "end_time": 7.25,
+        "duration": 7.25,
+        "synthetic_score": 0.5663,
+        "classification": "SYNTHETIC AUDIO INDICATORS DETECTED",
+        "processing_duration": 0.516,
+        "status": "Completed",
+        "error": null
+      }
+    ]
+  },
+  "model_info": {
+    "model_name": "Wav2Vec2 audio spoof classifier (ONNX int4)",
+    "model_id": "ai8shiro/deepfake-audio-wav2vec2-ONNX",
+    "architecture": "Wav2Vec2 (Transformer acoustic feature encoder + classification head)",
+    "source": "https://huggingface.co/ai8shiro/deepfake-audio-wav2vec2-ONNX",
+    "revision": "78a7991b7f413bd6ce15efd7cb27000736acc78a",
+    "runtime": "ONNX Runtime (CPUExecutionProvider)",
+    "quantization": "int4 ONNX",
+    "supported_domain": "Speech anti-spoofing and synthetic speech detection",
+    "license": "MIT (model card)",
+    "training_domain": "ASVspoof 2021 PA speech anti-spoofing (model-card statement)",
+    "limitations": [
+      "Model card metrics are self-reported on a balanced ASVspoof 2021 PA subset.",
+      "Performance may change across codecs, languages, environments, compression, and audio domains.",
+      "This output is an indicator and not proof of authenticity or manipulation."
+    ]
+  },
+  "timing": {
+    "processing_duration_seconds": 0.524
+  },
+  "details": {
+    "class_scores": {
+      "real": 0.4337,
+      "fake": 0.5663
+    },
+    "prediction": "DEEPFAKE DETECTED",
+    "raw_logits": [
+      -0.096450574696064,
+      0.17025716602802277
+    ],
+    "class_mapping": {
+      "0": "real",
+      "1": "fake"
+    },
+    "decision_thresholds": {
+      "deepfake_detected_min": 0.55,
+      "deepfake_not_detected_max": 0.45,
+      "inconclusive_range": [
+        0.45,
+        0.55
+      ]
+    },
+    "limitations": [
+      "Model card metrics are self-reported on a balanced ASVspoof 2021 PA subset.",
+      "Performance may change across codecs, languages, environments, compression, and audio domains.",
+      "This output is an indicator and not proof of authenticity or manipulation."
+    ],
+    "aggregation_strategy": "duration-weighted aggregation of individual segment classification outputs"
+  }
+}

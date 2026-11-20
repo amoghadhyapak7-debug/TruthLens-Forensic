@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TruthLens — Temp Upload Portal</title>
+  <style>
+    :root {
+      --bg: #0d1117; --surface: #161b22; --border: #30363d;
+      --accent: #58a6ff; --success: #3fb950; --danger: #f85149;
+      --warn: #d29922; --text: #e6edf3; --muted: #8b949e;
+      --purple: #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; }
+
+    header { background: var(--surface); border-bottom: 1px solid var(--border);
+             padding: 16px 32px; display: flex; align-items: center; gap: 12px; }
+    header h1 { font-size: 1.4em; color: var(--accent); }
+    header .nav-link { margin-left: auto; color: var(--accent); text-decoration: none; font-size: 0.9em;
+                        border: 1px solid var(--accent); padding: 6px 14px; border-radius: 6px; }
+    header .nav-link:hover { background: var(--accent); color: #000; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 36px 20px; }
+
+    .info-banner { background: #1f3a5f; border: 1px solid var(--accent); border-radius: 10px;
+                   padding: 16px 20px; margin-bottom: 32px; display: flex; gap: 14px; align-items: flex-start; }
+    .info-banner span { font-size: 1.5em; }
+    .info-banner div { font-size: 0.88em; line-height: 1.6; color: #cdd9e5; }
+    .info-banner strong { color: var(--accent); }
+
+    /* Drag-drop upload zone */
+    .drop-zone { border: 2px dashed var(--border); border-radius: 14px; padding: 56px 32px;
+                 text-align: center; transition: border-color 0.2s, background 0.2s; cursor: pointer; }
+    .drop-zone:hover, .drop-zone.dragover { border-color: var(--accent); background: #161f2e; }
+    .drop-zone .icon { font-size: 3em; margin-bottom: 12px; }
+    .drop-zone h2 { font-size: 1.1em; margin-bottom: 6px; }
+    .drop-zone p { color: var(--muted); font-size: 0.85em; margin-bottom: 20px; }
+    .drop-zone .limit-badge { display: inline-block; background: #2d1b00; border: 1px solid var(--warn);
+                               color: var(--warn); font-size: 0.75em; padding: 3px 10px; border-radius: 20px; margin-bottom: 20px; }
+    input[type=file] { display: none; }
+    .btn-upload { background: var(--accent); color: #000; border: none; padding: 10px 28px;
+                  border-radius: 6px; font-size: 0.95em; font-weight: 700; cursor: pointer; }
+    .btn-upload:hover { opacity: 0.85; }
+
+    /* File info row */
+    .file-info { display: none; background: var(--surface); border: 1px solid var(--border);
+                 border-radius: 10px; padding: 16px 20px; margin-top: 20px; gap: 16px;
+                 align-items: center; }
+    .file-info .file-icon { font-size: 2em; }
+    .file-info .file-details { flex: 1; }
+    .file-info .file-name { font-weight: 600; font-size: 0.95em; }
+    .file-info .file-meta { color: var(--muted); font-size: 0.8em; margin-top: 2px; }
+    .file-info .size-ok  { color: var(--success); font-size: 0.8em; font-weight: 600; }
+    .file-info .size-bad { color: var(--danger);  font-size: 0.8em; font-weight: 600; }
+    .btn-analyze { background: #238636; color: #fff; border: none; padding: 10px 24px;
+                   border-radius: 6px; font-size: 0.9em; font-weight: 700; cursor: pointer; }
+    .btn-analyze:hover { background: #2ea043; }
+    .btn-analyze:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-clear { background: none; border: 1px solid var(--border); color: var(--muted);
+                 padding: 10px 16px; border-radius: 6px; font-size: 0.85em; cursor: pointer; margin-left: 8px; }
+    .btn-clear:hover { border-color: var(--danger); color: var(--danger); }
+
+    /* Progress / status */
+    .progress-wrap { display: none; margin-top: 20px; }
+    .progress-label { font-size: 0.82em; color: var(--muted); margin-bottom: 6px; }
+    .progress-bar-bg { background: var(--border); border-radius: 6px; height: 8px; overflow: hidden; }
+    .progress-bar { height: 100%; background: var(--accent); border-radius: 6px; width: 0%;
+                    transition: width 0.3s ease; }
+
+    /* Session card */
+    .session-card { display: none; background: var(--surface); border: 1px solid var(--success);
+                    border-radius: 10px; padding: 20px 24px; margin-top: 20px; }
+    .session-card h3 { color: var(--success); font-size: 1em; margin-bottom: 14px; }
+    .session-row { display: flex; justify-content: space-between; padding: 5px 0;
+                   border-bottom: 1px solid #21262d; font-size: 0.84em; }
+    .session-row:last-of-type { border: none; }
+    .session-row .label { color: var(--muted); }
+    .session-row .value { font-family: monospace; word-break: break-all; }
+    .ttl-bar { background: #21262d; border-radius: 6px; height: 6px; margin-top: 12px; overflow: hidden; }
+    .ttl-fill { height: 100%; background: var(--success); border-radius: 6px;
+                transition: width 1s linear; }
+    .ttl-label { font-size: 0.75em; color: var(--muted); text-align: right; margin-top: 4px; }
+    .session-actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+    .btn-run { background: #238636; color: #fff; border: none; padding: 9px 22px;
+               border-radius: 6px; font-size: 0.88em; font-weight: 700; cursor: pointer; }
+    .btn-run:hover { background: #2ea043; }
+    .btn-del { background: none; border: 1px solid var(--danger); color: var(--danger);
+               padding: 9px 16px; border-radius: 6px; font-size: 0.85em; cursor: pointer; }
+    .btn-del:hover { background: #3d1f1f; }
+
+    /* Spinner */
+    .spinner { display: none; text-align: center; padding: 28px; }
+    .spinner-ring { border: 3px solid var(--border); border-top-color: var(--accent);
+                    border-radius: 50%; width: 40px; height: 40px; margin: 0 auto 12px;
+                    animation: spin 0.8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Results */
+    .results-panel { display: none; margin-top: 28px; }
+    .verdict-banner { border-radius: 10px; padding: 20px 24px; margin-bottom: 20px; }
+    .verdict-original    { background: #0d2518; border: 1px solid var(--success); }
+    .verdict-manipulated { background: #2d1515; border: 1px solid var(--danger); }
+    .verdict-ai          { background: #22183a; border: 1px solid var(--purple); }
+    .verdict-inconclusive{ background: #1e1a0e; border: 1px solid var(--warn); }
+    .verdict-banner h3 { font-size: 1.1em; margin-bottom: 6px; }
+    .verdict-banner p  { font-size: 0.85em; color: #ccc; line-height: 1.6; }
+
+    .signals-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .chip { border-radius: 20px; padding: 4px 12px; font-size: 0.78em; font-weight: 600; border: 1px solid; }
+    .chip-Critical { background:#2a0f3a; color:#bc8cff; border-color:#8957e5; }
+    .chip-High     { background:#2d1515; color:#f85149; border-color:#da3633; }
+    .chip-Medium   { background:#2d2000; color:#d29922; border-color:#d29922; }
+    .chip-Low      { background:#0f2232; color:#58a6ff; border-color:#1f6feb; }
+
+    .findings-list { display: grid; gap: 12px; margin-top: 16px; }
+    .find-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+    .find-card h4 { font-size: 0.9em; margin-bottom: 4px; }
+    .find-card p  { font-size: 0.8em; color: var(--muted); line-height: 1.5; }
+
+    .section-title { font-size: 1em; font-weight: 700; color: var(--accent); margin: 20px 0 10px; }
+
+    .error-box { background: #2d1515; border: 1px solid var(--danger); border-radius: 8px; padding: 16px; margin-top: 16px; font-size: 0.84em; color: #f85149; }
+
+    footer { text-align: center; color: var(--muted); font-size: 0.78em; padding: 28px; border-top: 1px solid var(--border); margin-top: 48px; }
+  </style>
+</head>
+<body>
+  <header>
+    <span style="font-size:1.6em">📂</span>
+    <h1>TruthLens — Temp Upload Portal</h1>
+    <a class="nav-link" href="/">← Main Analyzer</a>
+  </header>
+
+  <div class="container">
+
+    <!-- Info banner -->
+    <div class="info-banner">
+      <span>ℹ️</span>
+      <div>
+        <strong>Temporary Upload Portal</strong><br>
+        Upload an image for forensic analysis. Files are stored in an isolated temporary directory and
+        <strong>auto-deleted after 30 minutes</strong>. Maximum file size is <strong>10 MB</strong>.
+        Supported formats: JPEG, PNG, BMP, TIFF, WEBP.
+      </div>
+    </div>
+
+    <!-- Drop zone -->
+    <div class="drop-zone" id="dropZone">
+      <div class="icon">🖼️</div>
+      <h2>Drag & Drop your image here</h2>
+      <p>or click to browse files from your device</p>
+      <div class="limit-badge">⚠️ Max 10 MB · JPEG / PNG / BMP / TIFF / WEBP</div><br>
+      <label for="fileInput" class="btn-upload">📁 Choose File</label>
+      <input type="file" id="fileInput" accept="image/*" />
+    </div>
+
+    <!-- File info row -->
+    <div class="file-info" id="fileInfo" style="display:flex">
+      <span class="file-icon">🖼️</span>
+      <div class="file-details">
+        <div class="file-name" id="fiName">—</div>
+        <div class="file-meta" id="fiMeta">—</div>
+        <div id="fiSizeStatus"></div>
+      </div>
+      <div>
+        <button class="btn-analyze" id="uploadBtn" disabled>⬆️ Upload &amp; Stage</button>
+        <button class="btn-clear" id="clearBtn">✕ Clear</button>
+      </div>
+    </div>
+
+    <!-- Upload progress -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-label" id="progressLabel">Uploading…</div>
+      <div class="progress-bar-bg"><div class="progress-bar" id="progressBar"></div></div>
+    </div>
+
+    <!-- Session card (shown after successful upload) -->
+    <div class="session-card" id="sessionCard">
+      <h3>✅ File Staged in Temp Portal</h3>
+      <div class="session-row"><span class="label">Session ID</span><span class="value" id="scSession">—</span></div>
+      <div class="session-row"><span class="label">SHA-256</span><span class="value" id="scSha">—</span></div>
+      <div class="session-row"><span class="label">Size</span><span class="value" id="scSize">—</span></div>
+      <div class="session-row"><span class="label">Auto-delete</span><span class="value" id="scTtl">—</span></div>
+      <div class="ttl-bar"><div class="ttl-fill" id="ttlFill" style="width:100%"></div></div>
+      <div class="ttl-label" id="ttlLabel"></div>
+      <div class="session-actions">
+        <button class="btn-run" id="runAnalysisBtn">🔬 Run Forensic Analysis</button>
+        <button class="btn-del" id="deleteSessionBtn">🗑️ Delete Now</button>
+      </div>
+    </div>
+
+    <!-- Analysis spinner -->
+    <div class="spinner" id="spinner">
+      <div class="spinner-ring"></div>
+      <p style="color:var(--muted);font-size:0.88em">Running forensic analysis… Please wait (30–90 s on first load).</p>
+    </div>
+
+    <!-- Results panel -->
+    <div class="results-panel" id="resultsPanel">
+      <div class="verdict-banner" id="verdictBanner">
+        <h3 id="verdictTitle"></h3>
+        <p id="verdictSummary"></p>
+      </div>
+
+      <div class="section-title">⚡ Forensic Signals</div>
+      <div class="signals-wrap" id="signalsWrap"></div>
+
+      <div class="section-title">📋 Candidate Findings</div>
+      <div class="findings-list" id="findingsList"></div>
+    </div>
+
+    <!-- Error box -->
+    <div class="error-box" id="errorBox" style="display:none"></div>
+
+  </div>
+
+  <footer>TruthLens v2.0 — Temp Upload Portal · Files auto-deleted after 30 min · For investigative use only</footer>
+
+<script>
+  const MAX_MB = 10;
+  const MAX_BYTES = MAX_MB * 1024 * 1024;
+  let selectedFile = null;
+  let sessionData  = null;
+  let ttlInterval  = null;
+  let ttlStart     = null;
+  const TTL_SEC    = 30 * 60;
+
+  const dropZone    = document.getElementById('dropZone');
+  const fileInput   = document.getElementById('fileInput');
+  const fileInfo    = document.getElementById('fileInfo');
+  const fiName      = document.getElementById('fiName');
+  const fiMeta      = document.getElementById('fiMeta');
+  const fiSizeStatus= document.getElementById('fiSizeStatus');
+  const uploadBtn   = document.getElementById('uploadBtn');
+  const clearBtn    = document.getElementById('clearBtn');
+  const progressWrap= document.getElementById('progressWrap');
+  const progressBar = document.getElementById('progressBar');
+  const progressLabel=document.getElementById('progressLabel');
+  const sessionCard = document.getElementById('sessionCard');
+  const spinner     = document.getElementById('spinner');
+  const resultsPanel= document.getElementById('resultsPanel');
+  const errorBox    = document.getElementById('errorBox');
+
+  // Drag-drop handlers
+  dropZone.addEventListener('dragover',  e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault(); dropZone.classList.remove('dragover');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  dropZone.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', e => { if (e.target.files.length) handleFile(e.target.files[0]); });
+
+  function handleFile(f) {
+    selectedFile = f;
+    const mb = (f.size / (1024*1024)).toFixed(2);
+    fiName.textContent = f.name;
+    fiMeta.textContent = `${mb} MB · ${f.type || 'unknown type'}`;
+    fileInfo.style.display = 'flex';
+    hideAll();
+
+    if (f.size > MAX_BYTES) {
+      fiSizeStatus.innerHTML = `<span class="size-bad">❌ ${mb} MB exceeds the 10 MB limit.</span>`;
+      uploadBtn.disabled = true;
+    } else {
+      fiSizeStatus.innerHTML = `<span class="size-ok">✅ Size OK (${mb} MB / 10 MB)</span>`;
+      uploadBtn.disabled = false;
+    }
+  }
+
+  clearBtn.addEventListener('click', () => {
+    selectedFile = null;
+    sessionData  = null;
+    fileInput.value = '';
+    fileInfo.style.display = 'none';
+    hideAll();
+  });
+
+  function hideAll() {
+    progressWrap.style.display = 'none';
+    sessionCard.style.display  = 'none';
+    spinner.style.display      = 'none';
+    resultsPanel.style.display = 'none';
+    errorBox.style.display     = 'none';
+    if (ttlInterval) clearInterval(ttlInterval);
+  }
+
+  function showError(msg) {
+    errorBox.textContent = '❌ ' + msg;
+    errorBox.style.display = 'block';
+  }
+
+  // ── Upload & Stage ────────────────────────────────────────────────────────
+  uploadBtn.addEventListener('click', async () => {
+    if (!selectedFile) return;
+    uploadBtn.disabled = true;
+    progressWrap.style.display = 'block';
+    progressBar.style.width = '0%';
+    progressLabel.textContent = 'Uploading…';
+    errorBox.style.display = 'none';
+
+    // Animate progress bar
+    let prog = 0;
+    const progTimer = setInterval(() => {
+      prog = Math.min(prog + 5, 85);
+      progressBar.style.width = prog + '%';
+    }, 100);
+
+    try {
+      const form = new FormData();
+      form.append('file', selectedFile);
+
+      const resp = await fetch('/api/portal/upload', { method: 'POST', body: form });
+      clearInterval(progTimer);
+
+      if (!resp.ok) {
+        const err = await resp.json();
+        progressBar.style.width = '0%';
+        progressWrap.style.display = 'none';
+        uploadBtn.disabled = false;
+        showError(err.error || `HTTP ${resp.status}`);
+        return;
+      }
+
+      progressBar.style.width = '100%';
+      progressLabel.textContent = 'Upload complete!';
+      setTimeout(() => { progressWrap.style.display = 'none'; }, 800);
+
+      sessionData = await resp.json();
+      showSessionCard(sessionData);
+    } catch(e) {
+      clearInterval(progTimer);
+      progressWrap.style.display = 'none';
+      uploadBtn.disabled = false;
+      showError('Upload failed: ' + e.message);
+    }
+  });
+
+  function showSessionCard(d) {
+    document.getElementById('scSession').textContent = d.session_id;
+    document.getElementById('scSha').textContent     = d.sha256;
+    document.getElementById('scSize').textContent    = `${d.file_size_mb} MB (${d.file_size_bytes.toLocaleString()} bytes)`;
+    document.getElementById('scTtl').textContent     = `~${d.expires_in_minutes} minutes`;
+    sessionCard.style.display = 'block';
+    ttlStart = Date.now();
+    startTtlTimer(d.expires_in_minutes * 60);
+    uploadBtn.disabled = false;
+  }
+
+  function startTtlTimer(totalSec) {
+    if (ttlInterval) clearInterval(ttlInterval);
+    function tick() {
+      const elapsed = (Date.now() - ttlStart) / 1000;
+      const rem = Math.max(0, totalSec - elapsed);
+      const pct = (rem / totalSec) * 100;
+      document.getElementById('ttlFill').style.width = pct + '%';
+      document.getElementById('ttlFill').style.background = pct > 50 ? 'var(--success)' : pct > 20 ? 'var(--warn)' : 'var(--danger)';
+      const m = Math.floor(rem / 60), s = Math.floor(rem % 60);
+      document.getElementById('ttlLabel').textContent = `Auto-deletes in ${m}m ${s}s`;
+      if (rem <= 0) { clearInterval(ttlInterval); document.getElementById('ttlLabel').textContent = 'Session expired.'; }
+    }
+    tick();
+    ttlInterval = setInterval(tick, 1000);
+  }
+
+  // ── Delete session ─────────────────────────────────────────────────────────
+  document.getElementById('deleteSessionBtn').addEventListener('click', async () => {
+    if (!sessionData) return;
+    await fetch(`/api/portal/delete/${sessionData.session_id}`, { method: 'DELETE' });
+    sessionData = null;
+    hideAll();
+    fileInfo.style.display = 'none';
+    selectedFile = null;
+    fileInput.value = '';
+    alert('✅ Temp file deleted from server.');
+  });
+
+  // ── Run Analysis ───────────────────────────────────────────────────────────
+  document.getElementById('runAnalysisBtn').addEventListener('click', async () => {
+    if (!sessionData) return;
+    sessionCard.style.display  = 'none';
+    resultsPanel.style.display = 'none';
+    errorBox.style.display     = 'none';
+    spinner.style.display      = 'block';
+
+    try {
+      const resp = await fetch(`/api/portal/analyze/${sessionData.session_id}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          evidence_id: `EVD-${sessionData.session_id.slice(0,6).toUpperCase()}`,
+          original_filename: selectedFile ? selectedFile.name : 'upload_file',
+          mime_type: selectedFile ? selectedFile.type : 'image/jpeg',
+        })
+      });
+
+      spinner.style.display = 'none';
+      sessionCard.style.display = 'block';
+
+      if (!resp.ok) {
+        const err = await resp.json();
+        showError(err.errors?.[0]?.message || `HTTP ${resp.status}`);
+        return;
+      }
+
+      const data = await resp.json();
+      renderResults(data);
+    } catch(e) {
+      spinner.style.display = 'none';
+      sessionCard.style.display = 'block';
+      showError('Analysis failed: ' + e.message);
+    }
+  });
+
+  // ── Render Results ─────────────────────────────────────────────────────────
+  function renderResults(data) {
+    resultsPanel.style.display = 'block';
+
+    const cat = data.analyses?.overall_forensic_assessment?.category || 'inconclusive';
+    const summary = data.analyses?.overall_forensic_assessment?.evidence_summary || '';
+    const basis   = data.analyses?.overall_forensic_assessment?.confidence_basis || '';
+
+    const banner = document.getElementById('verdictBanner');
+    const icons = {
+      likely_original_capture:        { icon: '✅', label: 'Likely Original Capture',           cls: 'verdict-original' },
+      likely_deepfake_or_manipulated: { icon: '🚨', label: 'Likely Deepfake / Manipulated',    cls: 'verdict-manipulated' },
+      likely_ai_generated:            { icon: '🤖', label: 'Likely AI-Generated',               cls: 'verdict-ai' },
+      inconclusive:                   { icon: '⚠️', label: 'Inconclusive — Human Review Needed',cls: 'verdict-inconclusive' },
+    };
+    const v = icons[cat] || icons.inconclusive;
+    banner.className = 'verdict-banner ' + v.cls;
+    document.getElementById('verdictTitle').textContent   = v.icon + ' ' + v.label;
+    document.getElementById('verdictSummary').textContent = summary + ' ' + basis;
+
+    // Signals
+    const sw = document.getElementById('signalsWrap');
+    sw.innerHTML = '';
+    (data.signals || []).forEach(s => {
+      sw.innerHTML += `<span class="chip chip-${s.strength}">${s.strength}: ${s.name}</span>`;
+    });
+    if (!sw.innerHTML) sw.innerHTML = '<span style="color:var(--muted);font-size:0.84em">No signals triggered.</span>';
+
+    // Findings
+    const fl = document.getElementById('findingsList');
+    fl.innerHTML = '';
+    (data.findings || []).forEach(f => {
+      fl.innerHTML += `<div class="find-card">
+        <h4>${f.title} <span class="chip chip-${f.severity}" style="font-size:0.72em">${f.severity}</span></h4>
+        <p>${f.description}</p>
+      </div>`;
+    });
+    if (!fl.innerHTML) fl.innerHTML = '<p style="color:var(--muted);font-size:0.84em">No findings.</p>';
+  }
+</script>
+</body>
+</html>

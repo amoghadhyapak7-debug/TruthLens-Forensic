@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "extraction_method": "utf8_reader",
+  "character_encoding": "ascii",
+  "embedded_metadata": {
+    "format": "plain_text"
+  },
+  "structural_counts": {
+    "character_count": 232,
+    "word_count": 32,
+    "paragraph_count": 1,
+    "sentence_count": 3
+  },
+  "language_detection": {
+    "language": "en",
+    "confidence": 0.91,
+    "method": "stopword_frequency_profile"
+  },
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account.",
+      "start_char": 0,
+      "end_char": 232,
+      "word_count": 32,
+      "sentence_count": 3
+    }
+  ],
+  "sentences": [
+    {
+      "index": 0,
+      "paragraph_index": 0,
+      "text": "Artificial intelligence and deepfake technologies have advanced significantly.",
+      "start_char": 0,
+      "end_char": 79,
+      "word_count": 8
+    },
+    {
+      "index": 1,
+      "paragraph_index": 0,
+      "text": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+      "start_char": 79,
+      "end_char": 152,
+      "word_count": 14
+    },
+    {
+      "index": 2,
+      "paragraph_index": 0,
+      "text": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+      "start_char": 152,
+      "end_char": 232,
+      "word_count": 10
+    }
+  ],
+  "raw_text_length": 232,
+  "errors": [],
+  "limitations": []
+}

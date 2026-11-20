@@ -1,0 +1,3714 @@
+{
+  "report_type": "case_level",
+  "report_id": "TL-REP-TEST-CASE-01-20261120002443",
+  "generated_at": "2026-11-20T00:24:43.999035Z",
+  "case_id": "TEST-CASE-01",
+  "system": "TruthLens Multi-Modal Forensic Investigation Platform",
+  "evidence_count": 3,
+  "chain_of_custody": [
+    {
+      "evidence_id": "EVD-008",
+      "original_filename": "case_notes.txt",
+      "file_type": "text",
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+      "file_size_bytes": 232,
+      "ingestion_timestamp": "2026-11-20T04:02:43+05:30"
+    },
+    {
+      "evidence_id": "EVD-009",
+      "original_filename": "suspect_photo.png",
+      "file_type": "image",
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+      "file_size_bytes": 291,
+      "ingestion_timestamp": "2026-11-20T04:02:50+05:30"
+    },
+    {
+      "evidence_id": "EVD-010",
+      "original_filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+      "file_type": "video",
+      "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+      "file_size_bytes": 265387,
+      "ingestion_timestamp": "2026-11-20T05:28:08+05:30"
+    }
+  ],
+  "evidence": [
+    {
+      "ingest": {
+        "evidence_id": "EVD-008",
+        "original_filename": "case_notes.txt",
+        "file_type": "text",
+        "file_size_bytes": 232,
+        "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+        "ingestion_timestamp": "2026-11-20T04:02:43+05:30",
+        "case_id": "TEST-CASE-01",
+        "storage_path": null,
+        "is_testing": false,
+        "validation_status": "valid",
+        "analysis_eligibility": {
+          "status": "READY",
+          "reasons": [],
+          "warnings": []
+        },
+        "metadata": {
+          "modality": "text",
+          "extension": ".txt",
+          "format": "TXT",
+          "encoding": "utf-8",
+          "extracted_character_count": 232,
+          "word_count": 32,
+          "extraction_method": "streaming-python-codecs",
+          "extracted_text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account."
+        },
+        "stages": [
+          {
+            "stage": "RECEIVED",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          },
+          {
+            "stage": "VALIDATING",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          },
+          {
+            "stage": "HASHING",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          },
+          {
+            "stage": "METADATA_EXTRACTION",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          },
+          {
+            "stage": "STORAGE",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          },
+          {
+            "stage": "REGISTRATION",
+            "status": "in_progress",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          },
+          {
+            "stage": "COMPLETED",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:43+05:30"
+          }
+        ]
+      },
+      "analysis": {
+        "module": "text",
+        "evidence_id": "EVD-008",
+        "status": "completed",
+        "metadata": {
+          "evidence_id": "EVD-008",
+          "original_filename": "case_notes.txt",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\documents\\545f82944ebf405aa0f696f0353ea050.txt",
+          "file_type": "text",
+          "mime_type": "text/plain",
+          "file_size": 232,
+          "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+          "ingestion_metadata": {
+            "modality": "text",
+            "extension": ".txt",
+            "format": "TXT",
+            "encoding": "utf-8",
+            "extracted_character_count": 232,
+            "word_count": 32,
+            "extraction_method": "streaming-python-codecs",
+            "extracted_text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account."
+          },
+          "character_encoding": "ascii"
+        },
+        "analyses": {
+          "text_extraction": {
+            "status": "completed",
+            "extraction_method": "utf8_reader",
+            "character_encoding": "ascii",
+            "embedded_metadata": {
+              "format": "plain_text"
+            },
+            "structural_counts": {
+              "character_count": 232,
+              "word_count": 32,
+              "paragraph_count": 1,
+              "sentence_count": 3
+            },
+            "language_detection": {
+              "language": "en",
+              "confidence": 0.91,
+              "method": "stopword_frequency_profile"
+            },
+            "paragraphs": [
+              {
+                "index": 0,
+                "text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account.",
+                "start_char": 0,
+                "end_char": 232,
+                "word_count": 32,
+                "sentence_count": 3
+              }
+            ],
+            "sentences": [
+              {
+                "index": 0,
+                "paragraph_index": 0,
+                "text": "Artificial intelligence and deepfake technologies have advanced significantly.",
+                "start_char": 0,
+                "end_char": 79,
+                "word_count": 8
+              },
+              {
+                "index": 1,
+                "paragraph_index": 0,
+                "text": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+                "start_char": 79,
+                "end_char": 152,
+                "word_count": 14
+              },
+              {
+                "index": 2,
+                "paragraph_index": 0,
+                "text": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+                "start_char": 152,
+                "end_char": 232,
+                "word_count": 10
+              }
+            ],
+            "raw_text_length": 232,
+            "errors": [],
+            "limitations": []
+          },
+          "claim_extraction": {
+            "status": "completed",
+            "claims_count": 3,
+            "claim_types_distribution": {
+              "event_claim": 1,
+              "numerical_claim": 2
+            },
+            "claims": [
+              {
+                "claim_id": "e316afa0",
+                "statement": "Artificial intelligence and deepfake technologies have advanced significantly.",
+                "category": "event_claim",
+                "secondary_tags": [],
+                "entities": [],
+                "dates": [],
+                "numbers": [],
+                "locations": [],
+                "source_span": {
+                  "start_char": 0,
+                  "end_char": 79,
+                  "paragraph_index": 0,
+                  "sentence_index": 0,
+                  "context": "Artificial intelligence and deepfake technologies have advanced significantly."
+                },
+                "extraction_status": "completed"
+              },
+              {
+                "claim_id": "419602f4",
+                "statement": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+                "category": "numerical_claim",
+                "secondary_tags": [
+                  "quantitative",
+                  "time_stamped"
+                ],
+                "entities": [
+                  "Chicago",
+                  "November 15, 2024"
+                ],
+                "dates": [
+                  "November 15, 2024"
+                ],
+                "numbers": [],
+                "locations": [
+                  "Chicago"
+                ],
+                "source_span": {
+                  "start_char": 79,
+                  "end_char": 152,
+                  "paragraph_index": 0,
+                  "sentence_index": 1,
+                  "context": "The suspect claimed he was in Chicago on the night of November 15, 2024."
+                },
+                "extraction_status": "completed"
+              },
+              {
+                "claim_id": "a5f0519a",
+                "statement": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+                "category": "numerical_claim",
+                "secondary_tags": [
+                  "quantitative"
+                ],
+                "entities": [
+                  "$500,000"
+                ],
+                "dates": [],
+                "numbers": [
+                  "$500,000"
+                ],
+                "locations": [],
+                "source_span": {
+                  "start_char": 152,
+                  "end_char": 232,
+                  "paragraph_index": 0,
+                  "sentence_index": 2,
+                  "context": "Financial transactions indicate $500,000 was transferred to an offshore account."
+                },
+                "extraction_status": "completed"
+              }
+            ],
+            "errors": [],
+            "limitations": [
+              "Claims represent statements asserted inside the text itself and are extracted for forensic tracking.",
+              "Categorization indicates the semantic nature of the claim, not an external factual verification."
+            ]
+          },
+          "entity_extraction": {
+            "status": "completed",
+            "entity_counts": {
+              "LOCATION": 1,
+              "DATE": 1,
+              "MONETARY_VALUE": 1
+            },
+            "entities": [
+              {
+                "entity_type": "LOCATION",
+                "value": "Chicago",
+                "normalized_value": "Chicago",
+                "occurrences": 1,
+                "mentions": [
+                  {
+                    "text": "Chicago",
+                    "start_char": 109,
+                    "end_char": 116,
+                    "paragraph_index": 0,
+                    "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+                  }
+                ],
+                "extraction_method": "rule_based_location",
+                "reliability": "high",
+                "limitations": []
+              },
+              {
+                "entity_type": "DATE",
+                "value": "November 15, 2024",
+                "normalized_value": "November 15, 2024",
+                "occurrences": 1,
+                "mentions": [
+                  {
+                    "text": "November 15, 2024",
+                    "start_char": 133,
+                    "end_char": 150,
+                    "paragraph_index": 0,
+                    "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+                  }
+                ],
+                "extraction_method": "regex_pattern",
+                "reliability": "high",
+                "limitations": []
+              },
+              {
+                "entity_type": "MONETARY_VALUE",
+                "value": "$500,000",
+                "normalized_value": "$500,000",
+                "occurrences": 1,
+                "mentions": [
+                  {
+                    "text": "$500,000",
+                    "start_char": 184,
+                    "end_char": 192,
+                    "paragraph_index": 0,
+                    "context": "...nancial transactions indicate $500,000 was transferred to an offshor..."
+                  }
+                ],
+                "extraction_method": "regex_pattern",
+                "reliability": "high",
+                "limitations": []
+              }
+            ],
+            "errors": [],
+            "limitations": [
+              "Entity extraction uses high-precision deterministic patterns and contextual heuristics.",
+              "Ambiguous single-token names without title or context are preserved as unclassified to avoid false associations."
+            ]
+          },
+          "temporal_analysis": {
+            "status": "completed",
+            "temporal_expressions": [
+              {
+                "raw_text": "November 15, 2024",
+                "normalized_iso": "2024-11-15T00:00:00",
+                "entity_type": "DATE",
+                "start_char": 133,
+                "end_char": 150,
+                "paragraph_index": 0,
+                "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+              }
+            ],
+            "chronological_order": [
+              {
+                "raw_text": "November 15, 2024",
+                "iso": "2024-11-15T00:00:00",
+                "start_char": 133
+              }
+            ],
+            "potential_chronology_conflicts": [],
+            "errors": [],
+            "limitations": [
+              "Relative temporal expressions without reference epoch are extracted without absolute normalization.",
+              "Chronological conflicts are flagged only where explicit textual contradiction or reversal markers are present."
+            ]
+          },
+          "location_analysis": {
+            "status": "completed",
+            "location_mentions": [
+              {
+                "location": "Chicago",
+                "start_char": 109,
+                "end_char": 116,
+                "paragraph_index": 0,
+                "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+              }
+            ],
+            "distinct_locations": [
+              "Chicago"
+            ],
+            "potential_location_conflicts": [],
+            "errors": [],
+            "limitations": [
+              "Location extraction tracks spatial named entities and geopolitical references.",
+              "Distinct location references across separate events are expected in normal text and are not flagged as conflicts without direct contextual overlap."
+            ]
+          },
+          "linguistic_analysis": {
+            "status": "completed",
+            "sentence_length_distribution": {
+              "min": 8.0,
+              "max": 14.0,
+              "mean": 11,
+              "median": 11,
+              "std_dev": 3.0
+            },
+            "word_length_distribution": {
+              "min": 2.0,
+              "max": 13.0,
+              "mean": 6.31,
+              "std_dev": 3.66
+            },
+            "vocabulary_diversity": {
+              "type_token_ratio": 0.931,
+              "hapax_legomena_ratio": 0.8621,
+              "total_tokens": 29,
+              "unique_types": 27
+            },
+            "repetition_metrics": {
+              "repeated_phrases": {
+                "bigrams": [],
+                "trigrams": [],
+                "fourgrams": []
+              },
+              "repeated_sentence_starters": []
+            },
+            "punctuation_patterns": {
+              "counts": {
+                ".": 3,
+                ",": 2
+              },
+              "multiple_exclamations": 0,
+              "multiple_ellipses": 0,
+              "mixed_quote_styles": false,
+              "unusual_punctuation_flag": false
+            },
+            "capitalization_patterns": {
+              "uppercase_char_ratio": 0.0273,
+              "all_caps_word_count": 0,
+              "sample_all_caps": [],
+              "excessive_caps_flag": false
+            },
+            "readability_scores": {
+              "flesch_reading_ease": 27.82,
+              "flesch_kincaid_grade": 11.78,
+              "total_syllables": 58,
+              "avg_words_per_sentence": 9.67
+            },
+            "paragraph_metrics": {
+              "paragraph_count": 1,
+              "mean_paragraph_word_count": 32,
+              "paragraph_length_variance": 0.0
+            },
+            "section_shifts": [],
+            "errors": [],
+            "limitations": [
+              "Linguistic metrics are statistical descriptors calculated over the full text.",
+              "Statistical variations, high repetition, or grade-level changes are contextual markers and never treated as standalone proof of deception."
+            ]
+          },
+          "consistency_analysis": {
+            "status": "completed",
+            "items_count": 0,
+            "inconsistencies": [],
+            "errors": [],
+            "limitations": [
+              "Consistency analysis performs intra-document cross-referencing and factual coherence checks.",
+              "Only statements exhibiting clear semantic opposition or numerical incompatibility are classified as contradictory."
+            ]
+          },
+          "text_comparison": {
+            "status": "completed",
+            "intra_document_similarity": {
+              "comparisons_evaluated": 0,
+              "max_pairwise_similarity": 0.0,
+              "mean_pairwise_similarity": 0.0,
+              "high_similarity_pairs_count": 0
+            },
+            "duplicate_blocks": [],
+            "reference_comparison": null,
+            "errors": [],
+            "limitations": [
+              "Intra-document block similarity uses normalized Jaccard word set and character sequence matching.",
+              "No external reference text provided; single-document comparison performed."
+            ]
+          },
+          "ai_detector": {
+            "status": "not_implemented",
+            "model_name": "roberta-base-openai-detector",
+            "model_version_or_source": null,
+            "input_requirements": {
+              "max_sequence_length": 512,
+              "device": "cpu"
+            },
+            "raw_output": null,
+            "raw_scores": {},
+            "inference_ran": false,
+            "errors": [],
+            "limitations": [
+              "Pretrained detector 'roberta-base-openai-detector' is not locally available in current environment.",
+              "No synthetic scores were fabricated in adherence to forensic integrity guidelines."
+            ]
+          }
+        },
+        "signals": [],
+        "findings": [],
+        "artifacts": [
+          {
+            "artifact_id": "0597c9f8",
+            "name": "extracted_text.txt",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\extracted_text.txt",
+            "artifact_type": "text/plain",
+            "description": "Raw extracted text from evidence document.",
+            "file_size_bytes": 232,
+            "relative_url": "/artifacts/EVD-008/text/extracted_text.txt"
+          },
+          {
+            "artifact_id": "b36a429d",
+            "name": "text_extraction.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\text_extraction.json",
+            "artifact_type": "application/json",
+            "description": "Document extraction metadata, structural counts, and paragraph/sentence maps.",
+            "file_size_bytes": 1614,
+            "relative_url": "/artifacts/EVD-008/text/text_extraction.json"
+          },
+          {
+            "artifact_id": "02025ab5",
+            "name": "entities.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\entities.json",
+            "artifact_type": "application/json",
+            "description": "Structured entities and mentions with character offsets.",
+            "file_size_bytes": 1983,
+            "relative_url": "/artifacts/EVD-008/text/entities.json"
+          },
+          {
+            "artifact_id": "4529eb34",
+            "name": "claims.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\claims.json",
+            "artifact_type": "application/json",
+            "description": "Factual, temporal, causal, and opinion claims extracted from text.",
+            "file_size_bytes": 2447,
+            "relative_url": "/artifacts/EVD-008/text/claims.json"
+          },
+          {
+            "artifact_id": "d9ac72bb",
+            "name": "linguistic_stats.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\linguistic_stats.json",
+            "artifact_type": "application/json",
+            "description": "Deterministic linguistic metrics, readability scores, and repetition patterns.",
+            "file_size_bytes": 1599,
+            "relative_url": "/artifacts/EVD-008/text/linguistic_stats.json"
+          },
+          {
+            "artifact_id": "13cfef0a",
+            "name": "consistency_analysis.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\consistency_analysis.json",
+            "artifact_type": "application/json",
+            "description": "Internal cross-referencing contradictions, mismatches, and duplicate blocks.",
+            "file_size_bytes": 342,
+            "relative_url": "/artifacts/EVD-008/text/consistency_analysis.json"
+          },
+          {
+            "artifact_id": "07a5e5fc",
+            "name": "highlighted_evidence.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\highlighted_evidence.json",
+            "artifact_type": "application/json",
+            "description": "Traceable character span highlights and forensic annotations for report display.",
+            "file_size_bytes": 140,
+            "relative_url": "/artifacts/EVD-008/text/highlighted_evidence.json"
+          },
+          {
+            "artifact_id": "5b7d4e08",
+            "name": "standardized_output.json",
+            "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\standardized_output.json",
+            "artifact_type": "application/json",
+            "description": "Verifiable structured final analytical results delivered exclusively as standardized JSON.",
+            "file_size_bytes": 13506,
+            "relative_url": "/artifacts/EVD-008/text/standardized_output.json"
+          }
+        ],
+        "errors": [],
+        "limitations": [
+          "Text forensics analyzes intra-document semantic and statistical structures.",
+          "Module operates independently without cross-evidence correlation or final report generation."
+        ]
+      },
+      "review": {
+        "evidence_id": "EVD-008",
+        "status": "VERIFIED",
+        "notes": "Verified genuine evidence during automated testing.",
+        "examiner": "Lead Forensic Investigator",
+        "updated_at": "2026-11-20T00:24:31.874293+00:00",
+        "auto_findings": "",
+        "investigator_opinion": ""
+      }
+    },
+    {
+      "ingest": {
+        "evidence_id": "EVD-009",
+        "original_filename": "suspect_photo.png",
+        "file_type": "image",
+        "file_size_bytes": 291,
+        "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+        "ingestion_timestamp": "2026-11-20T04:02:50+05:30",
+        "case_id": "TEST-CASE-01",
+        "storage_path": null,
+        "is_testing": false,
+        "validation_status": "valid",
+        "analysis_eligibility": {
+          "status": "READY",
+          "reasons": [],
+          "warnings": []
+        },
+        "metadata": {
+          "modality": "image",
+          "extension": ".png",
+          "file_size": 291,
+          "format": "PNG",
+          "width": 100,
+          "height": 100,
+          "pixel_count": 10000,
+          "color_mode": "RGB",
+          "exif": {},
+          "camera": null,
+          "orientation": null
+        },
+        "stages": [
+          {
+            "stage": "RECEIVED",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          },
+          {
+            "stage": "VALIDATING",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          },
+          {
+            "stage": "HASHING",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          },
+          {
+            "stage": "METADATA_EXTRACTION",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          },
+          {
+            "stage": "STORAGE",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          },
+          {
+            "stage": "REGISTRATION",
+            "status": "in_progress",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          },
+          {
+            "stage": "COMPLETED",
+            "status": "completed",
+            "timestamp": "2026-11-20T04:02:50+05:30"
+          }
+        ]
+      },
+      "analysis": {
+        "module": "image",
+        "evidence_id": "EVD-009",
+        "status": "completed",
+        "metadata": {
+          "execution_timestamp": "2026-11-20T00:20:47.598606Z",
+          "analyzer_version": "2.0.0",
+          "original_filename": "suspect_photo.png",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\images\\1a4217742e1a4abd907feadad1a925f5.png",
+          "mime_type": "image/png",
+          "file_size_bytes": 291,
+          "sha256_expected": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+          "sha256_actual": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+          "sha256_verified": true,
+          "image_properties": {
+            "width": 100,
+            "height": 100,
+            "format": "PNG",
+            "color_mode": "RGB",
+            "has_exif": false
+          },
+          "ingestion_metadata": {
+            "modality": "image",
+            "extension": ".png",
+            "file_size": 291,
+            "format": "PNG",
+            "width": 100,
+            "height": 100,
+            "pixel_count": 10000,
+            "color_mode": "RGB",
+            "exif": {},
+            "camera": null,
+            "orientation": null
+          },
+          "exif_data": {}
+        },
+        "analyses": {
+          "noise_residual_analysis": {
+            "engine": "noise_residual_analysis",
+            "method": "2d_wavelet_subbands",
+            "global_noise_std": 0.0,
+            "block_variance_ratio": 0.0,
+            "prnu_signature_hash": "38723a2e5e8a17aa",
+            "prnu_fingerprint_vector": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "anomaly_regions": [],
+            "artifacts": [
+              {
+                "artifact_id": "ART-EVD-009-NOISE",
+                "type": "noise_residual_map",
+                "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\noise_residual.png",
+                "description": "2D wavelet high-frequency detail energy map isolating camera sensor noise and localized variance discontinuities."
+              }
+            ],
+            "interpretation": "Uniform sensor noise distribution across the image plane (Ratio: 0.000, Global Std: 0.00). Consistent with a single physical camera sensor capture.",
+            "limitations": [
+              "PRNU sensor noise assumes uncompressed or high-quality photographic sources; severe compression attenuates sensor noise.",
+              "Smooth, untextured regions (sky, flat surfaces) provide the cleanest PRNU signatures; dense textures add scene contamination.",
+              "Wavelet high-frequency components from different camera sensors typically have cross-correlation < 0.25, while identical sensors exceed 0.60."
+            ]
+          },
+          "ela_analysis": {
+            "engine": "ela_analysis",
+            "resave_quality": 95,
+            "amplification_factor": 20,
+            "mean_error": 0.6667,
+            "max_error": 0.6667,
+            "std_error": 0.0,
+            "high_ela_fraction": 0.0,
+            "anomaly_regions": [],
+            "artifact": {
+              "artifact_id": "ART-EVD-009-ELA",
+              "type": "ela_heatmap",
+              "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+              "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+            },
+            "artifacts": [
+              {
+                "artifact_id": "ART-EVD-009-ELA",
+                "type": "ela_heatmap",
+                "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+                "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+              }
+            ],
+            "interpretation": "Homogeneous compression characteristics across image (High-ELA Fraction: 0.00%). No localized recompression anomalies detected.",
+            "limitations": [
+              "ELA is calibrated for JPEG compression and is most informative on images with natural compression cycles.",
+              "Multiple uniform re-saves across the entire image reduce ELA sensitivity.",
+              "High-frequency natural edges (textures, foliage) naturally produce moderate ELA signals without tampering."
+            ]
+          },
+          "statistical_analysis": {
+            "engine": "statistical_analysis",
+            "histogram_anomalies": {
+              "red": {
+                "mean": 73.0,
+                "std": 0.0,
+                "spike_bins": 1,
+                "quantization_artifact": false
+              },
+              "green": {
+                "mean": 109.0,
+                "std": 0.0,
+                "spike_bins": 1,
+                "quantization_artifact": false
+              },
+              "blue": {
+                "mean": 137.0,
+                "std": 0.0,
+                "spike_bins": 1,
+                "quantization_artifact": false
+              },
+              "luminance_y": {
+                "mean": 101.0,
+                "std": 0.0,
+                "spike_bins": 1,
+                "quantization_artifact": false
+              }
+            },
+            "copy_move_matches": [],
+            "copy_move_detected": false,
+            "blur_inconsistency_score": 0.0,
+            "edge_density": 0.0,
+            "pca_block_variance": 0.0,
+            "interpretation": "Statistical and spatial gradient profiles consistent with natural imagery (Edge density: 0.000).",
+            "artifacts": [],
+            "limitations": [
+              "Copy-move block matching uses quantized feature hashing; heavily rotated or scaled duplicates may evade detection.",
+              "Histogram quantization spikes flag potential multiple compression/editing passes, but can occur naturally in high-contrast graphics.",
+              "Edge and blur metrics are influenced by natural optical depth of field (bokeh)."
+            ]
+          },
+          "metadata_analysis": {
+            "engine": "metadata_analysis",
+            "camera_present": false,
+            "camera_info": {
+              "make": null,
+              "model": null
+            },
+            "editing_software_detected": false,
+            "software_tag": null,
+            "timestamp_consistent": true,
+            "timestamps": {
+              "created": null,
+              "modified": null
+            },
+            "stripped_metadata": true,
+            "gps_present": false,
+            "exif_raw": {},
+            "flags": [
+              "Camera EXIF metadata is completely absent/stripped"
+            ],
+            "interpretation": "Image headers contain no camera or exposure metadata. Typical of AI-generated content, messaging platform stripping, or deliberate scrubbing.",
+            "artifacts": [],
+            "limitations": [
+              "EXIF metadata is stored in plain text within image file headers and can be modified or forged.",
+              "Social media platforms (Twitter/X, WhatsApp, Instagram) routinely strip all EXIF metadata for privacy; absence of EXIF alone does not prove malicious manipulation.",
+              "Timezone discrepancies between camera internal clocks and computer systems can create apparent timestamp mismatches."
+            ]
+          },
+          "ai_generated_detection": {
+            "engine": "ai_generated_detection",
+            "model_id": "efficientnet_b4",
+            "architecture": "EfficientNet-B4 (Convolutional Neural Network)",
+            "model_source": "timm (pretrained=ImageNet-1k)",
+            "device": "cpu",
+            "input_size": [
+              380,
+              380
+            ],
+            "inference_ran": true,
+            "inference_time_ms": 264.1,
+            "predicted_label": "Natural Photographic Characteristics",
+            "raw_logits": [
+              3.1761,
+              2.8877,
+              2.6721,
+              2.4524,
+              2.4293
+            ],
+            "scores": {
+              "class_21": 0.0327,
+              "class_701": 0.0245,
+              "class_557": 0.0198,
+              "class_405": 0.0159,
+              "class_23": 0.0155
+            },
+            "ai_probability": 0.3236,
+            "spectral_irregularity_score": 0.0,
+            "assessment": "natural_characteristics",
+            "interpretation": "Low synthetic anomaly score (0.324). Spectral and feature distributions are consistent with natural photographic acquisition.",
+            "artifacts": [],
+            "limitations": [
+              "EfficientNet-B4 is trained on ImageNet-1k and deployed as an empirical feature & entropy analyzer for AI artifact signatures.",
+              "The 'ai_probability' / 'ai_pattern_score' is an empirical fusion of logit entropy, feature dispersion, and 2D FFT spectral irregularity.",
+              "Recent diffusion models (e.g. Midjourney v6, SDXL, FLUX) produce sophisticated textures that may yield false negatives on low-res inputs.",
+              "Heavily recompressed social media images may lose high-frequency spectral artifacts, affecting detection confidence."
+            ]
+          },
+          "manipulation_detection": {
+            "engine": "manipulation_detection",
+            "model_id": "resnet50",
+            "architecture": "ResNet-50 (Deep Residual Network + Spatial Feature Hook)",
+            "model_source": "torchvision (pretrained=ImageNet-1k)",
+            "device": "cpu",
+            "input_size": [
+              224,
+              224
+            ],
+            "inference_ran": true,
+            "inference_time_ms": 148.46,
+            "predicted_label": "Potential Localized Manipulation / Splicing",
+            "raw_logits": [
+              3.5755,
+              3.476,
+              3.2454,
+              3.1273,
+              3.1173
+            ],
+            "scores": {
+              "class_783": 0.0188,
+              "class_499": 0.017,
+              "class_677": 0.0135,
+              "class_772": 0.012,
+              "class_902": 0.0119
+            },
+            "feature_anomaly_score": 0.9998,
+            "suspicious_regions": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 7,
+                "height": 7,
+                "anomaly_score": 9.2207
+              },
+              {
+                "x": 92,
+                "y": 0,
+                "width": 7,
+                "height": 7,
+                "anomaly_score": 3.7257
+              },
+              {
+                "x": 7,
+                "y": 7,
+                "width": 7,
+                "height": 7,
+                "anomaly_score": 3.5651
+              },
+              {
+                "x": 92,
+                "y": 7,
+                "width": 7,
+                "height": 7,
+                "anomaly_score": 3.2825
+              }
+            ],
+            "assessment": "likely_manipulated",
+            "manipulation_indicator": "High localized feature deviation detected (Anomaly Score: 1.000) across 4 flagged spatial regions. Requires multi-engine forensic corroboration.",
+            "interpretation": "High localized feature deviation detected (Anomaly Score: 1.000) across 4 flagged spatial regions. Requires multi-engine forensic corroboration.",
+            "artifacts": [
+              {
+                "artifact_id": "ART-EVD-009-MANIP",
+                "type": "manipulation_heatmap",
+                "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\manipulation_heatmap.png",
+                "description": "Deep feature spatial anomaly map localizing suspicious boundaries, compositing, and manipulation artifacts."
+              }
+            ],
+            "limitations": [
+              "ResNet-50 Layer-3 feature deviation highlights localized structural, boundary, and textural inconsistencies.",
+              "Feature anomaly scores are computed relative to baseline spatial distribution and represent relative anomaly rather than a calibrated probability.",
+              "Subtle facial deepfakes (e.g. slight mouth/eye reenactment) may require specialized facial landmark models for micro-expression localization."
+            ]
+          },
+          "overall_forensic_assessment": {
+            "category": "inconclusive",
+            "confidence_basis": "Ambiguous or contradictory forensic indicators requiring secondary human investigative verification.",
+            "evidence_summary": "Forensic metrics fall within intermediate threshold ranges without definitive physical or neural proof of manipulation or purity."
+          }
+        },
+        "signals": [
+          {
+            "signal_id": "SIG-001",
+            "code": "DEEPFAKE_FACIAL_ARTIFACT_DETECTED",
+            "name": "Localized Deepfake / Manipulation Spatial Anomaly",
+            "category": "manipulation",
+            "strength": "High",
+            "source_engine": "manipulation_detection",
+            "details": "Feature anomaly score: 1.000 across 4 localized spatial bounding regions."
+          },
+          {
+            "signal_id": "SIG-002",
+            "code": "EXIF_METADATA_STRIPPED",
+            "name": "Camera Sensor & Exposure Headers Stripped",
+            "category": "metadata",
+            "strength": "Low",
+            "source_engine": "metadata_analysis",
+            "details": "Absence of standard camera hardware EXIF tags."
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "FIND-001",
+            "title": "Multi-Engine Indicators of Localized Image Manipulation or Deepfake Splicing",
+            "severity": "High",
+            "category": "manipulation",
+            "description": "Physical and neural forensic engines reveal localized inconsistencies. ResNet-50 feature anomaly score: 1.000; ELA high-error fraction: 0.00%; Wavelet noise variance ratio: 0.000. These convergent cues strongly indicate region tampering or composite splicing.",
+            "supporting_evidence": [
+              "manipulation_detection"
+            ],
+            "regions": [
+              {
+                "x": 0,
+                "y": 0,
+                "width": 7,
+                "height": 7
+              },
+              {
+                "x": 92,
+                "y": 0,
+                "width": 7,
+                "height": 7
+              },
+              {
+                "x": 7,
+                "y": 7,
+                "width": 7,
+                "height": 7
+              },
+              {
+                "x": 92,
+                "y": 7,
+                "width": 7,
+                "height": 7
+              }
+            ]
+          }
+        ],
+        "artifacts": [
+          {
+            "artifact_id": "ART-EVD-009-NOISE",
+            "type": "noise_residual_map",
+            "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\noise_residual.png",
+            "description": "2D wavelet high-frequency detail energy map isolating camera sensor noise and localized variance discontinuities."
+          },
+          {
+            "artifact_id": "ART-EVD-009-ELA",
+            "type": "ela_heatmap",
+            "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+            "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+          },
+          {
+            "artifact_id": "ART-EVD-009-MANIP",
+            "type": "manipulation_heatmap",
+            "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\manipulation_heatmap.png",
+            "description": "Deep feature spatial anomaly map localizing suspicious boundaries, compositing, and manipulation artifacts."
+          }
+        ],
+        "errors": [],
+        "limitations": [
+          "PRNU sensor noise assumes uncompressed or high-quality photographic sources; severe compression attenuates sensor noise.",
+          "Smooth, untextured regions (sky, flat surfaces) provide the cleanest PRNU signatures; dense textures add scene contamination.",
+          "Wavelet high-frequency components from different camera sensors typically have cross-correlation < 0.25, while identical sensors exceed 0.60.",
+          "ELA is calibrated for JPEG compression and is most informative on images with natural compression cycles.",
+          "Multiple uniform re-saves across the entire image reduce ELA sensitivity.",
+          "High-frequency natural edges (textures, foliage) naturally produce moderate ELA signals without tampering.",
+          "Copy-move block matching uses quantized feature hashing; heavily rotated or scaled duplicates may evade detection.",
+          "Histogram quantization spikes flag potential multiple compression/editing passes, but can occur naturally in high-contrast graphics.",
+          "Edge and blur metrics are influenced by natural optical depth of field (bokeh).",
+          "EXIF metadata is stored in plain text within image file headers and can be modified or forged.",
+          "Social media platforms (Twitter/X, WhatsApp, Instagram) routinely strip all EXIF metadata for privacy; absence of EXIF alone does not prove malicious manipulation.",
+          "Timezone discrepancies between camera internal clocks and computer systems can create apparent timestamp mismatches.",
+          "EfficientNet-B4 is trained on ImageNet-1k and deployed as an empirical feature & entropy analyzer for AI artifact signatures.",
+          "The 'ai_probability' / 'ai_pattern_score' is an empirical fusion of logit entropy, feature dispersion, and 2D FFT spectral irregularity.",
+          "Recent diffusion models (e.g. Midjourney v6, SDXL, FLUX) produce sophisticated textures that may yield false negatives on low-res inputs.",
+          "Heavily recompressed social media images may lose high-frequency spectral artifacts, affecting detection confidence.",
+          "ResNet-50 Layer-3 feature deviation highlights localized structural, boundary, and textural inconsistencies.",
+          "Feature anomaly scores are computed relative to baseline spatial distribution and represent relative anomaly rather than a calibrated probability.",
+          "Subtle facial deepfakes (e.g. slight mouth/eye reenactment) may require specialized facial landmark models for micro-expression localization.",
+          "AI-generation models are calibrated on training sets and may exhibit domain shift on unseen generators.",
+          "PRNU sensor noise requires sufficient optical resolution; severe lossy recompression attenuates sensor footprints.",
+          "ELA relies on quantization differential; lossless formats (PNG) require spatial and frequency analysis instead.",
+          "EXIF data can be modified without altering image pixels; absence of EXIF does not confirm manipulation.",
+          "Forensic conclusions should be drawn from the convergence of multiple independent physical and neural indicators."
+        ]
+      },
+      "review": {
+        "evidence_id": "EVD-009",
+        "status": "UNREVIEWED",
+        "notes": "",
+        "examiner": "",
+        "auto_findings": "",
+        "investigator_opinion": "",
+        "updated_at": null
+      }
+    },
+    {
+      "ingest": {
+        "evidence_id": "EVD-010",
+        "original_filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+        "file_type": "video",
+        "file_size_bytes": 265387,
+        "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+        "ingestion_timestamp": "2026-11-20T05:28:08+05:30",
+        "case_id": null,
+        "storage_path": null,
+        "is_testing": false,
+        "validation_status": "valid",
+        "analysis_eligibility": {
+          "status": "READY",
+          "reasons": [],
+          "warnings": []
+        },
+        "metadata": {
+          "modality": "video",
+          "extension": ".mp4",
+          "duration_seconds": 4.87,
+          "width": 200,
+          "height": 112,
+          "fps": 15.0,
+          "frame_count": 73,
+          "video_codec": "h264",
+          "container_format": "mov",
+          "resolution": "200x112",
+          "bitrate": 436000,
+          "video_stream_count": 1,
+          "audio_stream_count": 0,
+          "audio_streams_present": false,
+          "audio_codec": null,
+          "sample_rate": null,
+          "metadata_extraction_status": "complete",
+          "stream_readable": true,
+          "stream_metadata": [
+            "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x112, 434 kb/s, 15 fps, 15 tbr, 15360 tbn (default)"
+          ],
+          "technical_details": [
+            "Metadata:",
+            "major_brand     : mp42",
+            "minor_version   : 0",
+            "compatible_brands: mp42isom",
+            "Duration: 00:00:04.87, start: 0.000000, bitrate: 436 kb/s",
+            "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x112, 434 kb/s, 15 fps, 15 tbr, 15360 tbn (default)",
+            "Stream mapping:",
+            "Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))",
+            "Press [q] to stop, [?] for help",
+            "Output #0, null, to 'pipe:':",
+            "Metadata:",
+            "major_brand     : mp42",
+            "minor_version   : 0",
+            "compatible_brands: mp42isom",
+            "encoder         : Lavf63.1.102",
+            "Stream #0:0(und): Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 200x112, q=2-31, 200 kb/s, 15 fps, 15 tbn (default)",
+            "Metadata:",
+            "encoder         : Lavc63.1.102 wrapped_avframe",
+            "[out#0/null @ 0000018a13ded6c0] video:0KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown",
+            "frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.06 bitrate=N/A speed=7.79x elapsed=0:00:00.00"
+          ]
+        },
+        "stages": [
+          {
+            "stage": "RECEIVED",
+            "status": "completed",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          },
+          {
+            "stage": "VALIDATING",
+            "status": "completed",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          },
+          {
+            "stage": "HASHING",
+            "status": "completed",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          },
+          {
+            "stage": "METADATA_EXTRACTION",
+            "status": "completed",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          },
+          {
+            "stage": "STORAGE",
+            "status": "completed",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          },
+          {
+            "stage": "REGISTRATION",
+            "status": "in_progress",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          },
+          {
+            "stage": "COMPLETED",
+            "status": "completed",
+            "timestamp": "2026-11-20T05:28:08+05:30"
+          }
+        ]
+      },
+      "analysis": {
+        "evidence_id": "EVD-010",
+        "video": {
+          "evidence_id": "EVD-010",
+          "media_type": "video",
+          "status": "completed",
+          "metadata": {
+            "file_name": "f6b45e1ef812466d86c19c6b9564d6b8.mp4",
+            "file_extension": ".mp4",
+            "file_size_bytes": 265387,
+            "file_size_mb": 0.25,
+            "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+            "resolution": {
+              "width": 200,
+              "height": 112,
+              "aspect_ratio": "200:112"
+            },
+            "frame_rate": 15.0,
+            "total_frames": 73,
+            "duration_seconds": 4.87,
+            "duration_formatted": "00:04",
+            "codec_fourcc": "h264",
+            "streams": [
+              "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x112, 434 kb/s, 15 fps, 15 tbr, 15360 tbn (default)"
+            ],
+            "encoder": null,
+            "creation_time": null,
+            "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\testing\\uploads\\f6b45e1ef812466d86c19c6b9564d6b8.mp4"
+          },
+          "assessment": {
+            "classification": "potentially_manipulated",
+            "verdict": "DEEPFAKE DETECTED",
+            "reliability": "High",
+            "reliability_note": "Strong manipulation evidence supported by neural models (88.7%) across 5 tracked face frames.",
+            "evidence_score": 15.0,
+            "manipulation_score_pct": 88.7,
+            "original_score_pct": 11.3,
+            "ai_generation_score_pct": null,
+            "ai_peak_score_pct": null,
+            "ai_authentic_score_pct": null,
+            "ai_flagged_frames_count": 0,
+            "ai_model_name": "disabled",
+            "ai_model_status": "disabled",
+            "ai_frame_predictions": [],
+            "model_name": "GenD CLIP ViT-L/14",
+            "face_detector": "yunet_cnn",
+            "total_faces_detected": 5,
+            "frames_with_faces": 5,
+            "total_frames_examined": 0,
+            "suspicious_frames_count": 5,
+            "confidence": null,
+            "basis": [
+              "Neural face forgery detector (GenD CLIP ViT-L/14) identified manipulation probability of 88.7% (authenticity: 11.3%) across 5 face frame(s).",
+              "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 88.0%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.00s",
+              "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 93.2%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.20s",
+              "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 86.5%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.40s",
+              "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 90.4%). Generalizable deepfake detector identified latent manipulation artifacts. at 1.80s",
+              "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 85.5%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.00s"
+            ],
+            "what_would_change_verdict": [],
+            "gend_status": "loaded_and_active",
+            "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+            "gend_mean_fake_pct": 88.7,
+            "gend_max_fake_pct": 93.2,
+            "gend_mean_real_pct": 11.3,
+            "mesonet_mean_fake_pct": 51.9
+          },
+          "verdict": "DEEPFAKE DETECTED",
+          "deepfake_metrics": {
+            "signal_name": "deepfake_neural_inference",
+            "model_name": "GenD CLIP ViT-L/14",
+            "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+            "face_detector": "yunet_cnn",
+            "model_status": "loaded_and_active",
+            "frames_with_faces": 5,
+            "total_faces_detected": 5,
+            "mean_manipulation_score": 0.8873,
+            "mean_manipulation_pct": 88.7,
+            "max_manipulation_score": 0.9318,
+            "mean_original_score": 0.1127,
+            "mean_original_pct": 11.3,
+            "mesonet_mean_fake_pct": 51.9,
+            "suspicious_face_frames_count": 0,
+            "gend_status": "loaded_and_active",
+            "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+            "gend_mean_fake_pct": 88.7,
+            "gend_max_fake_pct": 93.2,
+            "gend_mean_real_pct": 11.3
+          },
+          "findings": [
+            {
+              "indicator_name": "facial_deepfake_forgery_detected",
+              "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 88.0%). Generalizable deepfake detector identified latent manipulation artifacts.",
+              "timestamp": 0.0,
+              "frame_reference": "frame_000000_0.00s.jpg",
+              "severity": "high",
+              "method_used": "gend_clip_vit_l14",
+              "supporting_observations": "GenD Fake score: 0.8800, Real score: 0.1200, BBox: (69, 1, 71, 80)"
+            },
+            {
+              "indicator_name": "facial_deepfake_forgery_detected",
+              "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 93.2%). Generalizable deepfake detector identified latent manipulation artifacts.",
+              "timestamp": 0.2,
+              "frame_reference": "frame_000003_0.20s.jpg",
+              "severity": "high",
+              "method_used": "gend_clip_vit_l14",
+              "supporting_observations": "GenD Fake score: 0.9318, Real score: 0.0682, BBox: (64, 4, 71, 87)"
+            },
+            {
+              "indicator_name": "facial_deepfake_forgery_detected",
+              "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 86.5%). Generalizable deepfake detector identified latent manipulation artifacts.",
+              "timestamp": 0.4,
+              "frame_reference": "frame_000006_0.40s.jpg",
+              "severity": "high",
+              "method_used": "gend_clip_vit_l14",
+              "supporting_observations": "GenD Fake score: 0.8651, Real score: 0.1349, BBox: (59, 1, 72, 94)"
+            },
+            {
+              "indicator_name": "facial_deepfake_forgery_detected",
+              "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 90.4%). Generalizable deepfake detector identified latent manipulation artifacts.",
+              "timestamp": 1.8,
+              "frame_reference": "frame_000027_1.80s.jpg",
+              "severity": "high",
+              "method_used": "gend_clip_vit_l14",
+              "supporting_observations": "GenD Fake score: 0.9044, Real score: 0.0956, BBox: (37, 13, 52, 69)"
+            },
+            {
+              "indicator_name": "facial_deepfake_forgery_detected",
+              "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 85.5%). Generalizable deepfake detector identified latent manipulation artifacts.",
+              "timestamp": 2.0,
+              "frame_reference": "frame_000030_2.00s.jpg",
+              "severity": "high",
+              "method_used": "gend_clip_vit_l14",
+              "supporting_observations": "GenD Fake score: 0.8552, Real score: 0.1448, BBox: (36, 8, 54, 71)"
+            }
+          ],
+          "signals": [
+            {
+              "signal_name": "ai_generated_video_detection",
+              "model_name": "CIFAKE-EfficientNet-B0 (disabled)",
+              "model_status": "disabled",
+              "frames_analyzed": 0,
+              "mean_ai_generated_pct": null,
+              "peak_ai_generated_pct": null,
+              "mean_authentic_pct": null,
+              "flagged_synthetic_frames_count": 0,
+              "frame_predictions": [],
+              "findings": []
+            },
+            {
+              "signal_name": "deepfake_neural_inference",
+              "model_name": "GenD CLIP ViT-L/14",
+              "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+              "face_detector": "yunet_cnn",
+              "model_status": "loaded_and_active",
+              "frames_with_faces": 5,
+              "total_faces_detected": 5,
+              "mean_manipulation_score": 0.8873,
+              "mean_manipulation_pct": 88.7,
+              "max_manipulation_score": 0.9318,
+              "mean_original_score": 0.1127,
+              "mean_original_pct": 11.3,
+              "mesonet_mean_fake_pct": 51.9,
+              "suspicious_face_frames_count": 0,
+              "gend_status": "loaded_and_active",
+              "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+              "gend_mean_fake_pct": 88.7,
+              "gend_max_fake_pct": 93.2,
+              "gend_mean_real_pct": 11.3
+            },
+            {
+              "signal_name": "temporal_continuity",
+              "mean_interframe_difference": 0.0932,
+              "interframe_std_dev": 0.0744,
+              "anomalies_detected": 0
+            },
+            {
+              "signal_name": "sensor_noise_profile",
+              "mean_residual_variance": 43.856,
+              "noise_consistency": "natural"
+            },
+            {
+              "signal_name": "lighting_chrominance_stability",
+              "mean_luminance": 73.02,
+              "mean_saturation": 86.85,
+              "lighting_instabilities_detected": 0
+            },
+            {
+              "signal_name": "gradient_sharpness",
+              "sequence_mean_laplacian": 747.74,
+              "sharpness_anomalies": 0
+            },
+            {
+              "signal_name": "compression_artifact_profile",
+              "mean_dct_blockiness_ratio": 1.033,
+              "blockiness_std": 0.095,
+              "compression_anomalies": 0
+            },
+            {
+              "signal_name": "channel_correlation",
+              "mean_rgb_correlation": 0.9469,
+              "correlation_std": 0.0506,
+              "channel_anomalies": 0
+            }
+          ],
+          "source_matching_features": {
+            "evidence_id": "EVD-010",
+            "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+            "duration_seconds": 4.87,
+            "resolution": {
+              "width": 200,
+              "height": 112,
+              "aspect_ratio": "200:112"
+            },
+            "total_frames_fingerprinted": 25,
+            "keyframe_signatures": [
+              {
+                "timestamp": 0.0,
+                "frame_reference": "frame_000000_0.00s.jpg",
+                "dhash": "0011001100110011011110110111100110001101100011000000110000000110",
+                "ahash": "0000000100000001000000010000110011111100111111101110011011000000"
+              },
+              {
+                "timestamp": 0.2,
+                "frame_reference": "frame_000003_0.20s.jpg",
+                "dhash": "0011001101110011011110111111100110001001100011000000110000000110",
+                "ahash": "0000000100000001000000010000100011101100111111101110011010000000"
+              },
+              {
+                "timestamp": 0.4,
+                "frame_reference": "frame_000006_0.40s.jpg",
+                "dhash": "0011001101110011011110011111100110010000100001100000111000000110",
+                "ahash": "0000000100000001000000000001100011111100111111101110001011000000"
+              },
+              {
+                "timestamp": 0.6,
+                "frame_reference": "frame_000009_0.60s.jpg",
+                "dhash": "0001000110000010110001100100100101011100110010001100100011001001",
+                "ahash": "1100000011100000111000001010000000000110001011100111111111111111"
+              },
+              {
+                "timestamp": 0.8,
+                "frame_reference": "frame_000012_0.80s.jpg",
+                "dhash": "0001000110000010010001100100100111011100110010101100100011001001",
+                "ahash": "1100000011100000111000000010000000000110011011100110111111111111"
+              },
+              {
+                "timestamp": 1.0,
+                "frame_reference": "frame_000015_1.00s.jpg",
+                "dhash": "0001000010000010110000101100100011001100110010101100101011001101",
+                "ahash": "1100000011100000111000000010000000000110011011100110111101111111"
+              },
+              {
+                "timestamp": 1.2,
+                "frame_reference": "frame_000018_1.20s.jpg",
+                "dhash": "0001000100000010110000101100100011000100110110101100101011001101",
+                "ahash": "1100000011000000111000000110000000110110011011100110101001101111"
+              },
+              {
+                "timestamp": 1.4,
+                "frame_reference": "frame_000021_1.40s.jpg",
+                "dhash": "0001000000000011110000111100100011001100110010101101101011001111",
+                "ahash": "1100000011100000111000000110100001110110011011110110101001111111"
+              },
+              {
+                "timestamp": 1.6,
+                "frame_reference": "frame_000024_1.60s.jpg",
+                "dhash": "0001000100000011110000111100100011000100101010101101101011000011",
+                "ahash": "1100000011000000111000001110110001110110010111110110111101111011"
+              },
+              {
+                "timestamp": 1.8,
+                "frame_reference": "frame_000027_1.80s.jpg",
+                "dhash": "0110111111100111111011101110010111110111001101110011001000110011",
+                "ahash": "0000000000000011000001110000011100010011000110111111101111111000"
+              },
+              {
+                "timestamp": 2.0,
+                "frame_reference": "frame_000030_2.00s.jpg",
+                "dhash": "0110111111100111111011101110010111110111001101100011001100110011",
+                "ahash": "0000000000000011000001110001001100010011100110111111101111111000"
+              },
+              {
+                "timestamp": 2.2,
+                "frame_reference": "frame_000033_2.20s.jpg",
+                "dhash": "0010000000001000010010000100110000111110001000111010101110111110",
+                "ahash": "1000000011000000111000001110011011011111100100010100000101001111"
+              },
+              {
+                "timestamp": 2.4,
+                "frame_reference": "frame_000036_2.40s.jpg",
+                "dhash": "0010100000001000000011001100110000010111001100110010001100111110",
+                "ahash": "1000000010000000110000001110011111111111100110001000000010000011"
+              },
+              {
+                "timestamp": 2.6,
+                "frame_reference": "frame_000039_2.60s.jpg",
+                "dhash": "0110100011100100111000001100000011000000100110000111110011111100",
+                "ahash": "0000000000000000001000001110000011110000011011000001111000011111"
+              },
+              {
+                "timestamp": 2.8,
+                "frame_reference": "frame_000042_2.80s.jpg",
+                "dhash": "0110100011100100101000001100000011000000100110000111110011111100",
+                "ahash": "0000000000000000001000001110000011100000011011000001111000011111"
+              },
+              {
+                "timestamp": 3.0,
+                "frame_reference": "frame_000045_3.00s.jpg",
+                "dhash": "0110100011100100101000001100000011000000100110000111110011111100",
+                "ahash": "0000000000000000001000001110000011100000011011000001111000011111"
+              },
+              {
+                "timestamp": 3.2,
+                "frame_reference": "frame_000048_3.20s.jpg",
+                "dhash": "1000111010100110101001100001111000011101111110011111000111100000",
+                "ahash": "0000000000000000000000000000001100000111001111111111111111111111"
+              },
+              {
+                "timestamp": 3.4,
+                "frame_reference": "frame_000051_3.40s.jpg",
+                "dhash": "1000001110010011101011111000111110101111101111111111100011100000",
+                "ahash": "0000000000000000000000000000000100000011000111111111111101111111"
+              },
+              {
+                "timestamp": 3.6,
+                "frame_reference": "frame_000054_3.60s.jpg",
+                "dhash": "0011001100110111001111110101101111011011110010111100000011111000",
+                "ahash": "0000000000000000000000110000001100000111011111111111111111111111"
+              },
+              {
+                "timestamp": 3.8,
+                "frame_reference": "frame_000057_3.80s.jpg",
+                "dhash": "0011001001111010010101100100011011000110111000011110000111100000",
+                "ahash": "1000000000000000100000000000001101110111111111111111111111111111"
+              },
+              {
+                "timestamp": 4.0,
+                "frame_reference": "frame_000060_4.00s.jpg",
+                "dhash": "0001000100100011011011010110110111100101111100011110000011100000",
+                "ahash": "1000000000000000000000000011010001111111011111110111111101111110"
+              },
+              {
+                "timestamp": 4.2,
+                "frame_reference": "frame_000063_4.20s.jpg",
+                "dhash": "0001100100111001011000010110100111101100111100001110000011100000",
+                "ahash": "1000000000000000000000000011111100111111011111110111111101111111"
+              },
+              {
+                "timestamp": 4.4,
+                "frame_reference": "frame_000066_4.40s.jpg",
+                "dhash": "0001101100111011011100010111100111111111111100011110000011100000",
+                "ahash": "1000000010000000000010000011111100111111011111110111111101111110"
+              },
+              {
+                "timestamp": 4.6,
+                "frame_reference": "frame_000069_4.60s.jpg",
+                "dhash": "0001111000010111011101110111011111101001111010001110000011110000",
+                "ahash": "1000011110000001000000010011111100111111001111110011111101111100"
+              },
+              {
+                "timestamp": 4.8,
+                "frame_reference": "frame_000072_4.80s.jpg",
+                "dhash": "0011101000111110001101110111011111111010111100101110000011100000",
+                "ahash": "1111111110000011000000110001111100111111001111110011111100111100"
+              }
+            ],
+            "color_profile_vector": [
+              0.45174285769462585,
+              0.2563064396381378,
+              0.17950454354286194,
+              0.05233166739344597,
+              0.33799847960472107,
+              0.06372123211622238,
+              0.0802539512515068,
+              0.04509352520108223,
+              0.0563153401017189,
+              0.009293925017118454,
+              0.006966909859329462,
+              0.0047007673420012,
+              0.061462000012397766,
+              0.027225667610764503,
+              0.014398718252778053,
+              0.00404202239587903,
+              0.09936030209064484,
+              0.12238350510597229,
+              0.0728050023317337,
+              0.205286905169487,
+              0.134312242269516,
+              0.09950603544712067,
+              0.05831301212310791,
+              0.0739089846611023,
+              0.03671300783753395,
+              0.043717797845602036,
+              0.09413092583417892,
+              0.01134228240698576,
+              0.061350952833890915,
+              0.037814971059560776,
+              0.02028231881558895,
+              0.006658881437033415
+            ]
+          },
+          "video_relationships": [],
+          "errors": [],
+          "limitations": [
+            "Forensic classification represents automated signal measurements and neural inference scores; not judicial proof.",
+            "Keyframe sampling inspects periodic intervals across the video rather than 100% of video frames.",
+            "Google Gemini API understanding was not active (API key missing or request bypassed)."
+          ],
+          "extracted_frames_summary": {
+            "total_extracted": 25,
+            "output_directory": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames",
+            "scene_changes_timestamps": [],
+            "duplicate_frames_timestamps": [
+              2.8,
+              3.0
+            ],
+            "keyframe_paths": [
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000003_0.20s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000006_0.40s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000009_0.60s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.80s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000015_1.00s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000018_1.20s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000021_1.40s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.60s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000027_1.80s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000030_2.00s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000033_2.20s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_2.40s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000039_2.60s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000042_2.80s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000045_3.00s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_3.20s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000051_3.40s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000054_3.60s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000057_3.80s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_4.00s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000063_4.20s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000066_4.40s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000069_4.60s.jpg",
+              "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_4.80s.jpg"
+            ],
+            "keyframes": [
+              {
+                "frame_index": 0,
+                "timestamp": 0.0,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+                "file_name": "frame_000000_0.00s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 481.05,
+                "is_suspicious": true,
+                "suspicion_reasons": [
+                  "facial_deepfake_forgery_detected"
+                ]
+              },
+              {
+                "frame_index": 3,
+                "timestamp": 0.2,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000003_0.20s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000003_0.20s.jpg",
+                "file_name": "frame_000003_0.20s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 492.74,
+                "is_suspicious": true,
+                "suspicion_reasons": [
+                  "facial_deepfake_forgery_detected"
+                ]
+              },
+              {
+                "frame_index": 6,
+                "timestamp": 0.4,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000006_0.40s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000006_0.40s.jpg",
+                "file_name": "frame_000006_0.40s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 492.51,
+                "is_suspicious": true,
+                "suspicion_reasons": [
+                  "facial_deepfake_forgery_detected"
+                ]
+              },
+              {
+                "frame_index": 9,
+                "timestamp": 0.6,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000009_0.60s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000009_0.60s.jpg",
+                "file_name": "frame_000009_0.60s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 887.76,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 12,
+                "timestamp": 0.8,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.80s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.80s.jpg",
+                "file_name": "frame_000012_0.80s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 769.26,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 15,
+                "timestamp": 1.0,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000015_1.00s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000015_1.00s.jpg",
+                "file_name": "frame_000015_1.00s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 775.53,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 18,
+                "timestamp": 1.2,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000018_1.20s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000018_1.20s.jpg",
+                "file_name": "frame_000018_1.20s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 887.08,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 21,
+                "timestamp": 1.4,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000021_1.40s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000021_1.40s.jpg",
+                "file_name": "frame_000021_1.40s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 762.76,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 24,
+                "timestamp": 1.6,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.60s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.60s.jpg",
+                "file_name": "frame_000024_1.60s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 837.96,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 27,
+                "timestamp": 1.8,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000027_1.80s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000027_1.80s.jpg",
+                "file_name": "frame_000027_1.80s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 770.04,
+                "is_suspicious": true,
+                "suspicion_reasons": [
+                  "facial_deepfake_forgery_detected"
+                ]
+              },
+              {
+                "frame_index": 30,
+                "timestamp": 2.0,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000030_2.00s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000030_2.00s.jpg",
+                "file_name": "frame_000030_2.00s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 789.03,
+                "is_suspicious": true,
+                "suspicion_reasons": [
+                  "facial_deepfake_forgery_detected"
+                ]
+              },
+              {
+                "frame_index": 33,
+                "timestamp": 2.2,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000033_2.20s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000033_2.20s.jpg",
+                "file_name": "frame_000033_2.20s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 719.79,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 36,
+                "timestamp": 2.4,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_2.40s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_2.40s.jpg",
+                "file_name": "frame_000036_2.40s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 746.97,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 39,
+                "timestamp": 2.6,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000039_2.60s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000039_2.60s.jpg",
+                "file_name": "frame_000039_2.60s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 1267.04,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 42,
+                "timestamp": 2.8,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000042_2.80s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000042_2.80s.jpg",
+                "file_name": "frame_000042_2.80s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": true,
+                "laplacian_variance": 1225.99,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 45,
+                "timestamp": 3.0,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000045_3.00s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000045_3.00s.jpg",
+                "file_name": "frame_000045_3.00s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": true,
+                "laplacian_variance": 1177.76,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 48,
+                "timestamp": 3.2,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_3.20s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_3.20s.jpg",
+                "file_name": "frame_000048_3.20s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 449.16,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 51,
+                "timestamp": 3.4,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000051_3.40s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000051_3.40s.jpg",
+                "file_name": "frame_000051_3.40s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 393.49,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 54,
+                "timestamp": 3.6,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000054_3.60s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000054_3.60s.jpg",
+                "file_name": "frame_000054_3.60s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 531.61,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 57,
+                "timestamp": 3.8,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000057_3.80s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000057_3.80s.jpg",
+                "file_name": "frame_000057_3.80s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 574.0,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 60,
+                "timestamp": 4.0,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_4.00s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_4.00s.jpg",
+                "file_name": "frame_000060_4.00s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 614.91,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 63,
+                "timestamp": 4.2,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000063_4.20s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000063_4.20s.jpg",
+                "file_name": "frame_000063_4.20s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 691.18,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 66,
+                "timestamp": 4.4,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000066_4.40s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000066_4.40s.jpg",
+                "file_name": "frame_000066_4.40s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 784.1,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 69,
+                "timestamp": 4.6,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000069_4.60s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000069_4.60s.jpg",
+                "file_name": "frame_000069_4.60s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 849.89,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              },
+              {
+                "frame_index": 72,
+                "timestamp": 4.8,
+                "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_4.80s.jpg",
+                "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_4.80s.jpg",
+                "file_name": "frame_000072_4.80s.jpg",
+                "is_scene_change": false,
+                "is_duplicate": false,
+                "laplacian_variance": 721.99,
+                "is_suspicious": false,
+                "suspicion_reasons": []
+              }
+            ]
+          }
+        },
+        "audio": null,
+        "audio_extraction_status": "no_audio_stream"
+      },
+      "review": {
+        "evidence_id": "EVD-010",
+        "status": "UNREVIEWED",
+        "notes": "",
+        "examiner": "",
+        "auto_findings": "",
+        "investigator_opinion": "",
+        "updated_at": null
+      }
+    }
+  ],
+  "findings": {
+    "EVD-008": {
+      "module": "text",
+      "evidence_id": "EVD-008",
+      "status": "completed",
+      "metadata": {
+        "evidence_id": "EVD-008",
+        "original_filename": "case_notes.txt",
+        "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\documents\\545f82944ebf405aa0f696f0353ea050.txt",
+        "file_type": "text",
+        "mime_type": "text/plain",
+        "file_size": 232,
+        "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+        "ingestion_metadata": {
+          "modality": "text",
+          "extension": ".txt",
+          "format": "TXT",
+          "encoding": "utf-8",
+          "extracted_character_count": 232,
+          "word_count": 32,
+          "extraction_method": "streaming-python-codecs",
+          "extracted_text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account."
+        },
+        "character_encoding": "ascii"
+      },
+      "analyses": {
+        "text_extraction": {
+          "status": "completed",
+          "extraction_method": "utf8_reader",
+          "character_encoding": "ascii",
+          "embedded_metadata": {
+            "format": "plain_text"
+          },
+          "structural_counts": {
+            "character_count": 232,
+            "word_count": 32,
+            "paragraph_count": 1,
+            "sentence_count": 3
+          },
+          "language_detection": {
+            "language": "en",
+            "confidence": 0.91,
+            "method": "stopword_frequency_profile"
+          },
+          "paragraphs": [
+            {
+              "index": 0,
+              "text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account.",
+              "start_char": 0,
+              "end_char": 232,
+              "word_count": 32,
+              "sentence_count": 3
+            }
+          ],
+          "sentences": [
+            {
+              "index": 0,
+              "paragraph_index": 0,
+              "text": "Artificial intelligence and deepfake technologies have advanced significantly.",
+              "start_char": 0,
+              "end_char": 79,
+              "word_count": 8
+            },
+            {
+              "index": 1,
+              "paragraph_index": 0,
+              "text": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+              "start_char": 79,
+              "end_char": 152,
+              "word_count": 14
+            },
+            {
+              "index": 2,
+              "paragraph_index": 0,
+              "text": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+              "start_char": 152,
+              "end_char": 232,
+              "word_count": 10
+            }
+          ],
+          "raw_text_length": 232,
+          "errors": [],
+          "limitations": []
+        },
+        "claim_extraction": {
+          "status": "completed",
+          "claims_count": 3,
+          "claim_types_distribution": {
+            "event_claim": 1,
+            "numerical_claim": 2
+          },
+          "claims": [
+            {
+              "claim_id": "e316afa0",
+              "statement": "Artificial intelligence and deepfake technologies have advanced significantly.",
+              "category": "event_claim",
+              "secondary_tags": [],
+              "entities": [],
+              "dates": [],
+              "numbers": [],
+              "locations": [],
+              "source_span": {
+                "start_char": 0,
+                "end_char": 79,
+                "paragraph_index": 0,
+                "sentence_index": 0,
+                "context": "Artificial intelligence and deepfake technologies have advanced significantly."
+              },
+              "extraction_status": "completed"
+            },
+            {
+              "claim_id": "419602f4",
+              "statement": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+              "category": "numerical_claim",
+              "secondary_tags": [
+                "quantitative",
+                "time_stamped"
+              ],
+              "entities": [
+                "Chicago",
+                "November 15, 2024"
+              ],
+              "dates": [
+                "November 15, 2024"
+              ],
+              "numbers": [],
+              "locations": [
+                "Chicago"
+              ],
+              "source_span": {
+                "start_char": 79,
+                "end_char": 152,
+                "paragraph_index": 0,
+                "sentence_index": 1,
+                "context": "The suspect claimed he was in Chicago on the night of November 15, 2024."
+              },
+              "extraction_status": "completed"
+            },
+            {
+              "claim_id": "a5f0519a",
+              "statement": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+              "category": "numerical_claim",
+              "secondary_tags": [
+                "quantitative"
+              ],
+              "entities": [
+                "$500,000"
+              ],
+              "dates": [],
+              "numbers": [
+                "$500,000"
+              ],
+              "locations": [],
+              "source_span": {
+                "start_char": 152,
+                "end_char": 232,
+                "paragraph_index": 0,
+                "sentence_index": 2,
+                "context": "Financial transactions indicate $500,000 was transferred to an offshore account."
+              },
+              "extraction_status": "completed"
+            }
+          ],
+          "errors": [],
+          "limitations": [
+            "Claims represent statements asserted inside the text itself and are extracted for forensic tracking.",
+            "Categorization indicates the semantic nature of the claim, not an external factual verification."
+          ]
+        },
+        "entity_extraction": {
+          "status": "completed",
+          "entity_counts": {
+            "LOCATION": 1,
+            "DATE": 1,
+            "MONETARY_VALUE": 1
+          },
+          "entities": [
+            {
+              "entity_type": "LOCATION",
+              "value": "Chicago",
+              "normalized_value": "Chicago",
+              "occurrences": 1,
+              "mentions": [
+                {
+                  "text": "Chicago",
+                  "start_char": 109,
+                  "end_char": 116,
+                  "paragraph_index": 0,
+                  "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+                }
+              ],
+              "extraction_method": "rule_based_location",
+              "reliability": "high",
+              "limitations": []
+            },
+            {
+              "entity_type": "DATE",
+              "value": "November 15, 2024",
+              "normalized_value": "November 15, 2024",
+              "occurrences": 1,
+              "mentions": [
+                {
+                  "text": "November 15, 2024",
+                  "start_char": 133,
+                  "end_char": 150,
+                  "paragraph_index": 0,
+                  "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+                }
+              ],
+              "extraction_method": "regex_pattern",
+              "reliability": "high",
+              "limitations": []
+            },
+            {
+              "entity_type": "MONETARY_VALUE",
+              "value": "$500,000",
+              "normalized_value": "$500,000",
+              "occurrences": 1,
+              "mentions": [
+                {
+                  "text": "$500,000",
+                  "start_char": 184,
+                  "end_char": 192,
+                  "paragraph_index": 0,
+                  "context": "...nancial transactions indicate $500,000 was transferred to an offshor..."
+                }
+              ],
+              "extraction_method": "regex_pattern",
+              "reliability": "high",
+              "limitations": []
+            }
+          ],
+          "errors": [],
+          "limitations": [
+            "Entity extraction uses high-precision deterministic patterns and contextual heuristics.",
+            "Ambiguous single-token names without title or context are preserved as unclassified to avoid false associations."
+          ]
+        },
+        "temporal_analysis": {
+          "status": "completed",
+          "temporal_expressions": [
+            {
+              "raw_text": "November 15, 2024",
+              "normalized_iso": "2024-11-15T00:00:00",
+              "entity_type": "DATE",
+              "start_char": 133,
+              "end_char": 150,
+              "paragraph_index": 0,
+              "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+            }
+          ],
+          "chronological_order": [
+            {
+              "raw_text": "November 15, 2024",
+              "iso": "2024-11-15T00:00:00",
+              "start_char": 133
+            }
+          ],
+          "potential_chronology_conflicts": [],
+          "errors": [],
+          "limitations": [
+            "Relative temporal expressions without reference epoch are extracted without absolute normalization.",
+            "Chronological conflicts are flagged only where explicit textual contradiction or reversal markers are present."
+          ]
+        },
+        "location_analysis": {
+          "status": "completed",
+          "location_mentions": [
+            {
+              "location": "Chicago",
+              "start_char": 109,
+              "end_char": 116,
+              "paragraph_index": 0,
+              "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+            }
+          ],
+          "distinct_locations": [
+            "Chicago"
+          ],
+          "potential_location_conflicts": [],
+          "errors": [],
+          "limitations": [
+            "Location extraction tracks spatial named entities and geopolitical references.",
+            "Distinct location references across separate events are expected in normal text and are not flagged as conflicts without direct contextual overlap."
+          ]
+        },
+        "linguistic_analysis": {
+          "status": "completed",
+          "sentence_length_distribution": {
+            "min": 8.0,
+            "max": 14.0,
+            "mean": 11,
+            "median": 11,
+            "std_dev": 3.0
+          },
+          "word_length_distribution": {
+            "min": 2.0,
+            "max": 13.0,
+            "mean": 6.31,
+            "std_dev": 3.66
+          },
+          "vocabulary_diversity": {
+            "type_token_ratio": 0.931,
+            "hapax_legomena_ratio": 0.8621,
+            "total_tokens": 29,
+            "unique_types": 27
+          },
+          "repetition_metrics": {
+            "repeated_phrases": {
+              "bigrams": [],
+              "trigrams": [],
+              "fourgrams": []
+            },
+            "repeated_sentence_starters": []
+          },
+          "punctuation_patterns": {
+            "counts": {
+              ".": 3,
+              ",": 2
+            },
+            "multiple_exclamations": 0,
+            "multiple_ellipses": 0,
+            "mixed_quote_styles": false,
+            "unusual_punctuation_flag": false
+          },
+          "capitalization_patterns": {
+            "uppercase_char_ratio": 0.0273,
+            "all_caps_word_count": 0,
+            "sample_all_caps": [],
+            "excessive_caps_flag": false
+          },
+          "readability_scores": {
+            "flesch_reading_ease": 27.82,
+            "flesch_kincaid_grade": 11.78,
+            "total_syllables": 58,
+            "avg_words_per_sentence": 9.67
+          },
+          "paragraph_metrics": {
+            "paragraph_count": 1,
+            "mean_paragraph_word_count": 32,
+            "paragraph_length_variance": 0.0
+          },
+          "section_shifts": [],
+          "errors": [],
+          "limitations": [
+            "Linguistic metrics are statistical descriptors calculated over the full text.",
+            "Statistical variations, high repetition, or grade-level changes are contextual markers and never treated as standalone proof of deception."
+          ]
+        },
+        "consistency_analysis": {
+          "status": "completed",
+          "items_count": 0,
+          "inconsistencies": [],
+          "errors": [],
+          "limitations": [
+            "Consistency analysis performs intra-document cross-referencing and factual coherence checks.",
+            "Only statements exhibiting clear semantic opposition or numerical incompatibility are classified as contradictory."
+          ]
+        },
+        "text_comparison": {
+          "status": "completed",
+          "intra_document_similarity": {
+            "comparisons_evaluated": 0,
+            "max_pairwise_similarity": 0.0,
+            "mean_pairwise_similarity": 0.0,
+            "high_similarity_pairs_count": 0
+          },
+          "duplicate_blocks": [],
+          "reference_comparison": null,
+          "errors": [],
+          "limitations": [
+            "Intra-document block similarity uses normalized Jaccard word set and character sequence matching.",
+            "No external reference text provided; single-document comparison performed."
+          ]
+        },
+        "ai_detector": {
+          "status": "not_implemented",
+          "model_name": "roberta-base-openai-detector",
+          "model_version_or_source": null,
+          "input_requirements": {
+            "max_sequence_length": 512,
+            "device": "cpu"
+          },
+          "raw_output": null,
+          "raw_scores": {},
+          "inference_ran": false,
+          "errors": [],
+          "limitations": [
+            "Pretrained detector 'roberta-base-openai-detector' is not locally available in current environment.",
+            "No synthetic scores were fabricated in adherence to forensic integrity guidelines."
+          ]
+        }
+      },
+      "signals": [],
+      "findings": [],
+      "artifacts": [
+        {
+          "artifact_id": "0597c9f8",
+          "name": "extracted_text.txt",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\extracted_text.txt",
+          "artifact_type": "text/plain",
+          "description": "Raw extracted text from evidence document.",
+          "file_size_bytes": 232,
+          "relative_url": "/artifacts/EVD-008/text/extracted_text.txt"
+        },
+        {
+          "artifact_id": "b36a429d",
+          "name": "text_extraction.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\text_extraction.json",
+          "artifact_type": "application/json",
+          "description": "Document extraction metadata, structural counts, and paragraph/sentence maps.",
+          "file_size_bytes": 1614,
+          "relative_url": "/artifacts/EVD-008/text/text_extraction.json"
+        },
+        {
+          "artifact_id": "02025ab5",
+          "name": "entities.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\entities.json",
+          "artifact_type": "application/json",
+          "description": "Structured entities and mentions with character offsets.",
+          "file_size_bytes": 1983,
+          "relative_url": "/artifacts/EVD-008/text/entities.json"
+        },
+        {
+          "artifact_id": "4529eb34",
+          "name": "claims.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\claims.json",
+          "artifact_type": "application/json",
+          "description": "Factual, temporal, causal, and opinion claims extracted from text.",
+          "file_size_bytes": 2447,
+          "relative_url": "/artifacts/EVD-008/text/claims.json"
+        },
+        {
+          "artifact_id": "d9ac72bb",
+          "name": "linguistic_stats.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\linguistic_stats.json",
+          "artifact_type": "application/json",
+          "description": "Deterministic linguistic metrics, readability scores, and repetition patterns.",
+          "file_size_bytes": 1599,
+          "relative_url": "/artifacts/EVD-008/text/linguistic_stats.json"
+        },
+        {
+          "artifact_id": "13cfef0a",
+          "name": "consistency_analysis.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\consistency_analysis.json",
+          "artifact_type": "application/json",
+          "description": "Internal cross-referencing contradictions, mismatches, and duplicate blocks.",
+          "file_size_bytes": 342,
+          "relative_url": "/artifacts/EVD-008/text/consistency_analysis.json"
+        },
+        {
+          "artifact_id": "07a5e5fc",
+          "name": "highlighted_evidence.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\highlighted_evidence.json",
+          "artifact_type": "application/json",
+          "description": "Traceable character span highlights and forensic annotations for report display.",
+          "file_size_bytes": 140,
+          "relative_url": "/artifacts/EVD-008/text/highlighted_evidence.json"
+        },
+        {
+          "artifact_id": "5b7d4e08",
+          "name": "standardized_output.json",
+          "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\standardized_output.json",
+          "artifact_type": "application/json",
+          "description": "Verifiable structured final analytical results delivered exclusively as standardized JSON.",
+          "file_size_bytes": 13506,
+          "relative_url": "/artifacts/EVD-008/text/standardized_output.json"
+        }
+      ],
+      "errors": [],
+      "limitations": [
+        "Text forensics analyzes intra-document semantic and statistical structures.",
+        "Module operates independently without cross-evidence correlation or final report generation."
+      ]
+    },
+    "EVD-009": {
+      "module": "image",
+      "evidence_id": "EVD-009",
+      "status": "completed",
+      "metadata": {
+        "execution_timestamp": "2026-11-20T00:20:47.598606Z",
+        "analyzer_version": "2.0.0",
+        "original_filename": "suspect_photo.png",
+        "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\images\\1a4217742e1a4abd907feadad1a925f5.png",
+        "mime_type": "image/png",
+        "file_size_bytes": 291,
+        "sha256_expected": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+        "sha256_actual": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+        "sha256_verified": true,
+        "image_properties": {
+          "width": 100,
+          "height": 100,
+          "format": "PNG",
+          "color_mode": "RGB",
+          "has_exif": false
+        },
+        "ingestion_metadata": {
+          "modality": "image",
+          "extension": ".png",
+          "file_size": 291,
+          "format": "PNG",
+          "width": 100,
+          "height": 100,
+          "pixel_count": 10000,
+          "color_mode": "RGB",
+          "exif": {},
+          "camera": null,
+          "orientation": null
+        },
+        "exif_data": {}
+      },
+      "analyses": {
+        "noise_residual_analysis": {
+          "engine": "noise_residual_analysis",
+          "method": "2d_wavelet_subbands",
+          "global_noise_std": 0.0,
+          "block_variance_ratio": 0.0,
+          "prnu_signature_hash": "38723a2e5e8a17aa",
+          "prnu_fingerprint_vector": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "anomaly_regions": [],
+          "artifacts": [
+            {
+              "artifact_id": "ART-EVD-009-NOISE",
+              "type": "noise_residual_map",
+              "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\noise_residual.png",
+              "description": "2D wavelet high-frequency detail energy map isolating camera sensor noise and localized variance discontinuities."
+            }
+          ],
+          "interpretation": "Uniform sensor noise distribution across the image plane (Ratio: 0.000, Global Std: 0.00). Consistent with a single physical camera sensor capture.",
+          "limitations": [
+            "PRNU sensor noise assumes uncompressed or high-quality photographic sources; severe compression attenuates sensor noise.",
+            "Smooth, untextured regions (sky, flat surfaces) provide the cleanest PRNU signatures; dense textures add scene contamination.",
+            "Wavelet high-frequency components from different camera sensors typically have cross-correlation < 0.25, while identical sensors exceed 0.60."
+          ]
+        },
+        "ela_analysis": {
+          "engine": "ela_analysis",
+          "resave_quality": 95,
+          "amplification_factor": 20,
+          "mean_error": 0.6667,
+          "max_error": 0.6667,
+          "std_error": 0.0,
+          "high_ela_fraction": 0.0,
+          "anomaly_regions": [],
+          "artifact": {
+            "artifact_id": "ART-EVD-009-ELA",
+            "type": "ela_heatmap",
+            "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+            "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+          },
+          "artifacts": [
+            {
+              "artifact_id": "ART-EVD-009-ELA",
+              "type": "ela_heatmap",
+              "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+              "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+            }
+          ],
+          "interpretation": "Homogeneous compression characteristics across image (High-ELA Fraction: 0.00%). No localized recompression anomalies detected.",
+          "limitations": [
+            "ELA is calibrated for JPEG compression and is most informative on images with natural compression cycles.",
+            "Multiple uniform re-saves across the entire image reduce ELA sensitivity.",
+            "High-frequency natural edges (textures, foliage) naturally produce moderate ELA signals without tampering."
+          ]
+        },
+        "statistical_analysis": {
+          "engine": "statistical_analysis",
+          "histogram_anomalies": {
+            "red": {
+              "mean": 73.0,
+              "std": 0.0,
+              "spike_bins": 1,
+              "quantization_artifact": false
+            },
+            "green": {
+              "mean": 109.0,
+              "std": 0.0,
+              "spike_bins": 1,
+              "quantization_artifact": false
+            },
+            "blue": {
+              "mean": 137.0,
+              "std": 0.0,
+              "spike_bins": 1,
+              "quantization_artifact": false
+            },
+            "luminance_y": {
+              "mean": 101.0,
+              "std": 0.0,
+              "spike_bins": 1,
+              "quantization_artifact": false
+            }
+          },
+          "copy_move_matches": [],
+          "copy_move_detected": false,
+          "blur_inconsistency_score": 0.0,
+          "edge_density": 0.0,
+          "pca_block_variance": 0.0,
+          "interpretation": "Statistical and spatial gradient profiles consistent with natural imagery (Edge density: 0.000).",
+          "artifacts": [],
+          "limitations": [
+            "Copy-move block matching uses quantized feature hashing; heavily rotated or scaled duplicates may evade detection.",
+            "Histogram quantization spikes flag potential multiple compression/editing passes, but can occur naturally in high-contrast graphics.",
+            "Edge and blur metrics are influenced by natural optical depth of field (bokeh)."
+          ]
+        },
+        "metadata_analysis": {
+          "engine": "metadata_analysis",
+          "camera_present": false,
+          "camera_info": {
+            "make": null,
+            "model": null
+          },
+          "editing_software_detected": false,
+          "software_tag": null,
+          "timestamp_consistent": true,
+          "timestamps": {
+            "created": null,
+            "modified": null
+          },
+          "stripped_metadata": true,
+          "gps_present": false,
+          "exif_raw": {},
+          "flags": [
+            "Camera EXIF metadata is completely absent/stripped"
+          ],
+          "interpretation": "Image headers contain no camera or exposure metadata. Typical of AI-generated content, messaging platform stripping, or deliberate scrubbing.",
+          "artifacts": [],
+          "limitations": [
+            "EXIF metadata is stored in plain text within image file headers and can be modified or forged.",
+            "Social media platforms (Twitter/X, WhatsApp, Instagram) routinely strip all EXIF metadata for privacy; absence of EXIF alone does not prove malicious manipulation.",
+            "Timezone discrepancies between camera internal clocks and computer systems can create apparent timestamp mismatches."
+          ]
+        },
+        "ai_generated_detection": {
+          "engine": "ai_generated_detection",
+          "model_id": "efficientnet_b4",
+          "architecture": "EfficientNet-B4 (Convolutional Neural Network)",
+          "model_source": "timm (pretrained=ImageNet-1k)",
+          "device": "cpu",
+          "input_size": [
+            380,
+            380
+          ],
+          "inference_ran": true,
+          "inference_time_ms": 264.1,
+          "predicted_label": "Natural Photographic Characteristics",
+          "raw_logits": [
+            3.1761,
+            2.8877,
+            2.6721,
+            2.4524,
+            2.4293
+          ],
+          "scores": {
+            "class_21": 0.0327,
+            "class_701": 0.0245,
+            "class_557": 0.0198,
+            "class_405": 0.0159,
+            "class_23": 0.0155
+          },
+          "ai_probability": 0.3236,
+          "spectral_irregularity_score": 0.0,
+          "assessment": "natural_characteristics",
+          "interpretation": "Low synthetic anomaly score (0.324). Spectral and feature distributions are consistent with natural photographic acquisition.",
+          "artifacts": [],
+          "limitations": [
+            "EfficientNet-B4 is trained on ImageNet-1k and deployed as an empirical feature & entropy analyzer for AI artifact signatures.",
+            "The 'ai_probability' / 'ai_pattern_score' is an empirical fusion of logit entropy, feature dispersion, and 2D FFT spectral irregularity.",
+            "Recent diffusion models (e.g. Midjourney v6, SDXL, FLUX) produce sophisticated textures that may yield false negatives on low-res inputs.",
+            "Heavily recompressed social media images may lose high-frequency spectral artifacts, affecting detection confidence."
+          ]
+        },
+        "manipulation_detection": {
+          "engine": "manipulation_detection",
+          "model_id": "resnet50",
+          "architecture": "ResNet-50 (Deep Residual Network + Spatial Feature Hook)",
+          "model_source": "torchvision (pretrained=ImageNet-1k)",
+          "device": "cpu",
+          "input_size": [
+            224,
+            224
+          ],
+          "inference_ran": true,
+          "inference_time_ms": 148.46,
+          "predicted_label": "Potential Localized Manipulation / Splicing",
+          "raw_logits": [
+            3.5755,
+            3.476,
+            3.2454,
+            3.1273,
+            3.1173
+          ],
+          "scores": {
+            "class_783": 0.0188,
+            "class_499": 0.017,
+            "class_677": 0.0135,
+            "class_772": 0.012,
+            "class_902": 0.0119
+          },
+          "feature_anomaly_score": 0.9998,
+          "suspicious_regions": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 7,
+              "height": 7,
+              "anomaly_score": 9.2207
+            },
+            {
+              "x": 92,
+              "y": 0,
+              "width": 7,
+              "height": 7,
+              "anomaly_score": 3.7257
+            },
+            {
+              "x": 7,
+              "y": 7,
+              "width": 7,
+              "height": 7,
+              "anomaly_score": 3.5651
+            },
+            {
+              "x": 92,
+              "y": 7,
+              "width": 7,
+              "height": 7,
+              "anomaly_score": 3.2825
+            }
+          ],
+          "assessment": "likely_manipulated",
+          "manipulation_indicator": "High localized feature deviation detected (Anomaly Score: 1.000) across 4 flagged spatial regions. Requires multi-engine forensic corroboration.",
+          "interpretation": "High localized feature deviation detected (Anomaly Score: 1.000) across 4 flagged spatial regions. Requires multi-engine forensic corroboration.",
+          "artifacts": [
+            {
+              "artifact_id": "ART-EVD-009-MANIP",
+              "type": "manipulation_heatmap",
+              "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\manipulation_heatmap.png",
+              "description": "Deep feature spatial anomaly map localizing suspicious boundaries, compositing, and manipulation artifacts."
+            }
+          ],
+          "limitations": [
+            "ResNet-50 Layer-3 feature deviation highlights localized structural, boundary, and textural inconsistencies.",
+            "Feature anomaly scores are computed relative to baseline spatial distribution and represent relative anomaly rather than a calibrated probability.",
+            "Subtle facial deepfakes (e.g. slight mouth/eye reenactment) may require specialized facial landmark models for micro-expression localization."
+          ]
+        },
+        "overall_forensic_assessment": {
+          "category": "inconclusive",
+          "confidence_basis": "Ambiguous or contradictory forensic indicators requiring secondary human investigative verification.",
+          "evidence_summary": "Forensic metrics fall within intermediate threshold ranges without definitive physical or neural proof of manipulation or purity."
+        }
+      },
+      "signals": [
+        {
+          "signal_id": "SIG-001",
+          "code": "DEEPFAKE_FACIAL_ARTIFACT_DETECTED",
+          "name": "Localized Deepfake / Manipulation Spatial Anomaly",
+          "category": "manipulation",
+          "strength": "High",
+          "source_engine": "manipulation_detection",
+          "details": "Feature anomaly score: 1.000 across 4 localized spatial bounding regions."
+        },
+        {
+          "signal_id": "SIG-002",
+          "code": "EXIF_METADATA_STRIPPED",
+          "name": "Camera Sensor & Exposure Headers Stripped",
+          "category": "metadata",
+          "strength": "Low",
+          "source_engine": "metadata_analysis",
+          "details": "Absence of standard camera hardware EXIF tags."
+        }
+      ],
+      "findings": [
+        {
+          "finding_id": "FIND-001",
+          "title": "Multi-Engine Indicators of Localized Image Manipulation or Deepfake Splicing",
+          "severity": "High",
+          "category": "manipulation",
+          "description": "Physical and neural forensic engines reveal localized inconsistencies. ResNet-50 feature anomaly score: 1.000; ELA high-error fraction: 0.00%; Wavelet noise variance ratio: 0.000. These convergent cues strongly indicate region tampering or composite splicing.",
+          "supporting_evidence": [
+            "manipulation_detection"
+          ],
+          "regions": [
+            {
+              "x": 0,
+              "y": 0,
+              "width": 7,
+              "height": 7
+            },
+            {
+              "x": 92,
+              "y": 0,
+              "width": 7,
+              "height": 7
+            },
+            {
+              "x": 7,
+              "y": 7,
+              "width": 7,
+              "height": 7
+            },
+            {
+              "x": 92,
+              "y": 7,
+              "width": 7,
+              "height": 7
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "artifact_id": "ART-EVD-009-NOISE",
+          "type": "noise_residual_map",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\noise_residual.png",
+          "description": "2D wavelet high-frequency detail energy map isolating camera sensor noise and localized variance discontinuities."
+        },
+        {
+          "artifact_id": "ART-EVD-009-ELA",
+          "type": "ela_heatmap",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+          "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+        },
+        {
+          "artifact_id": "ART-EVD-009-MANIP",
+          "type": "manipulation_heatmap",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\manipulation_heatmap.png",
+          "description": "Deep feature spatial anomaly map localizing suspicious boundaries, compositing, and manipulation artifacts."
+        }
+      ],
+      "errors": [],
+      "limitations": [
+        "PRNU sensor noise assumes uncompressed or high-quality photographic sources; severe compression attenuates sensor noise.",
+        "Smooth, untextured regions (sky, flat surfaces) provide the cleanest PRNU signatures; dense textures add scene contamination.",
+        "Wavelet high-frequency components from different camera sensors typically have cross-correlation < 0.25, while identical sensors exceed 0.60.",
+        "ELA is calibrated for JPEG compression and is most informative on images with natural compression cycles.",
+        "Multiple uniform re-saves across the entire image reduce ELA sensitivity.",
+        "High-frequency natural edges (textures, foliage) naturally produce moderate ELA signals without tampering.",
+        "Copy-move block matching uses quantized feature hashing; heavily rotated or scaled duplicates may evade detection.",
+        "Histogram quantization spikes flag potential multiple compression/editing passes, but can occur naturally in high-contrast graphics.",
+        "Edge and blur metrics are influenced by natural optical depth of field (bokeh).",
+        "EXIF metadata is stored in plain text within image file headers and can be modified or forged.",
+        "Social media platforms (Twitter/X, WhatsApp, Instagram) routinely strip all EXIF metadata for privacy; absence of EXIF alone does not prove malicious manipulation.",
+        "Timezone discrepancies between camera internal clocks and computer systems can create apparent timestamp mismatches.",
+        "EfficientNet-B4 is trained on ImageNet-1k and deployed as an empirical feature & entropy analyzer for AI artifact signatures.",
+        "The 'ai_probability' / 'ai_pattern_score' is an empirical fusion of logit entropy, feature dispersion, and 2D FFT spectral irregularity.",
+        "Recent diffusion models (e.g. Midjourney v6, SDXL, FLUX) produce sophisticated textures that may yield false negatives on low-res inputs.",
+        "Heavily recompressed social media images may lose high-frequency spectral artifacts, affecting detection confidence.",
+        "ResNet-50 Layer-3 feature deviation highlights localized structural, boundary, and textural inconsistencies.",
+        "Feature anomaly scores are computed relative to baseline spatial distribution and represent relative anomaly rather than a calibrated probability.",
+        "Subtle facial deepfakes (e.g. slight mouth/eye reenactment) may require specialized facial landmark models for micro-expression localization.",
+        "AI-generation models are calibrated on training sets and may exhibit domain shift on unseen generators.",
+        "PRNU sensor noise requires sufficient optical resolution; severe lossy recompression attenuates sensor footprints.",
+        "ELA relies on quantization differential; lossless formats (PNG) require spatial and frequency analysis instead.",
+        "EXIF data can be modified without altering image pixels; absence of EXIF does not confirm manipulation.",
+        "Forensic conclusions should be drawn from the convergence of multiple independent physical and neural indicators."
+      ]
+    },
+    "EVD-010": {
+      "evidence_id": "EVD-010",
+      "video": {
+        "evidence_id": "EVD-010",
+        "media_type": "video",
+        "status": "completed",
+        "metadata": {
+          "file_name": "f6b45e1ef812466d86c19c6b9564d6b8.mp4",
+          "file_extension": ".mp4",
+          "file_size_bytes": 265387,
+          "file_size_mb": 0.25,
+          "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+          "resolution": {
+            "width": 200,
+            "height": 112,
+            "aspect_ratio": "200:112"
+          },
+          "frame_rate": 15.0,
+          "total_frames": 73,
+          "duration_seconds": 4.87,
+          "duration_formatted": "00:04",
+          "codec_fourcc": "h264",
+          "streams": [
+            "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x112, 434 kb/s, 15 fps, 15 tbr, 15360 tbn (default)"
+          ],
+          "encoder": null,
+          "creation_time": null,
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\testing\\uploads\\f6b45e1ef812466d86c19c6b9564d6b8.mp4"
+        },
+        "assessment": {
+          "classification": "potentially_manipulated",
+          "verdict": "DEEPFAKE DETECTED",
+          "reliability": "High",
+          "reliability_note": "Strong manipulation evidence supported by neural models (88.7%) across 5 tracked face frames.",
+          "evidence_score": 15.0,
+          "manipulation_score_pct": 88.7,
+          "original_score_pct": 11.3,
+          "ai_generation_score_pct": null,
+          "ai_peak_score_pct": null,
+          "ai_authentic_score_pct": null,
+          "ai_flagged_frames_count": 0,
+          "ai_model_name": "disabled",
+          "ai_model_status": "disabled",
+          "ai_frame_predictions": [],
+          "model_name": "GenD CLIP ViT-L/14",
+          "face_detector": "yunet_cnn",
+          "total_faces_detected": 5,
+          "frames_with_faces": 5,
+          "total_frames_examined": 0,
+          "suspicious_frames_count": 5,
+          "confidence": null,
+          "basis": [
+            "Neural face forgery detector (GenD CLIP ViT-L/14) identified manipulation probability of 88.7% (authenticity: 11.3%) across 5 face frame(s).",
+            "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 88.0%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.00s",
+            "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 93.2%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.20s",
+            "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 86.5%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.40s",
+            "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 90.4%). Generalizable deepfake detector identified latent manipulation artifacts. at 1.80s",
+            "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 85.5%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.00s"
+          ],
+          "what_would_change_verdict": [],
+          "gend_status": "loaded_and_active",
+          "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+          "gend_mean_fake_pct": 88.7,
+          "gend_max_fake_pct": 93.2,
+          "gend_mean_real_pct": 11.3,
+          "mesonet_mean_fake_pct": 51.9
+        },
+        "verdict": "DEEPFAKE DETECTED",
+        "deepfake_metrics": {
+          "signal_name": "deepfake_neural_inference",
+          "model_name": "GenD CLIP ViT-L/14",
+          "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+          "face_detector": "yunet_cnn",
+          "model_status": "loaded_and_active",
+          "frames_with_faces": 5,
+          "total_faces_detected": 5,
+          "mean_manipulation_score": 0.8873,
+          "mean_manipulation_pct": 88.7,
+          "max_manipulation_score": 0.9318,
+          "mean_original_score": 0.1127,
+          "mean_original_pct": 11.3,
+          "mesonet_mean_fake_pct": 51.9,
+          "suspicious_face_frames_count": 0,
+          "gend_status": "loaded_and_active",
+          "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+          "gend_mean_fake_pct": 88.7,
+          "gend_max_fake_pct": 93.2,
+          "gend_mean_real_pct": 11.3
+        },
+        "findings": [
+          {
+            "indicator_name": "facial_deepfake_forgery_detected",
+            "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 88.0%). Generalizable deepfake detector identified latent manipulation artifacts.",
+            "timestamp": 0.0,
+            "frame_reference": "frame_000000_0.00s.jpg",
+            "severity": "high",
+            "method_used": "gend_clip_vit_l14",
+            "supporting_observations": "GenD Fake score: 0.8800, Real score: 0.1200, BBox: (69, 1, 71, 80)"
+          },
+          {
+            "indicator_name": "facial_deepfake_forgery_detected",
+            "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 93.2%). Generalizable deepfake detector identified latent manipulation artifacts.",
+            "timestamp": 0.2,
+            "frame_reference": "frame_000003_0.20s.jpg",
+            "severity": "high",
+            "method_used": "gend_clip_vit_l14",
+            "supporting_observations": "GenD Fake score: 0.9318, Real score: 0.0682, BBox: (64, 4, 71, 87)"
+          },
+          {
+            "indicator_name": "facial_deepfake_forgery_detected",
+            "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 86.5%). Generalizable deepfake detector identified latent manipulation artifacts.",
+            "timestamp": 0.4,
+            "frame_reference": "frame_000006_0.40s.jpg",
+            "severity": "high",
+            "method_used": "gend_clip_vit_l14",
+            "supporting_observations": "GenD Fake score: 0.8651, Real score: 0.1349, BBox: (59, 1, 72, 94)"
+          },
+          {
+            "indicator_name": "facial_deepfake_forgery_detected",
+            "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 90.4%). Generalizable deepfake detector identified latent manipulation artifacts.",
+            "timestamp": 1.8,
+            "frame_reference": "frame_000027_1.80s.jpg",
+            "severity": "high",
+            "method_used": "gend_clip_vit_l14",
+            "supporting_observations": "GenD Fake score: 0.9044, Real score: 0.0956, BBox: (37, 13, 52, 69)"
+          },
+          {
+            "indicator_name": "facial_deepfake_forgery_detected",
+            "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 85.5%). Generalizable deepfake detector identified latent manipulation artifacts.",
+            "timestamp": 2.0,
+            "frame_reference": "frame_000030_2.00s.jpg",
+            "severity": "high",
+            "method_used": "gend_clip_vit_l14",
+            "supporting_observations": "GenD Fake score: 0.8552, Real score: 0.1448, BBox: (36, 8, 54, 71)"
+          }
+        ],
+        "signals": [
+          {
+            "signal_name": "ai_generated_video_detection",
+            "model_name": "CIFAKE-EfficientNet-B0 (disabled)",
+            "model_status": "disabled",
+            "frames_analyzed": 0,
+            "mean_ai_generated_pct": null,
+            "peak_ai_generated_pct": null,
+            "mean_authentic_pct": null,
+            "flagged_synthetic_frames_count": 0,
+            "frame_predictions": [],
+            "findings": []
+          },
+          {
+            "signal_name": "deepfake_neural_inference",
+            "model_name": "GenD CLIP ViT-L/14",
+            "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+            "face_detector": "yunet_cnn",
+            "model_status": "loaded_and_active",
+            "frames_with_faces": 5,
+            "total_faces_detected": 5,
+            "mean_manipulation_score": 0.8873,
+            "mean_manipulation_pct": 88.7,
+            "max_manipulation_score": 0.9318,
+            "mean_original_score": 0.1127,
+            "mean_original_pct": 11.3,
+            "mesonet_mean_fake_pct": 51.9,
+            "suspicious_face_frames_count": 0,
+            "gend_status": "loaded_and_active",
+            "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+            "gend_mean_fake_pct": 88.7,
+            "gend_max_fake_pct": 93.2,
+            "gend_mean_real_pct": 11.3
+          },
+          {
+            "signal_name": "temporal_continuity",
+            "mean_interframe_difference": 0.0932,
+            "interframe_std_dev": 0.0744,
+            "anomalies_detected": 0
+          },
+          {
+            "signal_name": "sensor_noise_profile",
+            "mean_residual_variance": 43.856,
+            "noise_consistency": "natural"
+          },
+          {
+            "signal_name": "lighting_chrominance_stability",
+            "mean_luminance": 73.02,
+            "mean_saturation": 86.85,
+            "lighting_instabilities_detected": 0
+          },
+          {
+            "signal_name": "gradient_sharpness",
+            "sequence_mean_laplacian": 747.74,
+            "sharpness_anomalies": 0
+          },
+          {
+            "signal_name": "compression_artifact_profile",
+            "mean_dct_blockiness_ratio": 1.033,
+            "blockiness_std": 0.095,
+            "compression_anomalies": 0
+          },
+          {
+            "signal_name": "channel_correlation",
+            "mean_rgb_correlation": 0.9469,
+            "correlation_std": 0.0506,
+            "channel_anomalies": 0
+          }
+        ],
+        "source_matching_features": {
+          "evidence_id": "EVD-010",
+          "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+          "duration_seconds": 4.87,
+          "resolution": {
+            "width": 200,
+            "height": 112,
+            "aspect_ratio": "200:112"
+          },
+          "total_frames_fingerprinted": 25,
+          "keyframe_signatures": [
+            {
+              "timestamp": 0.0,
+              "frame_reference": "frame_000000_0.00s.jpg",
+              "dhash": "0011001100110011011110110111100110001101100011000000110000000110",
+              "ahash": "0000000100000001000000010000110011111100111111101110011011000000"
+            },
+            {
+              "timestamp": 0.2,
+              "frame_reference": "frame_000003_0.20s.jpg",
+              "dhash": "0011001101110011011110111111100110001001100011000000110000000110",
+              "ahash": "0000000100000001000000010000100011101100111111101110011010000000"
+            },
+            {
+              "timestamp": 0.4,
+              "frame_reference": "frame_000006_0.40s.jpg",
+              "dhash": "0011001101110011011110011111100110010000100001100000111000000110",
+              "ahash": "0000000100000001000000000001100011111100111111101110001011000000"
+            },
+            {
+              "timestamp": 0.6,
+              "frame_reference": "frame_000009_0.60s.jpg",
+              "dhash": "0001000110000010110001100100100101011100110010001100100011001001",
+              "ahash": "1100000011100000111000001010000000000110001011100111111111111111"
+            },
+            {
+              "timestamp": 0.8,
+              "frame_reference": "frame_000012_0.80s.jpg",
+              "dhash": "0001000110000010010001100100100111011100110010101100100011001001",
+              "ahash": "1100000011100000111000000010000000000110011011100110111111111111"
+            },
+            {
+              "timestamp": 1.0,
+              "frame_reference": "frame_000015_1.00s.jpg",
+              "dhash": "0001000010000010110000101100100011001100110010101100101011001101",
+              "ahash": "1100000011100000111000000010000000000110011011100110111101111111"
+            },
+            {
+              "timestamp": 1.2,
+              "frame_reference": "frame_000018_1.20s.jpg",
+              "dhash": "0001000100000010110000101100100011000100110110101100101011001101",
+              "ahash": "1100000011000000111000000110000000110110011011100110101001101111"
+            },
+            {
+              "timestamp": 1.4,
+              "frame_reference": "frame_000021_1.40s.jpg",
+              "dhash": "0001000000000011110000111100100011001100110010101101101011001111",
+              "ahash": "1100000011100000111000000110100001110110011011110110101001111111"
+            },
+            {
+              "timestamp": 1.6,
+              "frame_reference": "frame_000024_1.60s.jpg",
+              "dhash": "0001000100000011110000111100100011000100101010101101101011000011",
+              "ahash": "1100000011000000111000001110110001110110010111110110111101111011"
+            },
+            {
+              "timestamp": 1.8,
+              "frame_reference": "frame_000027_1.80s.jpg",
+              "dhash": "0110111111100111111011101110010111110111001101110011001000110011",
+              "ahash": "0000000000000011000001110000011100010011000110111111101111111000"
+            },
+            {
+              "timestamp": 2.0,
+              "frame_reference": "frame_000030_2.00s.jpg",
+              "dhash": "0110111111100111111011101110010111110111001101100011001100110011",
+              "ahash": "0000000000000011000001110001001100010011100110111111101111111000"
+            },
+            {
+              "timestamp": 2.2,
+              "frame_reference": "frame_000033_2.20s.jpg",
+              "dhash": "0010000000001000010010000100110000111110001000111010101110111110",
+              "ahash": "1000000011000000111000001110011011011111100100010100000101001111"
+            },
+            {
+              "timestamp": 2.4,
+              "frame_reference": "frame_000036_2.40s.jpg",
+              "dhash": "0010100000001000000011001100110000010111001100110010001100111110",
+              "ahash": "1000000010000000110000001110011111111111100110001000000010000011"
+            },
+            {
+              "timestamp": 2.6,
+              "frame_reference": "frame_000039_2.60s.jpg",
+              "dhash": "0110100011100100111000001100000011000000100110000111110011111100",
+              "ahash": "0000000000000000001000001110000011110000011011000001111000011111"
+            },
+            {
+              "timestamp": 2.8,
+              "frame_reference": "frame_000042_2.80s.jpg",
+              "dhash": "0110100011100100101000001100000011000000100110000111110011111100",
+              "ahash": "0000000000000000001000001110000011100000011011000001111000011111"
+            },
+            {
+              "timestamp": 3.0,
+              "frame_reference": "frame_000045_3.00s.jpg",
+              "dhash": "0110100011100100101000001100000011000000100110000111110011111100",
+              "ahash": "0000000000000000001000001110000011100000011011000001111000011111"
+            },
+            {
+              "timestamp": 3.2,
+              "frame_reference": "frame_000048_3.20s.jpg",
+              "dhash": "1000111010100110101001100001111000011101111110011111000111100000",
+              "ahash": "0000000000000000000000000000001100000111001111111111111111111111"
+            },
+            {
+              "timestamp": 3.4,
+              "frame_reference": "frame_000051_3.40s.jpg",
+              "dhash": "1000001110010011101011111000111110101111101111111111100011100000",
+              "ahash": "0000000000000000000000000000000100000011000111111111111101111111"
+            },
+            {
+              "timestamp": 3.6,
+              "frame_reference": "frame_000054_3.60s.jpg",
+              "dhash": "0011001100110111001111110101101111011011110010111100000011111000",
+              "ahash": "0000000000000000000000110000001100000111011111111111111111111111"
+            },
+            {
+              "timestamp": 3.8,
+              "frame_reference": "frame_000057_3.80s.jpg",
+              "dhash": "0011001001111010010101100100011011000110111000011110000111100000",
+              "ahash": "1000000000000000100000000000001101110111111111111111111111111111"
+            },
+            {
+              "timestamp": 4.0,
+              "frame_reference": "frame_000060_4.00s.jpg",
+              "dhash": "0001000100100011011011010110110111100101111100011110000011100000",
+              "ahash": "1000000000000000000000000011010001111111011111110111111101111110"
+            },
+            {
+              "timestamp": 4.2,
+              "frame_reference": "frame_000063_4.20s.jpg",
+              "dhash": "0001100100111001011000010110100111101100111100001110000011100000",
+              "ahash": "1000000000000000000000000011111100111111011111110111111101111111"
+            },
+            {
+              "timestamp": 4.4,
+              "frame_reference": "frame_000066_4.40s.jpg",
+              "dhash": "0001101100111011011100010111100111111111111100011110000011100000",
+              "ahash": "1000000010000000000010000011111100111111011111110111111101111110"
+            },
+            {
+              "timestamp": 4.6,
+              "frame_reference": "frame_000069_4.60s.jpg",
+              "dhash": "0001111000010111011101110111011111101001111010001110000011110000",
+              "ahash": "1000011110000001000000010011111100111111001111110011111101111100"
+            },
+            {
+              "timestamp": 4.8,
+              "frame_reference": "frame_000072_4.80s.jpg",
+              "dhash": "0011101000111110001101110111011111111010111100101110000011100000",
+              "ahash": "1111111110000011000000110001111100111111001111110011111100111100"
+            }
+          ],
+          "color_profile_vector": [
+            0.45174285769462585,
+            0.2563064396381378,
+            0.17950454354286194,
+            0.05233166739344597,
+            0.33799847960472107,
+            0.06372123211622238,
+            0.0802539512515068,
+            0.04509352520108223,
+            0.0563153401017189,
+            0.009293925017118454,
+            0.006966909859329462,
+            0.0047007673420012,
+            0.061462000012397766,
+            0.027225667610764503,
+            0.014398718252778053,
+            0.00404202239587903,
+            0.09936030209064484,
+            0.12238350510597229,
+            0.0728050023317337,
+            0.205286905169487,
+            0.134312242269516,
+            0.09950603544712067,
+            0.05831301212310791,
+            0.0739089846611023,
+            0.03671300783753395,
+            0.043717797845602036,
+            0.09413092583417892,
+            0.01134228240698576,
+            0.061350952833890915,
+            0.037814971059560776,
+            0.02028231881558895,
+            0.006658881437033415
+          ]
+        },
+        "video_relationships": [],
+        "errors": [],
+        "limitations": [
+          "Forensic classification represents automated signal measurements and neural inference scores; not judicial proof.",
+          "Keyframe sampling inspects periodic intervals across the video rather than 100% of video frames.",
+          "Google Gemini API understanding was not active (API key missing or request bypassed)."
+        ],
+        "extracted_frames_summary": {
+          "total_extracted": 25,
+          "output_directory": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames",
+          "scene_changes_timestamps": [],
+          "duplicate_frames_timestamps": [
+            2.8,
+            3.0
+          ],
+          "keyframe_paths": [
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000003_0.20s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000006_0.40s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000009_0.60s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.80s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000015_1.00s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000018_1.20s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000021_1.40s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.60s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000027_1.80s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000030_2.00s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000033_2.20s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_2.40s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000039_2.60s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000042_2.80s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000045_3.00s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_3.20s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000051_3.40s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000054_3.60s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000057_3.80s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_4.00s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000063_4.20s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000066_4.40s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000069_4.60s.jpg",
+            "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_4.80s.jpg"
+          ],
+          "keyframes": [
+            {
+              "frame_index": 0,
+              "timestamp": 0.0,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+              "file_name": "frame_000000_0.00s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 481.05,
+              "is_suspicious": true,
+              "suspicion_reasons": [
+                "facial_deepfake_forgery_detected"
+              ]
+            },
+            {
+              "frame_index": 3,
+              "timestamp": 0.2,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000003_0.20s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000003_0.20s.jpg",
+              "file_name": "frame_000003_0.20s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 492.74,
+              "is_suspicious": true,
+              "suspicion_reasons": [
+                "facial_deepfake_forgery_detected"
+              ]
+            },
+            {
+              "frame_index": 6,
+              "timestamp": 0.4,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000006_0.40s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000006_0.40s.jpg",
+              "file_name": "frame_000006_0.40s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 492.51,
+              "is_suspicious": true,
+              "suspicion_reasons": [
+                "facial_deepfake_forgery_detected"
+              ]
+            },
+            {
+              "frame_index": 9,
+              "timestamp": 0.6,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000009_0.60s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000009_0.60s.jpg",
+              "file_name": "frame_000009_0.60s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 887.76,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 12,
+              "timestamp": 0.8,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.80s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.80s.jpg",
+              "file_name": "frame_000012_0.80s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 769.26,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 15,
+              "timestamp": 1.0,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000015_1.00s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000015_1.00s.jpg",
+              "file_name": "frame_000015_1.00s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 775.53,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 18,
+              "timestamp": 1.2,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000018_1.20s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000018_1.20s.jpg",
+              "file_name": "frame_000018_1.20s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 887.08,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 21,
+              "timestamp": 1.4,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000021_1.40s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000021_1.40s.jpg",
+              "file_name": "frame_000021_1.40s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 762.76,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 24,
+              "timestamp": 1.6,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.60s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.60s.jpg",
+              "file_name": "frame_000024_1.60s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 837.96,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 27,
+              "timestamp": 1.8,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000027_1.80s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000027_1.80s.jpg",
+              "file_name": "frame_000027_1.80s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 770.04,
+              "is_suspicious": true,
+              "suspicion_reasons": [
+                "facial_deepfake_forgery_detected"
+              ]
+            },
+            {
+              "frame_index": 30,
+              "timestamp": 2.0,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000030_2.00s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000030_2.00s.jpg",
+              "file_name": "frame_000030_2.00s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 789.03,
+              "is_suspicious": true,
+              "suspicion_reasons": [
+                "facial_deepfake_forgery_detected"
+              ]
+            },
+            {
+              "frame_index": 33,
+              "timestamp": 2.2,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000033_2.20s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000033_2.20s.jpg",
+              "file_name": "frame_000033_2.20s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 719.79,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 36,
+              "timestamp": 2.4,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_2.40s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_2.40s.jpg",
+              "file_name": "frame_000036_2.40s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 746.97,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 39,
+              "timestamp": 2.6,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000039_2.60s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000039_2.60s.jpg",
+              "file_name": "frame_000039_2.60s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 1267.04,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 42,
+              "timestamp": 2.8,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000042_2.80s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000042_2.80s.jpg",
+              "file_name": "frame_000042_2.80s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": true,
+              "laplacian_variance": 1225.99,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 45,
+              "timestamp": 3.0,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000045_3.00s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000045_3.00s.jpg",
+              "file_name": "frame_000045_3.00s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": true,
+              "laplacian_variance": 1177.76,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 48,
+              "timestamp": 3.2,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_3.20s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_3.20s.jpg",
+              "file_name": "frame_000048_3.20s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 449.16,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 51,
+              "timestamp": 3.4,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000051_3.40s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000051_3.40s.jpg",
+              "file_name": "frame_000051_3.40s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 393.49,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 54,
+              "timestamp": 3.6,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000054_3.60s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000054_3.60s.jpg",
+              "file_name": "frame_000054_3.60s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 531.61,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 57,
+              "timestamp": 3.8,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000057_3.80s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000057_3.80s.jpg",
+              "file_name": "frame_000057_3.80s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 574.0,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 60,
+              "timestamp": 4.0,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_4.00s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_4.00s.jpg",
+              "file_name": "frame_000060_4.00s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 614.91,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 63,
+              "timestamp": 4.2,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000063_4.20s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000063_4.20s.jpg",
+              "file_name": "frame_000063_4.20s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 691.18,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 66,
+              "timestamp": 4.4,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000066_4.40s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000066_4.40s.jpg",
+              "file_name": "frame_000066_4.40s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 784.1,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 69,
+              "timestamp": 4.6,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000069_4.60s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000069_4.60s.jpg",
+              "file_name": "frame_000069_4.60s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 849.89,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            },
+            {
+              "frame_index": 72,
+              "timestamp": 4.8,
+              "relative_path": "storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_4.80s.jpg",
+              "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_4.80s.jpg",
+              "file_name": "frame_000072_4.80s.jpg",
+              "is_scene_change": false,
+              "is_duplicate": false,
+              "laplacian_variance": 721.99,
+              "is_suspicious": false,
+              "suspicion_reasons": []
+            }
+          ]
+        }
+      },
+      "audio": null,
+      "audio_extraction_status": "no_audio_stream"
+    }
+  },
+  "analyst_reviews": {
+    "EVD-001": {
+      "evidence_id": "EVD-001",
+      "status": "VERIFIED",
+      "notes": "Forensic audit confirmed visual artifacts match known GAN synthesis patterns.",
+      "examiner": "Lead Examiner #42",
+      "updated_at": "2026-11-20T00:20:48.085670+00:00",
+      "auto_findings": "",
+      "investigator_opinion": ""
+    },
+    "EVD-008": {
+      "evidence_id": "EVD-008",
+      "status": "VERIFIED",
+      "notes": "Verified genuine evidence during automated testing.",
+      "examiner": "Lead Forensic Investigator",
+      "updated_at": "2026-11-20T00:24:31.874293+00:00",
+      "auto_findings": "",
+      "investigator_opinion": ""
+    }
+  },
+  "forensic_standards": {
+    "hashing": "SHA-256 integrity verification",
+    "image_models": [
+      "timm/EfficientNet-B4",
+      "timm/ResNet-50",
+      "ELA-95",
+      "BVR-Wavelet"
+    ],
+    "video_models": [
+      "GenD CLIP ViT-L/14 (WACV 2026)",
+      "MesoNet-4",
+      "YuNet Face Detector"
+    ],
+    "audio_models": [
+      "ai8shiro/deepfake-audio-wav2vec2-ONNX"
+    ],
+    "text_models": [
+      "DocumentExtractor",
+      "EntityExtractor",
+      "ClaimExtractor",
+      "LinguisticAnalyzer"
+    ]
+  }
+}

@@ -1,0 +1,474 @@
+{
+  "module": "text",
+  "evidence_id": "EVD-008",
+  "status": "completed",
+  "metadata": {
+    "evidence_id": "EVD-008",
+    "original_filename": "case_notes.txt",
+    "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\documents\\545f82944ebf405aa0f696f0353ea050.txt",
+    "file_type": "text",
+    "mime_type": "text/plain",
+    "file_size": 232,
+    "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+    "ingestion_metadata": {
+      "modality": "text",
+      "extension": ".txt",
+      "format": "TXT",
+      "encoding": "utf-8",
+      "extracted_character_count": 232,
+      "word_count": 32,
+      "extraction_method": "streaming-python-codecs",
+      "extracted_text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account."
+    },
+    "character_encoding": "ascii"
+  },
+  "analyses": {
+    "text_extraction": {
+      "status": "completed",
+      "extraction_method": "utf8_reader",
+      "character_encoding": "ascii",
+      "embedded_metadata": {
+        "format": "plain_text"
+      },
+      "structural_counts": {
+        "character_count": 232,
+        "word_count": 32,
+        "paragraph_count": 1,
+        "sentence_count": 3
+      },
+      "language_detection": {
+        "language": "en",
+        "confidence": 0.91,
+        "method": "stopword_frequency_profile"
+      },
+      "paragraphs": [
+        {
+          "index": 0,
+          "text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account.",
+          "start_char": 0,
+          "end_char": 232,
+          "word_count": 32,
+          "sentence_count": 3
+        }
+      ],
+      "sentences": [
+        {
+          "index": 0,
+          "paragraph_index": 0,
+          "text": "Artificial intelligence and deepfake technologies have advanced significantly.",
+          "start_char": 0,
+          "end_char": 79,
+          "word_count": 8
+        },
+        {
+          "index": 1,
+          "paragraph_index": 0,
+          "text": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+          "start_char": 79,
+          "end_char": 152,
+          "word_count": 14
+        },
+        {
+          "index": 2,
+          "paragraph_index": 0,
+          "text": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+          "start_char": 152,
+          "end_char": 232,
+          "word_count": 10
+        }
+      ],
+      "raw_text_length": 232,
+      "errors": [],
+      "limitations": []
+    },
+    "claim_extraction": {
+      "status": "completed",
+      "claims_count": 3,
+      "claim_types_distribution": {
+        "event_claim": 1,
+        "numerical_claim": 2
+      },
+      "claims": [
+        {
+          "claim_id": "e316afa0",
+          "statement": "Artificial intelligence and deepfake technologies have advanced significantly.",
+          "category": "event_claim",
+          "secondary_tags": [],
+          "entities": [],
+          "dates": [],
+          "numbers": [],
+          "locations": [],
+          "source_span": {
+            "start_char": 0,
+            "end_char": 79,
+            "paragraph_index": 0,
+            "sentence_index": 0,
+            "context": "Artificial intelligence and deepfake technologies have advanced significantly."
+          },
+          "extraction_status": "completed"
+        },
+        {
+          "claim_id": "419602f4",
+          "statement": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+          "category": "numerical_claim",
+          "secondary_tags": [
+            "quantitative",
+            "time_stamped"
+          ],
+          "entities": [
+            "Chicago",
+            "November 15, 2024"
+          ],
+          "dates": [
+            "November 15, 2024"
+          ],
+          "numbers": [],
+          "locations": [
+            "Chicago"
+          ],
+          "source_span": {
+            "start_char": 79,
+            "end_char": 152,
+            "paragraph_index": 0,
+            "sentence_index": 1,
+            "context": "The suspect claimed he was in Chicago on the night of November 15, 2024."
+          },
+          "extraction_status": "completed"
+        },
+        {
+          "claim_id": "a5f0519a",
+          "statement": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+          "category": "numerical_claim",
+          "secondary_tags": [
+            "quantitative"
+          ],
+          "entities": [
+            "$500,000"
+          ],
+          "dates": [],
+          "numbers": [
+            "$500,000"
+          ],
+          "locations": [],
+          "source_span": {
+            "start_char": 152,
+            "end_char": 232,
+            "paragraph_index": 0,
+            "sentence_index": 2,
+            "context": "Financial transactions indicate $500,000 was transferred to an offshore account."
+          },
+          "extraction_status": "completed"
+        }
+      ],
+      "errors": [],
+      "limitations": [
+        "Claims represent statements asserted inside the text itself and are extracted for forensic tracking.",
+        "Categorization indicates the semantic nature of the claim, not an external factual verification."
+      ]
+    },
+    "entity_extraction": {
+      "status": "completed",
+      "entity_counts": {
+        "LOCATION": 1,
+        "DATE": 1,
+        "MONETARY_VALUE": 1
+      },
+      "entities": [
+        {
+          "entity_type": "LOCATION",
+          "value": "Chicago",
+          "normalized_value": "Chicago",
+          "occurrences": 1,
+          "mentions": [
+            {
+              "text": "Chicago",
+              "start_char": 109,
+              "end_char": 116,
+              "paragraph_index": 0,
+              "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+            }
+          ],
+          "extraction_method": "rule_based_location",
+          "reliability": "high",
+          "limitations": []
+        },
+        {
+          "entity_type": "DATE",
+          "value": "November 15, 2024",
+          "normalized_value": "November 15, 2024",
+          "occurrences": 1,
+          "mentions": [
+            {
+              "text": "November 15, 2024",
+              "start_char": 133,
+              "end_char": 150,
+              "paragraph_index": 0,
+              "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+            }
+          ],
+          "extraction_method": "regex_pattern",
+          "reliability": "high",
+          "limitations": []
+        },
+        {
+          "entity_type": "MONETARY_VALUE",
+          "value": "$500,000",
+          "normalized_value": "$500,000",
+          "occurrences": 1,
+          "mentions": [
+            {
+              "text": "$500,000",
+              "start_char": 184,
+              "end_char": 192,
+              "paragraph_index": 0,
+              "context": "...nancial transactions indicate $500,000 was transferred to an offshor..."
+            }
+          ],
+          "extraction_method": "regex_pattern",
+          "reliability": "high",
+          "limitations": []
+        }
+      ],
+      "errors": [],
+      "limitations": [
+        "Entity extraction uses high-precision deterministic patterns and contextual heuristics.",
+        "Ambiguous single-token names without title or context are preserved as unclassified to avoid false associations."
+      ]
+    },
+    "temporal_analysis": {
+      "status": "completed",
+      "temporal_expressions": [
+        {
+          "raw_text": "November 15, 2024",
+          "normalized_iso": "2024-11-15T00:00:00",
+          "entity_type": "DATE",
+          "start_char": 133,
+          "end_char": 150,
+          "paragraph_index": 0,
+          "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+        }
+      ],
+      "chronological_order": [
+        {
+          "raw_text": "November 15, 2024",
+          "iso": "2024-11-15T00:00:00",
+          "start_char": 133
+        }
+      ],
+      "potential_chronology_conflicts": [],
+      "errors": [],
+      "limitations": [
+        "Relative temporal expressions without reference epoch are extracted without absolute normalization.",
+        "Chronological conflicts are flagged only where explicit textual contradiction or reversal markers are present."
+      ]
+    },
+    "location_analysis": {
+      "status": "completed",
+      "location_mentions": [
+        {
+          "location": "Chicago",
+          "start_char": 109,
+          "end_char": 116,
+          "paragraph_index": 0,
+          "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+        }
+      ],
+      "distinct_locations": [
+        "Chicago"
+      ],
+      "potential_location_conflicts": [],
+      "errors": [],
+      "limitations": [
+        "Location extraction tracks spatial named entities and geopolitical references.",
+        "Distinct location references across separate events are expected in normal text and are not flagged as conflicts without direct contextual overlap."
+      ]
+    },
+    "linguistic_analysis": {
+      "status": "completed",
+      "sentence_length_distribution": {
+        "min": 8.0,
+        "max": 14.0,
+        "mean": 11,
+        "median": 11,
+        "std_dev": 3.0
+      },
+      "word_length_distribution": {
+        "min": 2.0,
+        "max": 13.0,
+        "mean": 6.31,
+        "std_dev": 3.66
+      },
+      "vocabulary_diversity": {
+        "type_token_ratio": 0.931,
+        "hapax_legomena_ratio": 0.8621,
+        "total_tokens": 29,
+        "unique_types": 27
+      },
+      "repetition_metrics": {
+        "repeated_phrases": {
+          "bigrams": [],
+          "trigrams": [],
+          "fourgrams": []
+        },
+        "repeated_sentence_starters": []
+      },
+      "punctuation_patterns": {
+        "counts": {
+          ".": 3,
+          ",": 2
+        },
+        "multiple_exclamations": 0,
+        "multiple_ellipses": 0,
+        "mixed_quote_styles": false,
+        "unusual_punctuation_flag": false
+      },
+      "capitalization_patterns": {
+        "uppercase_char_ratio": 0.0273,
+        "all_caps_word_count": 0,
+        "sample_all_caps": [],
+        "excessive_caps_flag": false
+      },
+      "readability_scores": {
+        "flesch_reading_ease": 27.82,
+        "flesch_kincaid_grade": 11.78,
+        "total_syllables": 58,
+        "avg_words_per_sentence": 9.67
+      },
+      "paragraph_metrics": {
+        "paragraph_count": 1,
+        "mean_paragraph_word_count": 32,
+        "paragraph_length_variance": 0.0
+      },
+      "section_shifts": [],
+      "errors": [],
+      "limitations": [
+        "Linguistic metrics are statistical descriptors calculated over the full text.",
+        "Statistical variations, high repetition, or grade-level changes are contextual markers and never treated as standalone proof of deception."
+      ]
+    },
+    "consistency_analysis": {
+      "status": "completed",
+      "items_count": 0,
+      "inconsistencies": [],
+      "errors": [],
+      "limitations": [
+        "Consistency analysis performs intra-document cross-referencing and factual coherence checks.",
+        "Only statements exhibiting clear semantic opposition or numerical incompatibility are classified as contradictory."
+      ]
+    },
+    "text_comparison": {
+      "status": "completed",
+      "intra_document_similarity": {
+        "comparisons_evaluated": 0,
+        "max_pairwise_similarity": 0.0,
+        "mean_pairwise_similarity": 0.0,
+        "high_similarity_pairs_count": 0
+      },
+      "duplicate_blocks": [],
+      "reference_comparison": null,
+      "errors": [],
+      "limitations": [
+        "Intra-document block similarity uses normalized Jaccard word set and character sequence matching.",
+        "No external reference text provided; single-document comparison performed."
+      ]
+    },
+    "ai_detector": {
+      "status": "not_implemented",
+      "model_name": "roberta-base-openai-detector",
+      "model_version_or_source": null,
+      "input_requirements": {
+        "max_sequence_length": 512,
+        "device": "cpu"
+      },
+      "raw_output": null,
+      "raw_scores": {},
+      "inference_ran": false,
+      "errors": [],
+      "limitations": [
+        "Pretrained detector 'roberta-base-openai-detector' is not locally available in current environment.",
+        "No synthetic scores were fabricated in adherence to forensic integrity guidelines."
+      ]
+    }
+  },
+  "signals": [],
+  "findings": [],
+  "artifacts": [
+    {
+      "artifact_id": "0597c9f8",
+      "name": "extracted_text.txt",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\extracted_text.txt",
+      "artifact_type": "text/plain",
+      "description": "Raw extracted text from evidence document.",
+      "file_size_bytes": 232,
+      "relative_url": "/artifacts/EVD-008/text/extracted_text.txt"
+    },
+    {
+      "artifact_id": "b36a429d",
+      "name": "text_extraction.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\text_extraction.json",
+      "artifact_type": "application/json",
+      "description": "Document extraction metadata, structural counts, and paragraph/sentence maps.",
+      "file_size_bytes": 1614,
+      "relative_url": "/artifacts/EVD-008/text/text_extraction.json"
+    },
+    {
+      "artifact_id": "02025ab5",
+      "name": "entities.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\entities.json",
+      "artifact_type": "application/json",
+      "description": "Structured entities and mentions with character offsets.",
+      "file_size_bytes": 1983,
+      "relative_url": "/artifacts/EVD-008/text/entities.json"
+    },
+    {
+      "artifact_id": "4529eb34",
+      "name": "claims.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\claims.json",
+      "artifact_type": "application/json",
+      "description": "Factual, temporal, causal, and opinion claims extracted from text.",
+      "file_size_bytes": 2447,
+      "relative_url": "/artifacts/EVD-008/text/claims.json"
+    },
+    {
+      "artifact_id": "d9ac72bb",
+      "name": "linguistic_stats.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\linguistic_stats.json",
+      "artifact_type": "application/json",
+      "description": "Deterministic linguistic metrics, readability scores, and repetition patterns.",
+      "file_size_bytes": 1599,
+      "relative_url": "/artifacts/EVD-008/text/linguistic_stats.json"
+    },
+    {
+      "artifact_id": "13cfef0a",
+      "name": "consistency_analysis.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\consistency_analysis.json",
+      "artifact_type": "application/json",
+      "description": "Internal cross-referencing contradictions, mismatches, and duplicate blocks.",
+      "file_size_bytes": 342,
+      "relative_url": "/artifacts/EVD-008/text/consistency_analysis.json"
+    },
+    {
+      "artifact_id": "07a5e5fc",
+      "name": "highlighted_evidence.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\highlighted_evidence.json",
+      "artifact_type": "application/json",
+      "description": "Traceable character span highlights and forensic annotations for report display.",
+      "file_size_bytes": 140,
+      "relative_url": "/artifacts/EVD-008/text/highlighted_evidence.json"
+    },
+    {
+      "artifact_id": "5b7d4e08",
+      "name": "standardized_output.json",
+      "path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\artifacts\\EVD-008\\text\\standardized_output.json",
+      "artifact_type": "application/json",
+      "description": "Verifiable structured final analytical results delivered exclusively as standardized JSON.",
+      "file_size_bytes": 13506,
+      "relative_url": "/artifacts/EVD-008/text/standardized_output.json"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Text forensics analyzes intra-document semantic and statistical structures.",
+    "Module operates independently without cross-evidence correlation or final report generation."
+  ]
+}

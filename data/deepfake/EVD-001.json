@@ -1,0 +1,170 @@
+{
+  "evidence_id": "EVD-001",
+  "status": "Completed",
+  "result": "DEEPFAKE NOT DETECTED",
+  "score": 0.5801,
+  "model_name": "Wav2Vec2 audio spoof classifier (ONNX int4)",
+  "explanation": "No strong synthetic audio indicators detected (score: 0.5801, threshold: 0.6000).",
+  "score_band": {
+    "band_index": 6,
+    "band_range": "50-60%",
+    "band_label": "Upper Baseline Indicators",
+    "indicator_strength": "Upper Baseline",
+    "color": "#F59E0B",
+    "badge": "UPPER BASELINE",
+    "band_type": "Model Score Band (uncalibrated acoustic indicator; not probability)",
+    "explanation": "Model score band: Moderate acoustic feature activation within baseline limits (<= 0.60). Natural speech recorded via webcams or compressed codecs often falls here.",
+    "forensic_caution": "This score band reflects uncalibrated acoustic feature distance; it does not indicate AI generation and is below the detection threshold.",
+    "recommended_action": "Classify as NO STRONG SYNTHETIC INDICATORS unless contradictory segment evidence exists."
+  },
+  "verdict": {
+    "title": "NO STRONG SYNTHETIC AUDIO INDICATORS DETECTED",
+    "subtitle": "The model did not identify sufficient acoustic patterns associated with synthetic or spoofed speech.",
+    "classification": "DEEPFAKE NOT DETECTED",
+    "conclusion": "No strong synthetic-audio indicators were detected by this model during this analysis. This does not establish that the audio is authentic or free from manipulation.",
+    "summary": "The model produced a synthetic-audio score of 0.5801, which is below the detection threshold of 0.6000 by 0.0199."
+  },
+  "scores": {
+    "synthetic_score": 0.5801,
+    "genuine_score": 0.4199,
+    "threshold_detected": 0.7,
+    "threshold_not_detected": 0.6,
+    "score_margin": 0.0199,
+    "margin_description": "-0.0199 below threshold (0.6000)",
+    "logit_margin": 0.323,
+    "classification_rule": "NO STRONG SYNTHETIC INDICATORS DETECTED if score <= 0.6000; SYNTHETIC AUDIO INDICATORS DETECTED if score >= 0.7000 with supporting model evidence; INCONCLUSIVE if 0.6000 < score < 0.7000 or contradictory evidence",
+    "interpretation": "This score represents the model's output (or duration-weighted aggregate across segments) and is not a calibrated probability of audio manipulation."
+  },
+  "why_verdict": {
+    "evaluated": "Wav2Vec2 evaluated 16 kHz acoustic feature representations from the audio waveform.",
+    "score": 0.5801,
+    "logit_margin": 0.323,
+    "threshold": 0.6,
+    "decision": "DEEPFAKE NOT DETECTED",
+    "reason": "The model returned a synthetic-audio score of 0.5801. This score is below the configured negative detection threshold of 0.6000 by 0.0199. Under current decision rules, no strong synthetic audio indicators were detected.",
+    "segment_consistency": "Consistent (range: 0.000)",
+    "calibration_status": "not_calibrated \u2014 ASVspoof 2021 PA domain; scores are acoustic feature activations, not calibrated probabilities",
+    "what_it_means": "The classifier did not detect strong synthetic or spoofed speech acoustic patterns in this recording.",
+    "what_it_does_not_prove": "- It does not establish that the audio is authentic or free from manipulation.\n- It does not verify speaker identity or recording authenticity.\n- Advanced, unseen, or hybrid synthetic speech methods may not be detected by this model."
+  },
+  "audio_properties": {
+    "original_filename": "test audio two.wav",
+    "format": "WAV",
+    "audio_codec": "PCM",
+    "duration_seconds": 7.25,
+    "original_sample_rate": 48000,
+    "processing_sample_rate": 16000,
+    "original_channels": 2,
+    "processed_channels": 1,
+    "samples_processed": 348160,
+    "audio_extracted_from_video": false,
+    "decoding_status": "Successful (Native PCM WAV (16-bit))",
+    "errors_or_warnings": []
+  },
+  "signal_quality": {
+    "rms_energy": 0.109,
+    "peak_amplitude": 0.7115,
+    "clipping_count": 0,
+    "clipping_percentage": 0.0,
+    "silence_detected": false,
+    "low_energy_detected": false,
+    "disclaimer": "Signal-quality measurements describe the audio recording characteristics. They are not direct indicators of whether audio is authentic or AI-generated."
+  },
+  "segmentation": {
+    "segmentation_used": false,
+    "segment_duration_seconds": 15.0,
+    "overlap_seconds": 1.0,
+    "total_segments": 1,
+    "successful_segments": 1,
+    "skipped_segments": 0,
+    "failed_segments": 0,
+    "total_audio_duration": 7.25,
+    "total_analyzed_duration": 7.25,
+    "audio_coverage_percentage": 100.0,
+    "aggregation_method": "duration_weighted",
+    "aggregate_score": 0.5801,
+    "min_segment_score": 0.5801,
+    "max_segment_score": 0.5801,
+    "mean_segment_score": 0.5801,
+    "duration_weighted_score": 0.5801,
+    "segment_score_distribution": [
+      0.5801
+    ],
+    "segment_verdicts": [
+      "NO STRONG SYNTHETIC AUDIO INDICATORS DETECTED"
+    ],
+    "failed_segment_errors": [],
+    "pct_segments_strong_indicators": 0.0,
+    "high_segment_disagreement": false,
+    "segment_score_range": 0.0,
+    "avg_logit_margin": 0.323,
+    "segment_results": [
+      {
+        "segment_index": 1,
+        "start_time": 0.0,
+        "end_time": 7.25,
+        "duration": 7.25,
+        "synthetic_score": 0.5801,
+        "logit_margin": 0.323,
+        "raw_logits": [
+          -0.12534935772418976,
+          0.1976691037416458
+        ],
+        "classification": "NO STRONG SYNTHETIC AUDIO INDICATORS DETECTED",
+        "processing_duration": 6.18,
+        "status": "Completed",
+        "error": null
+      }
+    ]
+  },
+  "model_info": {
+    "model_name": "Wav2Vec2 audio spoof classifier (ONNX int4)",
+    "model_id": "ai8shiro/deepfake-audio-wav2vec2-ONNX",
+    "architecture": "Wav2Vec2 (Transformer acoustic feature encoder + classification head)",
+    "source": "https://huggingface.co/ai8shiro/deepfake-audio-wav2vec2-ONNX",
+    "revision": "78a7991b7f413bd6ce15efd7cb27000736acc78a",
+    "runtime": "ONNX Runtime (CPUExecutionProvider)",
+    "quantization": "int4 ONNX",
+    "supported_domain": "Speech anti-spoofing and synthetic speech detection",
+    "license": "MIT (model card)",
+    "training_domain": "ASVspoof 2021 PA speech anti-spoofing (model-card statement)",
+    "limitations": [
+      "Model card metrics are self-reported on a balanced ASVspoof 2021 PA subset.",
+      "Performance may change across codecs, languages, environments, compression, and audio domains.",
+      "This output is an indicator and not proof of authenticity or manipulation."
+    ]
+  },
+  "timing": {
+    "processing_duration_seconds": 6.34
+  },
+  "details": {
+    "class_scores": {
+      "real": 0.4199,
+      "fake": 0.5801
+    },
+    "prediction": "DEEPFAKE NOT DETECTED",
+    "raw_logits": [
+      -0.12534935772418976,
+      0.1976691037416458
+    ],
+    "class_mapping": {
+      "0": "real",
+      "1": "fake"
+    },
+    "decision_thresholds": {
+      "deepfake_detected_min": 0.7,
+      "deepfake_not_detected_max": 0.6,
+      "inconclusive_zone": [
+        0.6,
+        0.7
+      ]
+    },
+    "limitations": [
+      "Model card metrics are self-reported on a balanced ASVspoof 2021 PA subset.",
+      "Performance may change across codecs, languages, environments, compression, and audio domains.",
+      "This output is an indicator and not proof of authenticity or manipulation."
+    ],
+    "aggregation_strategy": "duration-weighted aggregation of individual segment classification outputs",
+    "calibration_status": "not_calibrated \u2014 ASVspoof 2021 PA domain"
+  }
+}

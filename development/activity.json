@@ -1,0 +1,303 @@
+[
+  {
+    "timestamp": "2026-11-19T00:00:00+05:30",
+    "phase": "Phase 0 — Repository inspection",
+    "task": "Repository inspection",
+    "status": "completed",
+    "message": "Inspected workspace; it is empty and is not a Git repository.",
+    "details": {
+      "backend": null,
+      "database": null,
+      "storage": null,
+      "ingestion": null,
+      "dependency_manifests": []
+    }
+  },
+  {
+    "timestamp": "2026-11-19T12:53:39.1946398+05:30",
+    "phase": "Phase 1 — INGEST",
+    "task": "Final verification",
+    "status": "completed",
+    "message": "4 tests passed; compileall passed; Streamlit launched successfully and smoke check completed.",
+    "details": {
+      "tests_failed": 0,
+      "streamlit_port": 8765,
+      "tests_passed": 4
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:45:14.1945611+05:30",
+    "phase": "Phase 1 — INGEST UI fix",
+    "task": "Current upload session and registry presentation",
+    "status": "completed",
+    "message": "Separated latest operation results from persistent ingestion history; verified new, duplicate, batch, and failed outcomes in isolated data.",
+    "details": {
+      "live_registry_preserved": true,
+      "tests": "6 passed",
+      "files_modified": [
+        "monitor/app.py",
+        "monitor/results.py",
+        "tests/test_monitor_results.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "ui_smoke": "Streamlit AppTest: zero exceptions"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:00:43.4326554+05:30",
+    "phase": "Phase 1 — INGEST registry diagnostics",
+    "task": "Investigate registry count mismatch",
+    "status": "completed",
+    "message": "Root cause was duplicate evidence uploads, not stale registry or API reads. Five records persisted before unique uploads; registry now has eight after three distinct test images.",
+    "details": {
+      "files_modified": [
+        "app/main.py",
+        "monitor/app.py",
+        "tests/test_ingest.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "duplicate_retry": "EVD-006; count unchanged",
+      "fresh_process_count": 8,
+      "after_count": 8,
+      "ui_rendered_count": 8,
+      "before_count": 5,
+      "api_count": 8,
+      "two_distinct": [
+        "EVD-007",
+        "EVD-008"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:01:08.3367541+05:30",
+    "phase": "Phase 1 — INGEST registry diagnostics",
+    "task": "Investigate registry count mismatch",
+    "status": "completed",
+    "message": "Root cause was duplicate evidence uploads, not stale registry or API reads. Five records persisted before unique uploads; registry now has eight after three distinct test images.",
+    "details": {
+      "duplicate_retry": "EVD-006; count unchanged",
+      "before_count": 5,
+      "two_distinct": [
+        "EVD-007",
+        "EVD-008"
+      ],
+      "ui_rendered_count": 8,
+      "api_count": 8,
+      "fresh_process_count": 8,
+      "after_count": 8,
+      "files_modified": [
+        "app/main.py",
+        "monitor/app.py",
+        "tests/test_ingest.py",
+        "development/progress.json",
+        "development/activity.json"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:51:32.299132+05:30",
+    "phase": "Phase 1 — Multimodal INGEST completion",
+    "task": "Multimodal evidence intake and analyzer input preparation",
+    "status": "completed",
+    "message": "Added centralized limits, modality-aware metadata and eligibility, and verified analyzer input preparation without modifying existing evidence.",
+    "details": {
+      "tests_failed": 0,
+      "not_ready": [
+        {
+          "reason": "Video duration exceeds 10.0 seconds.",
+          "evidence_id": "EVD-009"
+        }
+      ],
+      "api_count": 9,
+      "registry_count": 9,
+      "files_modified": [
+        "app/ingest/config.py",
+        "app/ingest/metadata.py",
+        "app/ingest/service.py",
+        "app/main.py",
+        "monitor/app.py",
+        "monitor/results.py",
+        "requirements.txt",
+        "README.md",
+        "tests/test_ingest.py",
+        "tests/test_multimodal_ingest.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "rendered_count": 9,
+      "tests_passed": 20,
+      "ready_contracts_verified": 8
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:52:12.8593849+05:30",
+    "phase": "Phase 1 — Final verification",
+    "task": "Full regression suite and final DOCX validation",
+    "status": "completed",
+    "message": "Re-ran all tests after requiring DOCX package content types and root relationships; all 20 tests pass.",
+    "details": {
+      "command": "python -m pytest -q",
+      "result": "20 passed",
+      "files_modified": [
+        "app/ingest/metadata.py",
+        "tests/test_multimodal_ingest.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "compileall": "passed"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T15:18:37+05:30",
+    "phase": "Phase 2 — Audio Analyzer",
+    "task": "Audio signal analyzer, API, and monitor integration",
+    "status": "completed",
+    "message": "Implemented a contract-driven audio signal analyzer and integrated it into the API and Streamlit monitor. Verified new tests and retained source evidence unchanged.",
+    "details": {
+      "files_modified": [
+        "app/analyzers/__init__.py",
+        "app/analyzers/config.py",
+        "app/analyzers/audio.py",
+        "app/main.py",
+        "monitor/app.py",
+        "requirements.txt",
+        "README.md",
+        "tests/test_audio_analyzer.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "tests": "25 passed; compile and AppTest passed",
+      "audio_formats": [
+        "WAV",
+        "MP3",
+        "M4A"
+      ],
+      "limitations": [
+        "No pretrained model configured",
+        "Voiced activity is heuristic, not transcription or speaker identification"
+      ],
+      "registry_mutated": false
+    }
+  },
+  {
+    "timestamp": "2026-11-19T15:43:32+05:30",
+    "phase": "Phase 2 — Video metadata and readiness fix",
+    "task": "FFmpeg stream verification and readable video metadata",
+    "status": "completed",
+    "message": "Verified stored MP4s and fixed video stream parsing, upload status presentation, and duplicate validation messages.",
+    "details": {
+      "files_modified": [
+        "app/ingest/metadata.py",
+        "app/ingest/service.py",
+        "monitor/app.py",
+        "monitor/results.py",
+        "tests/test_multimodal_ingest.py",
+        "tests/test_video_ui.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "tests": "29 passed; compile and AppTest passed",
+      "verified_live_records": {
+        "EVD-010": "readable video+audio stream; 138.93 seconds; valid file; duration-only eligibility restriction",
+        "EVD-013": "audio-only MP4; no video stream; unreadable as video"
+      },
+      "original_evidence_modified": false,
+      "duration_limit_changed": false
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:11:33+05:30",
+    "phase": "Phase 2 — Complete Audio Analyzer",
+    "task": "Duplicate attribution, local transcription and synthetic-audio analysis",
+    "status": "completed",
+    "message": "Reproduced and fixed duplicate metadata attribution; added optional lazy model adapters and unified audio orchestration/UI.",
+    "details": {
+      "file_changes": {
+        "app/analyzers/audio.py": "Orchestrates existing signal forensics with optional transcription and synthetic-audio detection; builds module statuses, unified timeline, partial results, and transcript artifacts.",
+        "app/analyzers/audio_models.py": "Adds lazy cached faster-whisper and pinned quantized ONNX classifier adapters; validates inputs and reports uncalibrated scores without unsupported confidence claims.",
+        "app/analyzers/config.py": "Centralizes model IDs/revisions, compute device, chunk and duration limits, and model compute settings.",
+        "app/ingest/service.py": "Re-extracts duplicate-attempt metadata from current bytes and separates container validation from stream readability; preserves SHA duplicate handling and EVD sequence.",
+        "app/main.py": "Adds opt-in model query flags, latest result/transcription/timeline/module routes, safe audio content playback, and retains artifact retrieval.",
+        "monitor/app.py": "Shows module statuses, transcript and segment playback/download, detector output, unified timeline, and artifact downloads.",
+        "monitor/results.py": "Avoids self-referential duplicate Evidence IDs and attributes duplicate metadata/validation to the current upload or explicit source.",
+        "requirements-audio-ml.txt": "Keeps optional local model inference dependencies out of core runtime requirements.",
+        "README.md": "Documents model selection, licensing, data domain, limitations, setup, API, and configuration.",
+        "tests/test_audio_analyzer.py": "Adds optional-module partial failure, API latest-result/module/timeline/transcript, content playback, and artifact coverage.",
+        "tests/test_audio_models.py": "Covers transcription timestamps, missing/load errors, detector input validation, score handling, unsupported lengths, and failures.",
+        "tests/test_monitor_results.py": "Regresses duplicate ID and metadata source attribution.",
+        "tests/test_multimodal_ingest.py": "Covers duplicate MP4 metadata re-extraction, audio-only stream distinction, duration, and readiness."
+      },
+      "root_cause_duplicate_ui": "Duplicate branch returned the matched record metadata/validation without attribution; UI fell back from missing evidence_id to duplicate_reference, making EVD-013 appear to identify both the attempted upload and match. Legacy registry metadata had duration/container fields but predated metadata_extraction_status and stream fields. Duplicate uploads now probe the current temporary bytes, do not receive a new EVD ID, and display the matched ID only as Duplicate reference.",
+      "model_selection": {
+        "transcription": "Systran/faster-whisper-tiny, pinned revision, CPU int8, timestamped segment model output.",
+        "synthetic_audio": "ai8shiro Wav2Vec2 ONNX int4 pinned to a revision; MIT metadata; ASVspoof 2021 PA subset; uncalibrated score disclosure."
+      },
+      "real_model_smoke": "Both local models loaded; generated English speech yielded a timestamped transcript and actual classifier scores; this checks execution only, not accuracy.",
+      "full_tests": "38 passed",
+      "compileall": "passed",
+      "streamlit_apptest": "0 exceptions",
+      "original_evidence_modified": false,
+      "analyzer_input_contract_modified": false
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:12:30+05:30",
+    "phase": "Phase 2 — Complete Audio Analyzer",
+    "task": "Final regression verification",
+    "status": "completed",
+    "message": "Full test suite, compileall, Streamlit AppTest, and real model end-to-end smoke were verified.",
+    "details": {
+      "tests": "39 passed; 1 upstream deprecation warning",
+      "compileall": "passed",
+      "streamlit_apptest": "0 exceptions",
+      "whisper_tiny_real_smoke": "loaded and returned English timestamped segment on generated speech",
+      "wav2vec2_onnx_real_smoke": "loaded and returned uncalibrated class scores",
+      "existing_registry_or_originals_modified": false
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:24:30+05:30",
+    "phase": "Phase 2 — Registry administration",
+    "task": "Clear Evidence Registry control",
+    "status": "completed",
+    "message": "Implemented guarded registry reset with scoped cleanup, confirmation UI, partial-error reporting, and session-state cleanup.",
+    "details": {
+      "files_modified": [
+        "app/ingest/service.py",
+        "app/main.py",
+        "monitor/app.py",
+        "monitor/results.py",
+        "tests/test_registry_reset.py",
+        "development/progress.json",
+        "development/activity.json"
+      ],
+      "reason_by_file": {
+        "app/ingest/service.py": "Validates exact phrase, serializes with ingestion, safely removes registered originals and known generated audio artifacts, preserves unrelated data/history, and reports incomplete cleanup.",
+        "app/main.py": "Exposes the guarded reset API and returns HTTP 422 for incorrect confirmation.",
+        "monitor/app.py": "Adds destructive-action warning, exact-text confirmation, cancel path, and reset result summary.",
+        "monitor/results.py": "Clears stale upload and analyzer session state after reset.",
+        "tests/test_registry_reset.py": "Covers successful scoped cleanup, API confirmation, unsafe path handling, missing originals, malformed registry safety, and session reset."
+      },
+      "implementation_progress": "Complete",
+      "tests_executed": [
+        "pytest -q tests/test_registry_reset.py",
+        "pytest -q",
+        "python -m compileall -q app monitor tests",
+        "Streamlit AppTest for monitor/app.py"
+      ],
+      "test_results": "45 passed; compileall passed; Streamlit AppTest had 0 exceptions; 1 upstream Starlette/httpx deprecation warning.",
+      "discovered_bugs": [
+        "General registry reader treats malformed JSON as empty; reset now validates raw registry content and aborts without overwriting it."
+      ],
+      "preserved": [
+        "SHA-256 duplicate behavior",
+        "EVD ID generation",
+        "ingestion activity log",
+        "unregistered files",
+        "project files/configuration"
+      ]
+    }
+  }
+]

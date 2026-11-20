@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TruthLens — AI Text Forensic Analyzer. Detect AI-generated text, extract entities, claims, consistency and linguistic signals." />
+  <title>TruthLens — Text Forensic Analyzer</title>
+
+  <!-- Google Fonts (matches Sapthagiri) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design Tokens (Sapthagiri palette) ─────────────────────── */
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2128;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-dark: #1f6feb;
+      --success: #3fb950;
+      --danger: #f85149;
+      --warn: #d29922;
+      --purple: #bc8cff;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --font: 'Inter', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Header ─────────────────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .logo-icon { font-size: 1.8em; user-select: none; }
+    header h1 { font-size: 1.3em; color: var(--accent); font-weight: 700; letter-spacing: -0.3px; }
+    header .subtitle { color: var(--muted); font-size: 0.82em; }
+    .header-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .nav-pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8em;
+      cursor: pointer;
+      font-family: var(--font);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .nav-pill:hover { color: var(--accent); border-color: var(--accent); background: #1f293d; }
+    .health-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.75em;
+      color: var(--muted);
+    }
+    .health-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+    .health-dot.ok { background: var(--success); }
+
+    /* ── Layout ─────────────────────────────────────────────────── */
+    main { max-width: 1200px; margin: 0 auto; padding: 32px 20px 60px; }
+
+    .grid { display: grid; grid-template-columns: 340px 1fr; gap: 24px; }
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+    /* ── Glass Cards ─────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .card h2 {
+      font-size: 1em;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text);
+    }
+
+    /* ── Dropzone ────────────────────────────────────────────────── */
+    .dropzone {
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      padding: 36px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      margin-bottom: 16px;
+      background: var(--bg);
+    }
+    .dropzone:hover, .dropzone.dragover { border-color: var(--accent); background: #161f2e; }
+    .dropzone p.main { font-weight: 600; font-size: 0.95rem; margin-top: 10px; }
+    .dropzone p.sub { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+    input[type=file] { position: absolute; left: -9999px; }
+
+    .text-preview-box {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 12px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: none;
+      max-height: 160px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+      font-family: var(--mono);
+    }
+
+    /* ── Buttons ─────────────────────────────────────────────────── */
+    .btn-primary {
+      background: var(--accent-dark);
+      color: #fff;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: var(--font);
+      transition: background 0.15s;
+      margin-top: 12px;
+    }
+    .btn-primary:hover:not(:disabled) { background: #388bfd; }
+    .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .btn-sample {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      margin-top: 8px;
+      text-align: left;
+      font-size: 0.82rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-family: var(--font);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-sample:hover { border-color: var(--accent); color: var(--accent); }
+
+    .samples-section {
+      margin-top: 20px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .samples-section h3 { font-size: 0.82rem; margin-bottom: 8px; color: var(--muted); }
+
+    /* ── Tabs ────────────────────────────────────────────────────── */
+    .tab-nav {
+      display: flex;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+      padding-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      padding: 7px 14px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.82rem;
+      font-family: var(--font);
+      transition: color 0.15s, background 0.15s;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { background: var(--surface-2); color: var(--accent); border: 1px solid var(--border); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── Spinner ─────────────────────────────────────────────────── */
+    #loadingBox {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .spinner-ring {
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 14px;
+      animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Placeholder ─────────────────────────────────────────────── */
+    #placeholderBox {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+    }
+
+    /* ── Badges ──────────────────────────────────────────────────── */
+    .badge {
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-high    { background: rgba(248,81,73,0.15);  color: #f85149; border: 1px solid rgba(248,81,73,0.3); }
+    .badge-medium  { background: rgba(210,153,34,0.15); color: #d29922; border: 1px solid rgba(210,153,34,0.3); }
+    .badge-low     { background: rgba(63,185,80,0.15);  color: #3fb950; border: 1px solid rgba(63,185,80,0.3); }
+    .badge-info    { background: rgba(88,166,255,0.15); color: #58a6ff; border: 1px solid rgba(88,166,255,0.3); }
+    .badge-purple  { background: rgba(188,140,255,0.15); color: #bc8cff; border: 1px solid rgba(188,140,255,0.3); }
+
+    /* ── Stat Grid ───────────────────────────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 600px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat-card {
+      background: var(--surface-2);
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .stat-card .val { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+    .stat-card .lbl { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── Assessment Banner ───────────────────────────────────────── */
+    .assessment-banner {
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+    .assessment-banner .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .assessment-banner h3 { font-size: 1rem; }
+    .assessment-banner p { font-size: 0.84rem; color: #cbd5e1; }
+
+    /* ── Finding / Signal Cards ──────────────────────────────────── */
+    .finding-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px;
+      margin-bottom: 10px;
+    }
+    .finding-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+      gap: 8px;
+    }
+    .finding-title { font-weight: 600; font-size: 0.9rem; }
+    .finding-desc { color: var(--muted); font-size: 0.83rem; margin-top: 4px; }
+    .finding-extra { font-size: 0.74rem; color: #475569; margin-top: 6px; }
+
+    /* ── Entity Chips ────────────────────────────────────────────── */
+    .entity-chip {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      margin: 3px;
+      background: var(--surface-2);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .entity-section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    /* ── Metric Row ──────────────────────────────────────────────── */
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.84rem;
+    }
+    .metric-row:last-child { border-bottom: none; }
+
+    /* ── AI Detector Card ────────────────────────────────────────── */
+    .ai-detector-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 18px;
+    }
+    .ai-detector-card .ai-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    /* ── Gemini Intelligence Section ── */
+    .gemini-text-banner {
+      background: linear-gradient(135deg, rgba(88,166,255,0.12), rgba(188,140,255,0.12));
+      border: 1px solid rgba(88,166,255,0.3);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+    .gemini-text-title { font-size: 0.96rem; font-weight: 700; color: var(--accent); }
+    .gemini-text-sub { font-size: 0.78rem; color: var(--muted); margin-top: 3px; }
+    .gemini-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .gemini-card h4 { font-size: 0.86rem; color: var(--accent); margin-bottom: 8px; }
+    .gemini-list { list-style: none; padding: 0; margin: 0; }
+    .gemini-list li {
+      font-size: 0.82rem;
+      line-height: 1.5;
+      padding: 5px 0 5px 18px;
+      position: relative;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .gemini-list li::before { content: "•"; position: absolute; left: 4px; color: var(--accent); font-weight: bold; }
+    .gemini-list.q-list li::before { content: "❓"; left: 0; font-size: 0.75rem; }
+    .gemini-list.q-list li { padding-left: 20px; color: #ffd33d; }
+
+    /* ── JSON Viewer ─────────────────────────────────────────────── */
+    pre {
+      background: var(--bg);
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 0.76rem;
+      overflow: auto;
+      color: #a5f3fc;
+      max-height: 540px;
+      line-height: 1.5;
+      font-family: var(--mono);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Banner ──────────────────────────────────────────────────── */
+    .info-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #1a2744 0%, #1a1f2e 100%);
+      border: 1px solid #2a4080;
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-size: 0.84em;
+    }
+    .info-banner strong { color: #7baaf7; }
+    .info-banner span { color: #9ab4d8; }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ──────────────────────────────────────────────────── -->
+  <header>
+    <span class="logo-icon" aria-hidden="true">📄</span>
+    <div>
+      <h1>TruthLens</h1>
+      <span class="subtitle">Text Forensic Analyzer</span>
+    </div>
+    <div class="header-right">
+      <div class="health-pill" id="healthPill">
+        <span class="health-dot" id="healthDot"></span>
+        <span id="healthText">Checking…</span>
+      </div>
+      <a class="nav-pill" href="/">🔍 Image Analyzer</a>
+    </div>
+  </header>
+
+  <!-- ── Main ────────────────────────────────────────────────────── -->
+  <main>
+
+    <div class="info-banner">
+      <span style="font-size:1.5em;">🔬</span>
+      <div>
+        <strong>Multi-Engine Text Forensic Pipeline</strong>
+        <span> — Entity extraction · Epistemic claim analysis · Chronology consistency · Linguistic statistics · AI-text detection</span>
+      </div>
+    </div>
+
+    <div class="grid">
+
+      <!-- Left column: Upload -->
+      <div>
+        <div class="card">
+          <h2>📂 Text Evidence Ingestion</h2>
+
+          <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()"
+               ondragover="onDragOver(event)" ondragleave="onDragLeave(event)" ondrop="onDrop(event)">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#58a6ff" stroke-width="2" style="margin-bottom:8px">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+            <p class="main">Click or drag document here</p>
+            <p class="sub">Supports TXT, MD, CSV, JSON, PDF, DOCX — max 10 MB</p>
+            <input type="file" id="fileInput" accept=".txt,.md,.csv,.json,.pdf,.docx" onchange="handleFileSelect(event)" />
+          </div>
+
+          <div id="filePreview" class="text-preview-box"></div>
+
+          <button class="btn-primary" id="analyzeBtn" onclick="runUpload()" disabled>
+            ▶ Run Forensic Analysis
+          </button>
+
+          <div class="samples-section">
+            <h3>⚡ 1-Click Judge Demos:</h3>
+            <button type="button" class="btn-sample" onclick="runTextDemo('sample-disinformation')">⚠ Chronology &amp; Disinformation Conflict</button>
+            <button type="button" class="btn-sample" onclick="runTextDemo('sample-synthetic')">🤖 AI-Generated Synthetic Document</button>
+            <button type="button" class="btn-sample" onclick="runTextDemo('sample-authentic')">✓ Authentic Consortium Communique</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: Results -->
+      <div class="card">
+
+        <div class="tab-nav">
+          <button class="tab-btn active" onclick="switchTab('geminiTab', this)">✨ Gemini Intel</button>
+          <button class="tab-btn" onclick="switchTab('summaryTab', this)">Assessment</button>
+          <button class="tab-btn" onclick="switchTab('entitiesTab', this)">Entities</button>
+          <button class="tab-btn" onclick="switchTab('claimsTab', this)">Claims</button>
+          <button class="tab-btn" onclick="switchTab('consistencyTab', this)">Consistency</button>
+          <button class="tab-btn" onclick="switchTab('findingsTab', this)">Findings &amp; Signals</button>
+          <button class="tab-btn" onclick="switchTab('rawTab', this)">JSON</button>
+        </div>
+
+        <!-- Loading -->
+        <div id="loadingBox">
+          <div class="spinner-ring"></div>
+          <p style="font-weight:600; font-size:1rem;">Running Text Forensic Pipeline…</p>
+          <p style="color:var(--muted); font-size:0.84rem; margin-top:6px;">
+            Extracting metadata · Entities · Claims · Chronology · Linguistic statistics · AI-text detection…
+          </p>
+        </div>
+
+        <!-- Placeholder -->
+        <div id="placeholderBox">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.5" style="margin-bottom:12px">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+          <p style="font-size:1rem; font-weight:600;">No text evidence analyzed yet.</p>
+          <p style="font-size:0.84rem; margin-top:4px;">Upload a document or select a sample from the left panel.</p>
+        </div>
+
+        <!-- Results (hidden until data arrives) -->
+        <div id="resultsContent" style="display:none;">
+
+          <!-- Tab: Summary -->
+          <div id="summaryTab" class="tab-content active">
+            <div class="assessment-banner">
+              <div class="top-row">
+                <h3>Evidence Assessment</h3>
+                <span id="statusBadge" class="badge badge-info">—</span>
+              </div>
+              <p id="metaSummary"></p>
+            </div>
+            <div class="stat-grid" id="statGrid"></div>
+
+            <!-- AI Detector card -->
+            <div class="ai-detector-card" id="aiDetectorCard" style="display:none;">
+              <div class="ai-row">
+                <span style="font-weight:700; font-size:0.9rem;">🤖 AI-Generated Text Detector</span>
+                <span id="aiScoreBadge" class="badge badge-info">HEURISTIC</span>
+              </div>
+              <div id="aiDetectorContent" style="font-size:0.84rem; color:#cbd5e1;"></div>
+              <div style="font-size:0.73rem; color:#64748b; margin-top:6px;">⚠ Model outputs represent statistical token-sequence likelihood and must not be used as standalone proof.</div>
+            </div>
+
+            <h3 style="font-size:0.9rem; color:var(--muted); margin-bottom:8px;">Deterministic Linguistic &amp; Statistical Metrics</h3>
+            <div id="lingMetrics"></div>
+          </div>
+
+          <!-- Tab: Entities -->
+          <div id="entitiesTab" class="tab-content">
+            <h3 style="font-size:0.9rem; margin-bottom:12px;">Identified Named Entities with Traceable Mentions</h3>
+            <div id="entitiesContainer"></div>
+          </div>
+
+          <!-- Tab: Claims -->
+          <div id="claimsTab" class="tab-content">
+            <h3 style="font-size:0.9rem; margin-bottom:12px;">Extracted Claims &amp; Epistemic Statements</h3>
+            <div id="claimsContainer"></div>
+          </div>
+
+          <!-- Tab: Consistency -->
+          <div id="consistencyTab" class="tab-content">
+            <h3 style="font-size:0.9rem; margin-bottom:12px;">Intra-Document Consistency Cross-Check</h3>
+            <div id="consistencyContainer"></div>
+          </div>
+
+          <!-- Tab: Findings & Signals -->
+          <div id="findingsTab" class="tab-content">
+            <h3 style="font-size:0.9rem; margin-bottom:12px;">Synthesized Forensic Findings</h3>
+            <div id="findingsContainer"></div>
+            <h3 style="font-size:0.9rem; margin:18px 0 12px;">Observable Signals</h3>
+            <div id="signalsContainer"></div>
+          </div>
+
+          <!-- Tab: Gemini Intelligence -->
+          <div id="geminiTab" class="tab-content active">
+            <div class="gemini-text-banner">
+              <div class="gemini-text-title">✨ Google Gemini Forensic Text Intelligence</div>
+              <p class="gemini-text-sub">Multimodal semantic reasoning, contradiction synthesis, and evidentiary cross-examination questions.</p>
+            </div>
+            <div id="geminiTextIntelContent">
+              <p style="color:var(--muted); font-size:0.84rem;">Analyze a document or click a quick sample to view Gemini intelligence.</p>
+            </div>
+          </div>
+
+          <!-- Tab: Raw JSON -->
+          <div id="rawTab" class="tab-content">
+            <pre id="jsonViewer"></pre>
+          </div>
+
+        </div><!-- /resultsContent -->
+      </div><!-- /right card -->
+    </div><!-- /grid -->
+  </main>
+
+  <script>
+    let selectedFile = null;
+
+    // ── Health check ─────────────────────────────────────────────────
+    (async function checkHealth() {
+      try {
+        const r = await fetch('/api/text/health');
+        const dot = document.getElementById('healthDot');
+        const txt = document.getElementById('healthText');
+        if (r.ok) {
+          dot.classList.add('ok');
+          txt.textContent = 'Text API online';
+        } else {
+          txt.textContent = 'API error';
+        }
+      } catch {
+        document.getElementById('healthText').textContent = 'Offline';
+      }
+    })();
+
+    // ── Drag & Drop ───────────────────────────────────────────────────
+    function onDragOver(e) {
+      e.preventDefault();
+      document.getElementById('dropzone').classList.add('dragover');
+    }
+    function onDragLeave(e) {
+      document.getElementById('dropzone').classList.remove('dragover');
+    }
+    function onDrop(e) {
+      e.preventDefault();
+      document.getElementById('dropzone').classList.remove('dragover');
+      const file = e.dataTransfer.files[0];
+      if (file) applyFile(file);
+    }
+
+    function handleFileSelect(e) {
+      const file = e.target.files[0];
+      if (file) applyFile(file);
+    }
+
+    function applyFile(file) {
+      selectedFile = file;
+      document.getElementById('analyzeBtn').disabled = false;
+      const preview = document.getElementById('filePreview');
+      const reader = new FileReader();
+      reader.onload = ev => {
+        const text = ev.target.result || '';
+        preview.textContent = text.substring(0, 1500) + (text.length > 1500 ? '\n…[truncated]' : '');
+        preview.style.display = 'block';
+      };
+      if (file.type.includes('text') || /\.(md|csv|json)$/i.test(file.name)) {
+        reader.readAsText(file);
+      } else {
+        preview.textContent = `[${file.name}] (${(file.size/1024).toFixed(1)} KB) — Binary document ready for analysis.`;
+        preview.style.display = 'block';
+      }
+    }
+
+    // ── Tab switching ─────────────────────────────────────────────────
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      if (btn) btn.classList.add('active');
+    }
+
+    // ── Upload ────────────────────────────────────────────────────────
+    async function runUpload() {
+      if (!selectedFile) return;
+      showLoading(true);
+      const formData = new FormData();
+      formData.append('file', selectedFile);
+      try {
+        const res = await fetch('/api/text/analyze', { method: 'POST', body: formData });
+        const data = await res.json();
+        if (res.ok) renderReport(data);
+        else showError(data.error || 'Analysis failed');
+      } catch (err) {
+        showError('Analysis failed: ' + err.message);
+      } finally {
+        showLoading(false);
+      }
+    }
+
+    // ── 1-Click Judge Text Demo Loader ────────────────────────────────
+    async function runTextDemo(sampleId) {
+      showLoading(true);
+      try {
+        const res = await fetch('/api/text/demo/load/' + encodeURIComponent(sampleId), {
+          method: 'POST'
+        });
+        const data = await res.json();
+        if (res.ok && data.report) {
+          if (data.raw_text) {
+            const preview = document.getElementById('filePreview');
+            preview.style.display = 'block';
+            preview.textContent = data.raw_text.substring(0, 300) + '...';
+          }
+          renderReport(data.report);
+          if (data.gemini_synthesis) {
+            displayGeminiTextSynthesis(data.gemini_synthesis);
+          }
+        } else {
+          showError(data.error || 'Sample analysis failed');
+        }
+      } catch (err) {
+        showError('Demo analysis failed: ' + err.message);
+      } finally {
+        showLoading(false);
+      }
+    }
+
+    function showLoading(show) {
+      document.getElementById('loadingBox').style.display = show ? 'block' : 'none';
+      document.getElementById('placeholderBox').style.display = 'none';
+      if (show) document.getElementById('resultsContent').style.display = 'none';
+    }
+
+    function showError(msg) {
+      document.getElementById('placeholderBox').style.display = 'block';
+      document.getElementById('placeholderBox').innerHTML =
+        `<p style="color:var(--danger);font-weight:600;">⚠ ${msg}</p>`;
+    }
+
+    // ── Render Report ─────────────────────────────────────────────────
+    function renderReport(data) {
+      document.getElementById('resultsContent').style.display = 'block';
+      document.getElementById('jsonViewer').textContent = JSON.stringify(data, null, 2);
+
+      // Status badge
+      const status = (data.status || 'unknown').toUpperCase();
+      const badge = document.getElementById('statusBadge');
+      badge.textContent = status;
+      badge.className = 'badge ' +
+        (status === 'COMPLETED' ? 'badge-low' : status === 'PARTIAL' ? 'badge-medium' : 'badge-high');
+
+      // Meta summary
+      const ex = data.analyses?.text_extraction || {};
+      const sc = ex.structural_counts || {};
+      const lang = ex.language_detection || {};
+      document.getElementById('metaSummary').textContent =
+        `${data.metadata?.original_filename || 'Evidence'} | Method: ${ex.extraction_method || 'reader'} | ` +
+        `Encoding: ${ex.character_encoding || 'utf-8'} | Language: ${lang.language || 'en'} (${lang.method || ''})`;
+
+      // Stat grid
+      const statGrid = document.getElementById('statGrid');
+      statGrid.innerHTML = '';
+      const totalEntities = data.analyses?.entity_extraction?.entities?.length || 0;
+      const totalClaims   = data.analyses?.claim_extraction?.claims_count || 0;
+      [
+        { val: sc.word_count || 0,     lbl: 'Words' },
+        { val: sc.sentence_count || 0, lbl: 'Sentences' },
+        { val: totalEntities,          lbl: 'Entities' },
+        { val: totalClaims,            lbl: 'Claims' }
+      ].forEach(s => {
+        const c = document.createElement('div');
+        c.className = 'stat-card';
+        c.innerHTML = `<div class="val">${s.val}</div><div class="lbl">${s.lbl}</div>`;
+        statGrid.appendChild(c);
+      });
+
+      // AI Detector
+      const ai = data.analyses?.ai_detector || {};
+      const aiCard = document.getElementById('aiDetectorCard');
+      const aiContent = document.getElementById('aiDetectorContent');
+      if (ai.inference_ran && ai.raw_scores) {
+        aiCard.style.display = 'block';
+        const scores = Object.entries(ai.raw_scores)
+          .map(([k, v]) => `<b>${k}</b>: ${(v * 100).toFixed(1)}%`).join(' · ');
+        aiContent.innerHTML = `Model: <b>${ai.model_name}</b> (${ai.model_version_or_source})<br>Scores: ${scores}`;
+        const fake = ai.raw_scores.Fake || 0;
+        document.getElementById('aiScoreBadge').textContent = fake > 0.8 ? 'SYNTHETIC CUES' : 'NATURAL CUES';
+        document.getElementById('aiScoreBadge').className = 'badge ' + (fake > 0.8 ? 'badge-medium' : 'badge-low');
+      } else if (ai.status) {
+        aiCard.style.display = 'block';
+        aiContent.textContent = `Status: ${ai.status}. ${(ai.limitations || []).join(' ')}`;
+        document.getElementById('aiScoreBadge').textContent = ai.status.toUpperCase();
+      } else {
+        aiCard.style.display = 'none';
+      }
+
+      // Linguistic metrics
+      const ling = data.analyses?.linguistic_analysis || {};
+      const lingDiv = document.getElementById('lingMetrics');
+      lingDiv.innerHTML = '';
+      [
+        ['Flesch Reading Ease',              (ling.readability_scores?.flesch_reading_ease || 0).toFixed(1)],
+        ['Flesch–Kincaid Grade Level',       (ling.readability_scores?.flesch_kincaid_grade || 0).toFixed(1)],
+        ['Type–Token Ratio',                 (ling.vocabulary_diversity?.type_token_ratio || 0).toFixed(4)],
+        ['Hapax Legomena Ratio',             (ling.vocabulary_diversity?.hapax_legomena_ratio || 0).toFixed(4)],
+        ['Avg Words per Sentence',           (ling.sentence_length_distribution?.mean || 0).toFixed(1)],
+        ['ALL-CAPS Words',                   ling.capitalization_patterns?.all_caps_word_count || 0],
+        ['Unusual Punctuation',              ling.punctuation_patterns?.unusual_punctuation_flag ? 'Yes (flagged)' : 'No (normal)'],
+      ].forEach(([k, v]) => {
+        const row = document.createElement('div');
+        row.className = 'metric-row';
+        row.innerHTML = `<span style="color:var(--muted);">${k}</span><span style="font-weight:600;">${v}</span>`;
+        lingDiv.appendChild(row);
+      });
+
+      // Entities
+      const entContainer = document.getElementById('entitiesContainer');
+      entContainer.innerHTML = '';
+      const entities = data.analyses?.entity_extraction?.entities || [];
+      const entByType = {};
+      entities.forEach(e => { (entByType[e.entity_type] = entByType[e.entity_type] || []).push(e); });
+      if (Object.keys(entByType).length === 0) {
+        entContainer.innerHTML = '<p style="color:var(--muted); font-size:0.84rem;">No identifiable entities detected.</p>';
+      }
+      Object.entries(entByType).forEach(([type, ents]) => {
+        const sec = document.createElement('div');
+        sec.style.marginBottom = '16px';
+        sec.innerHTML = `<div class="entity-section-label">${type} (${ents.length})</div>`;
+        ents.forEach(e => {
+          const chip = document.createElement('span');
+          chip.className = 'entity-chip';
+          chip.title = `Occurrences: ${e.occurrences} | Reliability: ${e.reliability}`;
+          chip.textContent = `${e.value}${e.occurrences > 1 ? ' ('+e.occurrences+')' : ''}`;
+          sec.appendChild(chip);
+        });
+        entContainer.appendChild(sec);
+      });
+
+      // Claims
+      const claimsContainer = document.getElementById('claimsContainer');
+      claimsContainer.innerHTML = '';
+      const claims = data.analyses?.claim_extraction?.claims || [];
+      if (!claims.length) {
+        claimsContainer.innerHTML = '<p style="color:var(--muted); font-size:0.84rem;">No claims extracted.</p>';
+      } else {
+        claims.forEach(c => {
+          const card = document.createElement('div');
+          card.className = 'finding-card';
+          const extras = [
+            c.entities?.length  ? 'Entities: '  + c.entities.join(', ')  : '',
+            c.dates?.length     ? 'Dates: '     + c.dates.join(', ')     : '',
+            c.numbers?.length   ? 'Numbers: '   + c.numbers.join(', ')   : '',
+          ].filter(Boolean).join(' · ');
+          card.innerHTML = `
+            <div class="finding-header">
+              <span class="finding-title" style="font-size:0.86rem;">${esc(c.statement)}</span>
+              <span class="badge badge-info">${esc((c.category || '').replace(/_/g, ' '))}</span>
+            </div>
+            ${extras ? `<div class="finding-extra">${esc(extras)}</div>` : ''}`;
+          claimsContainer.appendChild(card);
+        });
+      }
+
+      // Consistency
+      const consContainer = document.getElementById('consistencyContainer');
+      consContainer.innerHTML = '';
+      const incons = data.analyses?.consistency_analysis?.inconsistencies || [];
+      if (!incons.length) {
+        consContainer.innerHTML = '<p style="color:var(--success); font-size:0.9rem; font-weight:600;">✓ No internal contradictions, conflicting numbers, or duplicate blocks detected.</p>';
+      } else {
+        incons.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'finding-card';
+          const cls = item.classification || '';
+          const badgeClass = cls === 'confirmed_textual_mismatch' ? 'badge-high' : cls === 'potential_contradiction' ? 'badge-medium' : 'badge-low';
+          let passHtml = '';
+          (item.supporting_passages || []).forEach(p => {
+            passHtml += `<div style="background:var(--bg);padding:8px;border-radius:4px;font-size:0.76rem;margin-top:6px;color:#cbd5e1;">"${esc(p.text || JSON.stringify(p))}"</div>`;
+          });
+          card.innerHTML = `
+            <div class="finding-header">
+              <span class="finding-title">${esc(cls.replace(/_/g,' ').toUpperCase())}</span>
+              <span class="badge ${badgeClass}">${cls.includes('confirmed') ? 'HIGH' : cls.includes('potential') ? 'MEDIUM' : 'LOW'}</span>
+            </div>
+            <p class="finding-desc">${esc(item.description || '')}</p>
+            ${passHtml}
+            ${item.explanation ? `<p class="finding-extra">${esc(item.explanation)}</p>` : ''}`;
+          consContainer.appendChild(card);
+        });
+      }
+
+      // Findings
+      const findingsDiv = document.getElementById('findingsContainer');
+      findingsDiv.innerHTML = '';
+      (data.findings || []).forEach(f => {
+        const card = document.createElement('div');
+        card.className = 'finding-card';
+        const sev = (f.severity || 'low').toLowerCase();
+        card.innerHTML = `
+          <div class="finding-header">
+            <span class="finding-title">${esc((f.category || '').replace(/_/g,' ').toUpperCase())}</span>
+            <span class="badge badge-${sev}">${sev.toUpperCase()}</span>
+          </div>
+          <p class="finding-desc">${esc(f.description || '')}</p>
+          ${f.explanation ? `<p class="finding-extra">${esc(f.explanation)}</p>` : ''}`;
+        findingsDiv.appendChild(card);
+      });
+      if (!data.findings?.length) {
+        findingsDiv.innerHTML = '<p style="color:var(--muted); font-size:0.84rem;">No forensic anomaly findings generated (clean document).</p>';
+      }
+
+      // Signals
+      const signalsDiv = document.getElementById('signalsContainer');
+      signalsDiv.innerHTML = '';
+      (data.signals || []).forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'finding-card';
+        card.innerHTML = `
+          <div class="finding-header">
+            <span style="font-size:0.84rem; font-weight:600; color:var(--accent);">${esc(s.signal_type)} (${esc(s.source_analysis)})</span>
+            <span class="badge badge-info">${((s.confidence||0)*100).toFixed(0)}% CONF</span>
+          </div>
+          <p class="finding-desc">${esc(s.description || '')}</p>`;
+        signalsDiv.appendChild(card);
+      });
+      if (!data.signals?.length) {
+        signalsDiv.innerHTML = '<p style="color:var(--muted); font-size:0.84rem;">No observable anomaly signals emitted.</p>';
+      }
+
+      // Gemini Intelligence
+      renderTextGeminiIntel(data);
+
+      // Default active tab
+      switchTab('geminiTab', document.querySelector('.tab-btn'));
+    }
+
+    async function renderTextGeminiIntel(report) {
+      const container = document.getElementById('geminiTextIntelContent');
+      if (!container) return;
+      container.innerHTML = `
+        <div style="text-align:center; padding:20px;">
+          <div class="spinner-ring" style="width:28px;height:28px;margin:0 auto 10px;"></div>
+          <p style="color:var(--accent); font-weight:600; font-size:0.86rem;">Generating Gemini Forensic Intelligence…</p>
+        </div>`;
+
+      try {
+        const resp = await fetch('/api/text/gemini-summarize', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ report: report })
+        });
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const s = await resp.json();
+        displayGeminiTextSynthesis(s);
+      } catch (err) {
+        container.innerHTML = `<p style="color:var(--warn); font-size:0.82rem;">Gemini intelligence fallback: ${esc(err.message)}</p>`;
+      }
+    }
+
+    function displayGeminiTextSynthesis(s) {
+      const container = document.getElementById('geminiTextIntelContent');
+      if (!container || !s) return;
+
+      const confPct = Math.round((s.calibrated_confidence || 0.85) * 100);
+      const verdict = s.authenticity_verdict || 'Analysis Complete';
+      const isAuthentic = verdict.toLowerCase().includes('authentic');
+      const isManip = verdict.toLowerCase().includes('manipulat') || verdict.toLowerCase().includes('disinformation');
+
+      let badgeColor = isAuthentic ? 'var(--success)' : (isManip ? 'var(--danger)' : 'var(--purple)');
+
+      const factors = (s.key_evidentiary_factors || []).map(f => `<li>${esc(f)}</li>`).join('');
+      const questions = (s.courtroom_cross_examination_questions || []).map(q => `<li>${esc(q)}</li>`).join('');
+      const steps = (s.recommended_next_steps || []).map(st => `<li>${esc(st)}</li>`).join('');
+
+      container.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; background:var(--surface-2); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin-bottom:14px;">
+          <div>
+            <div style="font-size:0.72rem; text-transform:uppercase; color:var(--muted);">Adjudicated Integrity Status</div>
+            <div style="font-size:1.05rem; font-weight:700; color:${badgeColor};">${esc(verdict)}</div>
+          </div>
+          <span style="font-family:var(--mono); font-size:0.8rem; background:rgba(255,255,255,0.06); padding:4px 10px; border-radius:12px; border:1px solid ${badgeColor}; color:${badgeColor};">
+            ${confPct}% Confidence
+          </span>
+        </div>
+
+        <div class="gemini-card">
+          <h4>⚖️ Executive Forensic Summary</h4>
+          <p style="font-size:0.84rem; line-height:1.5;">${esc(s.executive_summary || '')}</p>
+        </div>
+
+        <div class="gemini-card">
+          <h4>🔍 Key Evidentiary Factors</h4>
+          <ul class="gemini-list">${factors || '<li>Standard textual baseline verified.</li>'}</ul>
+        </div>
+
+        <div class="gemini-card">
+          <h4>❓ Courtroom Cross-Examination Strategy</h4>
+          <ul class="gemini-list q-list">${questions || '<li>No contradiction lines to probe.</li>'}</ul>
+        </div>
+
+        <div class="gemini-card">
+          <h4>🛡️ Investigative Actions</h4>
+          <ul class="gemini-list">${steps || '<li>Preserve document cryptographic digest.</li>'}</ul>
+        </div>
+      `;
+    }
+
+    // ── Utility ───────────────────────────────────────────────────────
+    function esc(str) {
+      return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+  </script>
+</body>
+</html>

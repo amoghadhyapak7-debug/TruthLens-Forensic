@@ -1,0 +1,7 @@
+# Install after the core requirements to enable explicitly requested local models.
+# Whisper tiny downloads its model weights lazily on first transcription.
+faster-whisper>=1.2,<2
+
+# ONNX CPU classifier and Hugging Face Hub model download support.
+onnxruntime>=1.18,<2
+huggingface-hub>=0.24,<1

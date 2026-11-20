@@ -1,0 +1,450 @@
+{
+  "module": "image",
+  "evidence_id": "EVD-009",
+  "status": "completed",
+  "metadata": {
+    "execution_timestamp": "2026-11-19T22:49:26.002901Z",
+    "analyzer_version": "2.0.0",
+    "original_filename": "suspect_photo.png",
+    "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\evidence\\1a4217742e1a4abd907feadad1a925f5.png",
+    "mime_type": "image/png",
+    "file_size_bytes": 291,
+    "sha256_expected": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+    "sha256_actual": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+    "sha256_verified": true,
+    "image_properties": {
+      "width": 100,
+      "height": 100,
+      "format": "PNG",
+      "color_mode": "RGB",
+      "has_exif": false
+    },
+    "ingestion_metadata": {
+      "modality": "image",
+      "extension": ".png",
+      "file_size": 291,
+      "format": "PNG",
+      "width": 100,
+      "height": 100,
+      "pixel_count": 10000,
+      "color_mode": "RGB",
+      "exif": {},
+      "camera": null,
+      "orientation": null
+    },
+    "exif_data": {}
+  },
+  "analyses": {
+    "ela_analysis": {
+      "engine": "ela_analysis",
+      "resave_quality": 95,
+      "amplification_factor": 20,
+      "mean_error": 0.6667,
+      "max_error": 0.6667,
+      "std_error": 0.0,
+      "high_ela_fraction": 0.0,
+      "anomaly_regions": [],
+      "artifact": {
+        "artifact_id": "ART-EVD-009-ELA",
+        "type": "ela_heatmap",
+        "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+        "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+      },
+      "artifacts": [
+        {
+          "artifact_id": "ART-EVD-009-ELA",
+          "type": "ela_heatmap",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+          "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+        }
+      ],
+      "interpretation": "Homogeneous compression characteristics across image (High-ELA Fraction: 0.00%). No localized recompression anomalies detected.",
+      "limitations": [
+        "ELA is calibrated for JPEG compression and is most informative on images with natural compression cycles.",
+        "Multiple uniform re-saves across the entire image reduce ELA sensitivity.",
+        "High-frequency natural edges (textures, foliage) naturally produce moderate ELA signals without tampering."
+      ]
+    },
+    "noise_residual_analysis": {
+      "engine": "noise_residual_analysis",
+      "method": "2d_wavelet_subbands",
+      "global_noise_std": 0.0,
+      "block_variance_ratio": 0.0,
+      "prnu_signature_hash": "38723a2e5e8a17aa",
+      "prnu_fingerprint_vector": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "anomaly_regions": [],
+      "artifacts": [
+        {
+          "artifact_id": "ART-EVD-009-NOISE",
+          "type": "noise_residual_map",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\noise_residual.png",
+          "description": "2D wavelet high-frequency detail energy map isolating camera sensor noise and localized variance discontinuities."
+        }
+      ],
+      "interpretation": "Uniform sensor noise distribution across the image plane (Ratio: 0.000, Global Std: 0.00). Consistent with a single physical camera sensor capture.",
+      "limitations": [
+        "PRNU sensor noise assumes uncompressed or high-quality photographic sources; severe compression attenuates sensor noise.",
+        "Smooth, untextured regions (sky, flat surfaces) provide the cleanest PRNU signatures; dense textures add scene contamination.",
+        "Wavelet high-frequency components from different camera sensors typically have cross-correlation < 0.25, while identical sensors exceed 0.60."
+      ]
+    },
+    "statistical_analysis": {
+      "engine": "statistical_analysis",
+      "histogram_anomalies": {
+        "red": {
+          "mean": 73.0,
+          "std": 0.0,
+          "spike_bins": 1,
+          "quantization_artifact": false
+        },
+        "green": {
+          "mean": 109.0,
+          "std": 0.0,
+          "spike_bins": 1,
+          "quantization_artifact": false
+        },
+        "blue": {
+          "mean": 137.0,
+          "std": 0.0,
+          "spike_bins": 1,
+          "quantization_artifact": false
+        },
+        "luminance_y": {
+          "mean": 101.0,
+          "std": 0.0,
+          "spike_bins": 1,
+          "quantization_artifact": false
+        }
+      },
+      "copy_move_matches": [],
+      "copy_move_detected": false,
+      "blur_inconsistency_score": 0.0,
+      "edge_density": 0.0,
+      "pca_block_variance": 0.0,
+      "interpretation": "Statistical and spatial gradient profiles consistent with natural imagery (Edge density: 0.000).",
+      "artifacts": [],
+      "limitations": [
+        "Copy-move block matching uses quantized feature hashing; heavily rotated or scaled duplicates may evade detection.",
+        "Histogram quantization spikes flag potential multiple compression/editing passes, but can occur naturally in high-contrast graphics.",
+        "Edge and blur metrics are influenced by natural optical depth of field (bokeh)."
+      ]
+    },
+    "metadata_analysis": {
+      "engine": "metadata_analysis",
+      "camera_present": false,
+      "camera_info": {
+        "make": null,
+        "model": null
+      },
+      "editing_software_detected": false,
+      "software_tag": null,
+      "timestamp_consistent": true,
+      "timestamps": {
+        "created": null,
+        "modified": null
+      },
+      "stripped_metadata": true,
+      "gps_present": false,
+      "exif_raw": {},
+      "flags": [
+        "Camera EXIF metadata is completely absent/stripped"
+      ],
+      "interpretation": "Image headers contain no camera or exposure metadata. Typical of AI-generated content, messaging platform stripping, or deliberate scrubbing.",
+      "artifacts": [],
+      "limitations": [
+        "EXIF metadata is stored in plain text within image file headers and can be modified or forged.",
+        "Social media platforms (Twitter/X, WhatsApp, Instagram) routinely strip all EXIF metadata for privacy; absence of EXIF alone does not prove malicious manipulation.",
+        "Timezone discrepancies between camera internal clocks and computer systems can create apparent timestamp mismatches."
+      ]
+    },
+    "ai_generated_detection": {
+      "engine": "ai_generated_detection",
+      "model_id": "efficientnet_b4",
+      "architecture": "EfficientNet-B4 (Convolutional Neural Network)",
+      "model_source": "timm (pretrained=ImageNet-1k)",
+      "device": "cpu",
+      "input_size": [
+        380,
+        380
+      ],
+      "inference_ran": true,
+      "inference_time_ms": 346.17,
+      "predicted_label": "Natural Photographic Characteristics",
+      "raw_logits": [
+        3.1761,
+        2.8877,
+        2.6721,
+        2.4524,
+        2.4293
+      ],
+      "scores": {
+        "class_21": 0.0327,
+        "class_701": 0.0245,
+        "class_557": 0.0198,
+        "class_405": 0.0159,
+        "class_23": 0.0155
+      },
+      "ai_probability": 0.3236,
+      "spectral_irregularity_score": 0.0,
+      "assessment": "natural_characteristics",
+      "interpretation": "Low synthetic anomaly score (0.324). Spectral and feature distributions are consistent with natural photographic acquisition.",
+      "artifacts": [],
+      "limitations": [
+        "EfficientNet-B4 is trained on ImageNet-1k and deployed as an empirical feature & entropy analyzer for AI artifact signatures.",
+        "The 'ai_probability' / 'ai_pattern_score' is an empirical fusion of logit entropy, feature dispersion, and 2D FFT spectral irregularity.",
+        "Recent diffusion models (e.g. Midjourney v6, SDXL, FLUX) produce sophisticated textures that may yield false negatives on low-res inputs.",
+        "Heavily recompressed social media images may lose high-frequency spectral artifacts, affecting detection confidence."
+      ]
+    },
+    "manipulation_detection": {
+      "engine": "manipulation_detection",
+      "model_id": "resnet50",
+      "architecture": "ResNet-50 (Deep Residual Network + Spatial Feature Hook)",
+      "model_source": "torchvision (pretrained=ImageNet-1k)",
+      "device": "cpu",
+      "input_size": [
+        224,
+        224
+      ],
+      "inference_ran": true,
+      "inference_time_ms": 168.27,
+      "predicted_label": "Potential Localized Manipulation / Splicing",
+      "raw_logits": [
+        3.5755,
+        3.476,
+        3.2454,
+        3.1273,
+        3.1173
+      ],
+      "scores": {
+        "class_783": 0.0188,
+        "class_499": 0.017,
+        "class_677": 0.0135,
+        "class_772": 0.012,
+        "class_902": 0.0119
+      },
+      "feature_anomaly_score": 0.9998,
+      "suspicious_regions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 7,
+          "height": 7,
+          "anomaly_score": 9.2207
+        },
+        {
+          "x": 92,
+          "y": 0,
+          "width": 7,
+          "height": 7,
+          "anomaly_score": 3.7257
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "width": 7,
+          "height": 7,
+          "anomaly_score": 3.5651
+        },
+        {
+          "x": 92,
+          "y": 7,
+          "width": 7,
+          "height": 7,
+          "anomaly_score": 3.2825
+        }
+      ],
+      "assessment": "likely_manipulated",
+      "manipulation_indicator": "High localized feature deviation detected (Anomaly Score: 1.000) across 4 flagged spatial regions. Requires multi-engine forensic corroboration.",
+      "interpretation": "High localized feature deviation detected (Anomaly Score: 1.000) across 4 flagged spatial regions. Requires multi-engine forensic corroboration.",
+      "artifacts": [
+        {
+          "artifact_id": "ART-EVD-009-MANIP",
+          "type": "manipulation_heatmap",
+          "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\manipulation_heatmap.png",
+          "description": "Deep feature spatial anomaly map localizing suspicious boundaries, compositing, and manipulation artifacts."
+        }
+      ],
+      "limitations": [
+        "ResNet-50 Layer-3 feature deviation highlights localized structural, boundary, and textural inconsistencies.",
+        "Feature anomaly scores are computed relative to baseline spatial distribution and represent relative anomaly rather than a calibrated probability.",
+        "Subtle facial deepfakes (e.g. slight mouth/eye reenactment) may require specialized facial landmark models for micro-expression localization."
+      ]
+    },
+    "overall_forensic_assessment": {
+      "category": "inconclusive",
+      "confidence_basis": "Ambiguous or contradictory forensic indicators requiring secondary human investigative verification.",
+      "evidence_summary": "Forensic metrics fall within intermediate threshold ranges without definitive physical or neural proof of manipulation or purity."
+    }
+  },
+  "signals": [
+    {
+      "signal_id": "SIG-001",
+      "code": "DEEPFAKE_FACIAL_ARTIFACT_DETECTED",
+      "name": "Localized Deepfake / Manipulation Spatial Anomaly",
+      "category": "manipulation",
+      "strength": "High",
+      "source_engine": "manipulation_detection",
+      "details": "Feature anomaly score: 1.000 across 4 localized spatial bounding regions."
+    },
+    {
+      "signal_id": "SIG-002",
+      "code": "EXIF_METADATA_STRIPPED",
+      "name": "Camera Sensor & Exposure Headers Stripped",
+      "category": "metadata",
+      "strength": "Low",
+      "source_engine": "metadata_analysis",
+      "details": "Absence of standard camera hardware EXIF tags."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "FIND-001",
+      "title": "Multi-Engine Indicators of Localized Image Manipulation or Deepfake Splicing",
+      "severity": "High",
+      "category": "manipulation",
+      "description": "Physical and neural forensic engines reveal localized inconsistencies. ResNet-50 feature anomaly score: 1.000; ELA high-error fraction: 0.00%; Wavelet noise variance ratio: 0.000. These convergent cues strongly indicate region tampering or composite splicing.",
+      "supporting_evidence": [
+        "manipulation_detection"
+      ],
+      "regions": [
+        {
+          "x": 0,
+          "y": 0,
+          "width": 7,
+          "height": 7
+        },
+        {
+          "x": 92,
+          "y": 0,
+          "width": 7,
+          "height": 7
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "width": 7,
+          "height": 7
+        },
+        {
+          "x": 92,
+          "y": 7,
+          "width": 7,
+          "height": 7
+        }
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "artifact_id": "ART-EVD-009-ELA",
+      "type": "ela_heatmap",
+      "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\ela_heatmap.png",
+      "description": "Error Level Analysis compression variance heatmap (brighter pixels indicate distinct compression history)."
+    },
+    {
+      "artifact_id": "ART-EVD-009-NOISE",
+      "type": "noise_residual_map",
+      "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\noise_residual.png",
+      "description": "2D wavelet high-frequency detail energy map isolating camera sensor noise and localized variance discontinuities."
+    },
+    {
+      "artifact_id": "ART-EVD-009-MANIP",
+      "type": "manipulation_heatmap",
+      "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\image\\EVD-009\\manipulation_heatmap.png",
+      "description": "Deep feature spatial anomaly map localizing suspicious boundaries, compositing, and manipulation artifacts."
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "ELA is calibrated for JPEG compression and is most informative on images with natural compression cycles.",
+    "Multiple uniform re-saves across the entire image reduce ELA sensitivity.",
+    "High-frequency natural edges (textures, foliage) naturally produce moderate ELA signals without tampering.",
+    "PRNU sensor noise assumes uncompressed or high-quality photographic sources; severe compression attenuates sensor noise.",
+    "Smooth, untextured regions (sky, flat surfaces) provide the cleanest PRNU signatures; dense textures add scene contamination.",
+    "Wavelet high-frequency components from different camera sensors typically have cross-correlation < 0.25, while identical sensors exceed 0.60.",
+    "Copy-move block matching uses quantized feature hashing; heavily rotated or scaled duplicates may evade detection.",
+    "Histogram quantization spikes flag potential multiple compression/editing passes, but can occur naturally in high-contrast graphics.",
+    "Edge and blur metrics are influenced by natural optical depth of field (bokeh).",
+    "EXIF metadata is stored in plain text within image file headers and can be modified or forged.",
+    "Social media platforms (Twitter/X, WhatsApp, Instagram) routinely strip all EXIF metadata for privacy; absence of EXIF alone does not prove malicious manipulation.",
+    "Timezone discrepancies between camera internal clocks and computer systems can create apparent timestamp mismatches.",
+    "EfficientNet-B4 is trained on ImageNet-1k and deployed as an empirical feature & entropy analyzer for AI artifact signatures.",
+    "The 'ai_probability' / 'ai_pattern_score' is an empirical fusion of logit entropy, feature dispersion, and 2D FFT spectral irregularity.",
+    "Recent diffusion models (e.g. Midjourney v6, SDXL, FLUX) produce sophisticated textures that may yield false negatives on low-res inputs.",
+    "Heavily recompressed social media images may lose high-frequency spectral artifacts, affecting detection confidence.",
+    "ResNet-50 Layer-3 feature deviation highlights localized structural, boundary, and textural inconsistencies.",
+    "Feature anomaly scores are computed relative to baseline spatial distribution and represent relative anomaly rather than a calibrated probability.",
+    "Subtle facial deepfakes (e.g. slight mouth/eye reenactment) may require specialized facial landmark models for micro-expression localization.",
+    "AI-generation models are calibrated on training sets and may exhibit domain shift on unseen generators.",
+    "PRNU sensor noise requires sufficient optical resolution; severe lossy recompression attenuates sensor footprints.",
+    "ELA relies on quantization differential; lossless formats (PNG) require spatial and frequency analysis instead.",
+    "EXIF data can be modified without altering image pixels; absence of EXIF does not confirm manipulation.",
+    "Forensic conclusions should be drawn from the convergence of multiple independent physical and neural indicators."
+  ]
+}

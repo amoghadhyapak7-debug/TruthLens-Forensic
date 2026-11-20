@@ -1,0 +1,691 @@
+{
+  "evidence_id": "EVD-006",
+  "video": {
+    "evidence_id": "EVD-006",
+    "media_type": "video",
+    "status": "completed",
+    "metadata": {
+      "file_name": "1cf22a15ba09436099bcdcf64778cbfe.mp4",
+      "file_extension": ".mp4",
+      "file_size_bytes": 167164,
+      "file_size_mb": 0.16,
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e",
+      "resolution": {
+        "width": 200,
+        "height": 200,
+        "aspect_ratio": "200:200"
+      },
+      "frame_rate": 15.0,
+      "total_frames": 71,
+      "duration_seconds": 4.73,
+      "duration_formatted": "00:04",
+      "codec_fourcc": "h264",
+      "streams": [
+        "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x200 [SAR 1:1 DAR 1:1], 280 kb/s, 15 fps, 15 tbr, 15360 tbn (default)"
+      ],
+      "encoder": null,
+      "creation_time": null,
+      "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\evidence\\1cf22a15ba09436099bcdcf64778cbfe.mp4"
+    },
+    "assessment": {
+      "classification": "no_manipulation_detected",
+      "verdict": "NO DEEPFAKE DETECTED",
+      "reliability": "Low",
+      "reliability_note": "Borderline score (71.7% authentic vs 28.3% manipulation). Classified as NOT DEEPFAKE based on best-supported probability.",
+      "evidence_score": 1.5,
+      "manipulation_score_pct": 28.3,
+      "original_score_pct": 71.7,
+      "ai_generation_score_pct": null,
+      "ai_peak_score_pct": null,
+      "ai_authentic_score_pct": null,
+      "ai_flagged_frames_count": 0,
+      "ai_model_name": "disabled",
+      "ai_model_status": "disabled",
+      "ai_frame_predictions": [],
+      "model_name": "GenD CLIP ViT-L/14",
+      "face_detector": "yunet_cnn",
+      "total_faces_detected": 8,
+      "frames_with_faces": 8,
+      "total_frames_examined": 0,
+      "suspicious_frames_count": 1,
+      "confidence": null,
+      "basis": [
+        "Neural face forgery detector confirmed authenticity probability of 71.7% (manipulation: 28.3%) across 8 face frame(s).",
+        "[Signal \u00d71.5] Abrupt temporal discontinuity detected (frame difference 0.278 vs baseline 0.050). May indicate spliced content, dropped frames, or synthetic rendering jitter. at 2.80s"
+      ],
+      "what_would_change_verdict": [],
+      "gend_status": "loaded_and_active",
+      "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+      "gend_mean_fake_pct": 28.3,
+      "gend_max_fake_pct": 47.6,
+      "gend_mean_real_pct": 71.7,
+      "mesonet_mean_fake_pct": 51.0
+    },
+    "verdict": "NO DEEPFAKE DETECTED",
+    "deepfake_metrics": {
+      "signal_name": "deepfake_neural_inference",
+      "model_name": "GenD CLIP ViT-L/14",
+      "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+      "face_detector": "yunet_cnn",
+      "model_status": "loaded_and_active",
+      "frames_with_faces": 8,
+      "total_faces_detected": 8,
+      "mean_manipulation_score": 0.2831,
+      "mean_manipulation_pct": 28.3,
+      "max_manipulation_score": 0.4759,
+      "mean_original_score": 0.7169,
+      "mean_original_pct": 71.7,
+      "mesonet_mean_fake_pct": 51.0,
+      "suspicious_face_frames_count": 0,
+      "gend_status": "loaded_and_active",
+      "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+      "gend_mean_fake_pct": 28.3,
+      "gend_max_fake_pct": 47.6,
+      "gend_mean_real_pct": 71.7
+    },
+    "findings": [
+      {
+        "indicator_name": "temporal_motion_anomaly",
+        "description": "Abrupt temporal discontinuity detected (frame difference 0.278 vs baseline 0.050). May indicate spliced content, dropped frames, or synthetic rendering jitter.",
+        "timestamp": 2.8,
+        "frame_reference": "frame_000042_2.80s.jpg",
+        "severity": "medium",
+        "method_used": "interframe_difference_variance",
+        "supporting_observations": "Diff z-score: 4.59"
+      }
+    ],
+    "signals": [
+      {
+        "signal_name": "ai_generated_video_detection",
+        "model_name": "CIFAKE-EfficientNet-B0 (disabled)",
+        "model_status": "disabled",
+        "frames_analyzed": 0,
+        "mean_ai_generated_pct": null,
+        "peak_ai_generated_pct": null,
+        "mean_authentic_pct": null,
+        "flagged_synthetic_frames_count": 0,
+        "frame_predictions": [],
+        "findings": []
+      },
+      {
+        "signal_name": "deepfake_neural_inference",
+        "model_name": "GenD CLIP ViT-L/14",
+        "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+        "face_detector": "yunet_cnn",
+        "model_status": "loaded_and_active",
+        "frames_with_faces": 8,
+        "total_faces_detected": 8,
+        "mean_manipulation_score": 0.2831,
+        "mean_manipulation_pct": 28.3,
+        "max_manipulation_score": 0.4759,
+        "mean_original_score": 0.7169,
+        "mean_original_pct": 71.7,
+        "mesonet_mean_fake_pct": 51.0,
+        "suspicious_face_frames_count": 0,
+        "gend_status": "loaded_and_active",
+        "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+        "gend_mean_fake_pct": 28.3,
+        "gend_max_fake_pct": 47.6,
+        "gend_mean_real_pct": 71.7
+      },
+      {
+        "signal_name": "temporal_continuity",
+        "mean_interframe_difference": 0.0496,
+        "interframe_std_dev": 0.0498,
+        "anomalies_detected": 1
+      },
+      {
+        "signal_name": "sensor_noise_profile",
+        "mean_residual_variance": 13.797,
+        "noise_consistency": "natural"
+      },
+      {
+        "signal_name": "lighting_chrominance_stability",
+        "mean_luminance": 108.64,
+        "mean_saturation": 116.82,
+        "lighting_instabilities_detected": 0
+      },
+      {
+        "signal_name": "gradient_sharpness",
+        "sequence_mean_laplacian": 226.39,
+        "sharpness_anomalies": 0
+      },
+      {
+        "signal_name": "compression_artifact_profile",
+        "mean_dct_blockiness_ratio": 1.15,
+        "blockiness_std": 0.039,
+        "compression_anomalies": 0
+      },
+      {
+        "signal_name": "channel_correlation",
+        "mean_rgb_correlation": 0.9599,
+        "correlation_std": 0.0112,
+        "channel_anomalies": 0
+      }
+    ],
+    "source_matching_features": {
+      "evidence_id": "EVD-006",
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e",
+      "duration_seconds": 4.73,
+      "resolution": {
+        "width": 200,
+        "height": 200,
+        "aspect_ratio": "200:200"
+      },
+      "total_frames_fingerprinted": 24,
+      "keyframe_signatures": [
+        {
+          "timestamp": 0.0,
+          "frame_reference": "frame_000000_0.00s.jpg",
+          "dhash": "1111101011111011110010101101110011101100101001011001000110000011",
+          "ahash": "0001111101111111011111110111111100000110000000000000000000000000"
+        },
+        {
+          "timestamp": 0.2,
+          "frame_reference": "frame_000003_0.20s.jpg",
+          "dhash": "1011111011111010110011101101110011111000110000001001000111100001",
+          "ahash": "0101111101111111011111110111111000001110000000000000000000000000"
+        },
+        {
+          "timestamp": 0.4,
+          "frame_reference": "frame_000006_0.40s.jpg",
+          "dhash": "1011110011110110110001001101110011111000110010001000000111000011",
+          "ahash": "0011111111111111111111110111111000001100000000000000000000000000"
+        },
+        {
+          "timestamp": 0.6,
+          "frame_reference": "frame_000009_0.60s.jpg",
+          "dhash": "1111100011100100110001001101100011111000110010001000001110000011",
+          "ahash": "0011111101111111111111100111110000011100000000000000000000000000"
+        },
+        {
+          "timestamp": 0.8,
+          "frame_reference": "frame_000012_0.80s.jpg",
+          "dhash": "1111100011101000110010001111100011110000110100001000001110000011",
+          "ahash": "0111111001111110011111100111110000111100000000000000000000000000"
+        },
+        {
+          "timestamp": 1.0,
+          "frame_reference": "frame_000015_1.00s.jpg",
+          "dhash": "1111000011101000110010001111100011110000100100001000001100000011",
+          "ahash": "0111111001111110011111000111110000111100000000000000000000000000"
+        },
+        {
+          "timestamp": 1.2,
+          "frame_reference": "frame_000018_1.20s.jpg",
+          "dhash": "1111000011001000110010001111000011110000100100001000000100000011",
+          "ahash": "0111111001111110011111000111110000111100000000000000000000000000"
+        },
+        {
+          "timestamp": 1.4,
+          "frame_reference": "frame_000021_1.40s.jpg",
+          "dhash": "1111000011001000110010001111000011110001100100011000001100000011",
+          "ahash": "0111111001111110111111000111110000111000000000000000000000000000"
+        },
+        {
+          "timestamp": 1.6,
+          "frame_reference": "frame_000024_1.60s.jpg",
+          "dhash": "1111000011010000110010001111000011110001101100011000001100000011",
+          "ahash": "0111110011111100111111000111110000111000000000000000000000000000"
+        },
+        {
+          "timestamp": 1.8,
+          "frame_reference": "frame_000027_1.80s.jpg",
+          "dhash": "1111000011100000110000011101000011110000101100011001001100010011",
+          "ahash": "0111110011111100111111000111100000111000000100000000000000000000"
+        },
+        {
+          "timestamp": 2.0,
+          "frame_reference": "frame_000030_2.00s.jpg",
+          "dhash": "1110001110110000100000011001000011100000101100001011001100010011",
+          "ahash": "1111100011111100111110001111100001111000000110000000000000000000"
+        },
+        {
+          "timestamp": 2.2,
+          "frame_reference": "frame_000033_2.20s.jpg",
+          "dhash": "1110001101100010100000011000000011100000011000000110011000010110",
+          "ahash": "1111000011111000111110001111100011110000001100000000000000000000"
+        },
+        {
+          "timestamp": 2.4,
+          "frame_reference": "frame_000036_2.40s.jpg",
+          "dhash": "1110001001100000100000001000000011100000011000000110011100000110",
+          "ahash": "1111100011111000111110001111100011111000001100000000000000000000"
+        },
+        {
+          "timestamp": 2.6,
+          "frame_reference": "frame_000039_2.60s.jpg",
+          "dhash": "1110001011100000100100001001000011100001011100010010001100000111",
+          "ahash": "1111100011111000111110001111100001111000001110000000000000000000"
+        },
+        {
+          "timestamp": 2.8,
+          "frame_reference": "frame_000042_2.80s.jpg",
+          "dhash": "1111100110111001011111101011111001111100001111000001111000011011",
+          "ahash": "1111111100001111000011110000111100000111000001110000011100001111"
+        },
+        {
+          "timestamp": 3.0,
+          "frame_reference": "frame_000045_3.00s.jpg",
+          "dhash": "1111100110111001111111101111111011101100111111000111111010111011",
+          "ahash": "0111111100001111000011110000111100000111000011110000111100001111"
+        },
+        {
+          "timestamp": 3.2,
+          "frame_reference": "frame_000048_3.20s.jpg",
+          "dhash": "1111100100111001011111100001111011101110111111001111111000111011",
+          "ahash": "0111111100001111000011110000111100000111000011110000011100001111"
+        },
+        {
+          "timestamp": 3.4,
+          "frame_reference": "frame_000051_3.40s.jpg",
+          "dhash": "1111100100111001001111100001111011101110111111001111111001111011",
+          "ahash": "0111111100001111000011111000111100000111000001110000011100001111"
+        },
+        {
+          "timestamp": 3.6,
+          "frame_reference": "frame_000054_3.60s.jpg",
+          "dhash": "1111100100111001001111100001111001101110011111001111111001111111",
+          "ahash": "0111110100001111000011110000111100000111000001110000011100001111"
+        },
+        {
+          "timestamp": 3.8,
+          "frame_reference": "frame_000057_3.80s.jpg",
+          "dhash": "1111100110111001001110100011111001101110011111000111111001111111",
+          "ahash": "0111110100011111000011110000111100001111000001110000011100001111"
+        },
+        {
+          "timestamp": 4.0,
+          "frame_reference": "frame_000060_4.00s.jpg",
+          "dhash": "1111100110111001001110100011111011101110011111000101111001111110",
+          "ahash": "0111110000011111000011110000111100001111000001110000011100000111"
+        },
+        {
+          "timestamp": 4.2,
+          "frame_reference": "frame_000063_4.20s.jpg",
+          "dhash": "1111100110111001001110000011111011101110011111000101111011111110",
+          "ahash": "0111110001111101000011110000111100001111000001110000011100000111"
+        },
+        {
+          "timestamp": 4.4,
+          "frame_reference": "frame_000066_4.40s.jpg",
+          "dhash": "1111100111111001001110010011111011111110111111000011111011111110",
+          "ahash": "0111110001111101000011110000111100001111000111110000011100001111"
+        },
+        {
+          "timestamp": 4.6,
+          "frame_reference": "frame_000069_4.60s.jpg",
+          "dhash": "1111100111111001101110010011111011111110111111000111111011111110",
+          "ahash": "0011110001111101000011110000111100001111000101110000011100001111"
+        }
+      ],
+      "color_profile_vector": [
+        0.00015995862486306578,
+        0.0,
+        0.0,
+        0.0,
+        0.0005003637634217739,
+        0.0,
+        0.0,
+        0.0,
+        0.0013664310099557042,
+        0.0,
+        0.0,
+        6.504752036562422e-06,
+        0.04743853583931923,
+        0.0017820218345150352,
+        0.0027810477185994387,
+        0.00014335142623167485,
+        0.4959707260131836,
+        0.5833321213722229,
+        0.46201929450035095,
+        0.34228506684303284,
+        0.009902464225888252,
+        0.03514818474650383,
+        0.04442329704761505,
+        0.031961459666490555,
+        3.6630775866797194e-05,
+        2.150502268705168e-06,
+        8.635247468191665e-06,
+        1.7008174836519174e-05,
+        2.5984933017753065e-05,
+        0.0,
+        0.0,
+        2.1682506030629156e-06
+      ]
+    },
+    "video_relationships": [],
+    "errors": [],
+    "limitations": [
+      "Forensic classification represents automated signal measurements and neural inference scores; not judicial proof.",
+      "Keyframe sampling inspects periodic intervals across the video rather than 100% of video frames.",
+      "Google Gemini API understanding was not active (API key missing or request bypassed)."
+    ],
+    "extracted_frames_summary": {
+      "total_extracted": 24,
+      "output_directory": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames",
+      "scene_changes_timestamps": [],
+      "duplicate_frames_timestamps": [],
+      "keyframe_paths": [
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000000_0.00s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000003_0.20s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000006_0.40s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000009_0.60s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000012_0.80s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000015_1.00s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000018_1.20s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000021_1.40s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000024_1.60s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000027_1.80s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000030_2.00s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000033_2.20s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000036_2.40s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000039_2.60s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000042_2.80s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000045_3.00s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000048_3.20s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000051_3.40s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000054_3.60s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000057_3.80s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000060_4.00s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000063_4.20s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000066_4.40s.jpg",
+        "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000069_4.60s.jpg"
+      ],
+      "keyframes": [
+        {
+          "frame_index": 0,
+          "timestamp": 0.0,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000000_0.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000000_0.00s.jpg",
+          "file_name": "frame_000000_0.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 393.59,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 3,
+          "timestamp": 0.2,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000003_0.20s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000003_0.20s.jpg",
+          "file_name": "frame_000003_0.20s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 297.59,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 6,
+          "timestamp": 0.4,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000006_0.40s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000006_0.40s.jpg",
+          "file_name": "frame_000006_0.40s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 305.99,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 9,
+          "timestamp": 0.6,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000009_0.60s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000009_0.60s.jpg",
+          "file_name": "frame_000009_0.60s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 230.36,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 12,
+          "timestamp": 0.8,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000012_0.80s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000012_0.80s.jpg",
+          "file_name": "frame_000012_0.80s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 260.85,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 15,
+          "timestamp": 1.0,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000015_1.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000015_1.00s.jpg",
+          "file_name": "frame_000015_1.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 255.96,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 18,
+          "timestamp": 1.2,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000018_1.20s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000018_1.20s.jpg",
+          "file_name": "frame_000018_1.20s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 269.74,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 21,
+          "timestamp": 1.4,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000021_1.40s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000021_1.40s.jpg",
+          "file_name": "frame_000021_1.40s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 264.78,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 24,
+          "timestamp": 1.6,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000024_1.60s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000024_1.60s.jpg",
+          "file_name": "frame_000024_1.60s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 241.01,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 27,
+          "timestamp": 1.8,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000027_1.80s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000027_1.80s.jpg",
+          "file_name": "frame_000027_1.80s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 261.15,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 30,
+          "timestamp": 2.0,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000030_2.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000030_2.00s.jpg",
+          "file_name": "frame_000030_2.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 220.34,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 33,
+          "timestamp": 2.2,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000033_2.20s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000033_2.20s.jpg",
+          "file_name": "frame_000033_2.20s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 219.28,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 36,
+          "timestamp": 2.4,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000036_2.40s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000036_2.40s.jpg",
+          "file_name": "frame_000036_2.40s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 222.06,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 39,
+          "timestamp": 2.6,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000039_2.60s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000039_2.60s.jpg",
+          "file_name": "frame_000039_2.60s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 224.84,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 42,
+          "timestamp": 2.8,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000042_2.80s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000042_2.80s.jpg",
+          "file_name": "frame_000042_2.80s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 197.48,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "temporal_motion_anomaly"
+          ]
+        },
+        {
+          "frame_index": 45,
+          "timestamp": 3.0,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000045_3.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000045_3.00s.jpg",
+          "file_name": "frame_000045_3.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 146.69,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 48,
+          "timestamp": 3.2,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000048_3.20s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000048_3.20s.jpg",
+          "file_name": "frame_000048_3.20s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 143.48,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 51,
+          "timestamp": 3.4,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000051_3.40s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000051_3.40s.jpg",
+          "file_name": "frame_000051_3.40s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 178.59,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 54,
+          "timestamp": 3.6,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000054_3.60s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000054_3.60s.jpg",
+          "file_name": "frame_000054_3.60s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 170.12,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 57,
+          "timestamp": 3.8,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000057_3.80s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000057_3.80s.jpg",
+          "file_name": "frame_000057_3.80s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 173.58,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 60,
+          "timestamp": 4.0,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000060_4.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000060_4.00s.jpg",
+          "file_name": "frame_000060_4.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 197.21,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 63,
+          "timestamp": 4.2,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000063_4.20s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000063_4.20s.jpg",
+          "file_name": "frame_000063_4.20s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 181.88,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 66,
+          "timestamp": 4.4,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000066_4.40s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000066_4.40s.jpg",
+          "file_name": "frame_000066_4.40s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 186.28,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 69,
+          "timestamp": 4.6,
+          "relative_path": "data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000069_4.60s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-006\\video\\EVD-006\\frames\\frame_000069_4.60s.jpg",
+          "file_name": "frame_000069_4.60s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 190.63,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        }
+      ]
+    }
+  },
+  "audio": null,
+  "audio_extraction_status": "no_audio_stream"
+}

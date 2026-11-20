@@ -1,0 +1,47 @@
+# ==============================================================================
+# TruthLens .gitignore
+# ==============================================================================
+
+# Environment variables & secrets
+.env
+*.env
+.env.*
+!.env.example
+credentials.json
+client_secret*.json
+*.pem
+*.key
+service_account*.json
+
+# Python & Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+.pytest_cache/
+
+# Large Pretrained Weights Exceeding GitHub 100 MB Limit
+# (Downloadable on demand via python scripts/download_models.py)
+truthlens_video/models/gend_clip_vit_l14.safetensors
+truthlens_video/models/*.safetensors
+truthlens_video/models/gend_cache/
+truthlens_video/models/.locks/
+
+# Temporary Backup Directories
+data_backup_pre_storage_reorg/
+
+# Temporary Testing Uploads & Artifacts
+storage/testing/uploads/*
+!storage/testing/uploads/.gitkeep
+storage/testing/temporary/*
+!storage/testing/temporary/.gitkeep
+
+# IDE & OS Artifacts
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,274 @@
+[
+  {
+    "evidence_id": "EVD-008",
+    "case_id": "TEST-CASE-01",
+    "original_filename": "case_notes.txt",
+    "stored_filename": "545f82944ebf405aa0f696f0353ea050.txt",
+    "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\documents\\545f82944ebf405aa0f696f0353ea050.txt",
+    "storage_location": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\documents",
+    "file_type": "text",
+    "file_extension": ".txt",
+    "mime_type": "text/plain",
+    "file_size": 232,
+    "file_size_human": "232 B",
+    "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+    "hash": {
+      "algorithm": "SHA-256",
+      "value": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535",
+      "status": "completed",
+      "file_reference": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\documents\\545f82944ebf405aa0f696f0353ea050.txt"
+    },
+    "ingestion_timestamp": "2026-11-20T04:02:43+05:30",
+    "metadata": {
+      "modality": "text",
+      "extension": ".txt",
+      "format": "TXT",
+      "encoding": "utf-8",
+      "extracted_character_count": 232,
+      "word_count": 32,
+      "extraction_method": "streaming-python-codecs",
+      "extracted_text": "Artificial intelligence and deepfake technologies have advanced significantly. The suspect claimed he was in Chicago on the night of November 15, 2024. Financial transactions indicate $500,000 was transferred to an offshore account."
+    },
+    "validation_status": "valid",
+    "ingestion_status": "completed",
+    "analysis_eligibility": {
+      "status": "READY",
+      "reasons": [],
+      "warnings": []
+    },
+    "duplicate_reference": null,
+    "errors": [],
+    "warnings": [],
+    "stages": [
+      {
+        "stage": "RECEIVED",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      },
+      {
+        "stage": "VALIDATING",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      },
+      {
+        "stage": "HASHING",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      },
+      {
+        "stage": "METADATA_EXTRACTION",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      },
+      {
+        "stage": "STORAGE",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      },
+      {
+        "stage": "REGISTRATION",
+        "status": "in_progress",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      },
+      {
+        "stage": "COMPLETED",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:43+05:30"
+      }
+    ]
+  },
+  {
+    "evidence_id": "EVD-009",
+    "case_id": "TEST-CASE-01",
+    "original_filename": "suspect_photo.png",
+    "stored_filename": "1a4217742e1a4abd907feadad1a925f5.png",
+    "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\images\\1a4217742e1a4abd907feadad1a925f5.png",
+    "storage_location": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\images",
+    "file_type": "image",
+    "file_extension": ".png",
+    "mime_type": "image/png",
+    "file_size": 291,
+    "file_size_human": "291 B",
+    "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+    "hash": {
+      "algorithm": "SHA-256",
+      "value": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765",
+      "status": "completed",
+      "file_reference": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\evidence\\images\\1a4217742e1a4abd907feadad1a925f5.png"
+    },
+    "ingestion_timestamp": "2026-11-20T04:02:50+05:30",
+    "metadata": {
+      "modality": "image",
+      "extension": ".png",
+      "file_size": 291,
+      "format": "PNG",
+      "width": 100,
+      "height": 100,
+      "pixel_count": 10000,
+      "color_mode": "RGB",
+      "exif": {},
+      "camera": null,
+      "orientation": null
+    },
+    "validation_status": "valid",
+    "ingestion_status": "completed",
+    "analysis_eligibility": {
+      "status": "READY",
+      "reasons": [],
+      "warnings": []
+    },
+    "duplicate_reference": null,
+    "errors": [],
+    "warnings": [],
+    "stages": [
+      {
+        "stage": "RECEIVED",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      },
+      {
+        "stage": "VALIDATING",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      },
+      {
+        "stage": "HASHING",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      },
+      {
+        "stage": "METADATA_EXTRACTION",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      },
+      {
+        "stage": "STORAGE",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      },
+      {
+        "stage": "REGISTRATION",
+        "status": "in_progress",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      },
+      {
+        "stage": "COMPLETED",
+        "status": "completed",
+        "timestamp": "2026-11-20T04:02:50+05:30"
+      }
+    ]
+  },
+  {
+    "evidence_id": "EVD-010",
+    "case_id": null,
+    "original_filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "stored_filename": "f6b45e1ef812466d86c19c6b9564d6b8.mp4",
+    "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\testing\\uploads\\f6b45e1ef812466d86c19c6b9564d6b8.mp4",
+    "storage_location": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\testing\\uploads",
+    "file_type": "video",
+    "file_extension": ".mp4",
+    "mime_type": "video/mp4",
+    "file_size": 265387,
+    "file_size_human": "259.17 KB",
+    "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+    "hash": {
+      "algorithm": "SHA-256",
+      "value": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b",
+      "status": "completed",
+      "file_reference": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\storage\\testing\\uploads\\f6b45e1ef812466d86c19c6b9564d6b8.mp4"
+    },
+    "ingestion_timestamp": "2026-11-20T05:28:08+05:30",
+    "metadata": {
+      "modality": "video",
+      "extension": ".mp4",
+      "duration_seconds": 4.87,
+      "width": 200,
+      "height": 112,
+      "fps": 15.0,
+      "frame_count": 73,
+      "video_codec": "h264",
+      "container_format": "mov",
+      "resolution": "200x112",
+      "bitrate": 436000,
+      "video_stream_count": 1,
+      "audio_stream_count": 0,
+      "audio_streams_present": false,
+      "audio_codec": null,
+      "sample_rate": null,
+      "metadata_extraction_status": "complete",
+      "stream_readable": true,
+      "stream_metadata": [
+        "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x112, 434 kb/s, 15 fps, 15 tbr, 15360 tbn (default)"
+      ],
+      "technical_details": [
+        "Metadata:",
+        "major_brand     : mp42",
+        "minor_version   : 0",
+        "compatible_brands: mp42isom",
+        "Duration: 00:00:04.87, start: 0.000000, bitrate: 436 kb/s",
+        "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 200x112, 434 kb/s, 15 fps, 15 tbr, 15360 tbn (default)",
+        "Stream mapping:",
+        "Stream #0:0 -> #0:0 (h264 (native) -> wrapped_avframe (native))",
+        "Press [q] to stop, [?] for help",
+        "Output #0, null, to 'pipe:':",
+        "Metadata:",
+        "major_brand     : mp42",
+        "minor_version   : 0",
+        "compatible_brands: mp42isom",
+        "encoder         : Lavf63.1.102",
+        "Stream #0:0(und): Video: wrapped_avframe, yuv420p(tv, bt709, progressive), 200x112, q=2-31, 200 kb/s, 15 fps, 15 tbn (default)",
+        "Metadata:",
+        "encoder         : Lavc63.1.102 wrapped_avframe",
+        "[out#0/null @ 0000018a13ded6c0] video:0KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown",
+        "frame=    1 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.06 bitrate=N/A speed=7.79x elapsed=0:00:00.00"
+      ]
+    },
+    "validation_status": "valid",
+    "ingestion_status": "completed",
+    "analysis_eligibility": {
+      "status": "READY",
+      "reasons": [],
+      "warnings": []
+    },
+    "duplicate_reference": null,
+    "errors": [],
+    "warnings": [],
+    "stages": [
+      {
+        "stage": "RECEIVED",
+        "status": "completed",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      },
+      {
+        "stage": "VALIDATING",
+        "status": "completed",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      },
+      {
+        "stage": "HASHING",
+        "status": "completed",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      },
+      {
+        "stage": "METADATA_EXTRACTION",
+        "status": "completed",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      },
+      {
+        "stage": "STORAGE",
+        "status": "completed",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      },
+      {
+        "stage": "REGISTRATION",
+        "status": "in_progress",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      },
+      {
+        "stage": "COMPLETED",
+        "status": "completed",
+        "timestamp": "2026-11-20T05:28:08+05:30"
+      }
+    ]
+  }
+]

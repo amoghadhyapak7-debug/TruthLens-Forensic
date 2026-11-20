@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "entity_counts": {
+    "LOCATION": 1,
+    "DATE": 1,
+    "MONETARY_VALUE": 1
+  },
+  "entities": [
+    {
+      "entity_type": "LOCATION",
+      "value": "Chicago",
+      "normalized_value": "Chicago",
+      "occurrences": 1,
+      "mentions": [
+        {
+          "text": "Chicago",
+          "start_char": 109,
+          "end_char": 116,
+          "paragraph_index": 0,
+          "context": "...The suspect claimed he was in Chicago on the night of November 15,..."
+        }
+      ],
+      "extraction_method": "rule_based_location",
+      "reliability": "high",
+      "limitations": []
+    },
+    {
+      "entity_type": "DATE",
+      "value": "November 15, 2024",
+      "normalized_value": "November 15, 2024",
+      "occurrences": 1,
+      "mentions": [
+        {
+          "text": "November 15, 2024",
+          "start_char": 133,
+          "end_char": 150,
+          "paragraph_index": 0,
+          "context": "...as in Chicago on the night of November 15, 2024. Financial transactions indic..."
+        }
+      ],
+      "extraction_method": "regex_pattern",
+      "reliability": "high",
+      "limitations": []
+    },
+    {
+      "entity_type": "MONETARY_VALUE",
+      "value": "$500,000",
+      "normalized_value": "$500,000",
+      "occurrences": 1,
+      "mentions": [
+        {
+          "text": "$500,000",
+          "start_char": 184,
+          "end_char": 192,
+          "paragraph_index": 0,
+          "context": "...nancial transactions indicate $500,000 was transferred to an offshor..."
+        }
+      ],
+      "extraction_method": "regex_pattern",
+      "reliability": "high",
+      "limitations": []
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Entity extraction uses high-precision deterministic patterns and contextual heuristics.",
+    "Ambiguous single-token names without title or context are preserved as unclassified to avoid false associations."
+  ]
+}

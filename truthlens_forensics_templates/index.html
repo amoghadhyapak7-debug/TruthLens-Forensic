@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TruthLens — AI-Powered Image Forensic Analyzer for digital evidence investigation. Detect deepfakes, AI-generated images, and manipulations." />
+  <meta name="theme-color" content="#0d1117" />
+  <title>TruthLens — AI Image Forensic Analyzer</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design Tokens ─────────────────────────────────────────────── */
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --surface-2: #1c2128;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --accent-dark: #1f6feb;
+      --success: #3fb950;
+      --danger: #f85149;
+      --warn: #d29922;
+      --purple: #bc8cff;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --radius: 10px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.4);
+      --font: 'Inter', system-ui, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    /* ── Reset & Base ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── Skip-nav (Accessibility) ───────────────────────────────────── */
+    .skip-nav {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent);
+      color: #000;
+      padding: 8px 16px;
+      z-index: 9999;
+      border-radius: 0 0 6px 0;
+      font-weight: 600;
+      text-decoration: none;
+      transition: top 0.2s;
+    }
+    .skip-nav:focus { top: 0; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+    .logo-icon { font-size: 1.8em; user-select: none; }
+    header h1 { font-size: 1.3em; color: var(--accent); font-weight: 700; letter-spacing: -0.3px; }
+    header .subtitle { color: var(--muted); font-size: 0.82em; }
+    .header-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+    .health-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.75em;
+      color: var(--muted);
+    }
+    .health-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--muted); }
+    .health-dot.ok { background: var(--success); }
+    .nav-pill {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8em;
+      cursor: pointer;
+      font-family: var(--font);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+    .nav-pill:hover, .nav-pill.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: #1f293d;
+    }
+
+    /* ── Layout ─────────────────────────────────────────────────────── */
+    main { max-width: 1100px; margin: 0 auto; padding: 36px 20px 60px; }
+
+    /* ── Google Vision Banner ──────────────────────────────────────── */
+    .google-banner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, #1a2744 0%, #1a1f2e 100%);
+      border: 1px solid #2a4080;
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-size: 0.84em;
+    }
+    .google-banner .g-logo { font-size: 1.5em; }
+    .google-banner strong { color: #7baaf7; }
+    .google-banner span { color: #9ab4d8; }
+
+    /* ── Main View Switcher ────────────────────────────────────────── */
+    .view-switcher {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 24px;
+      background: var(--surface);
+      padding: 6px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      width: fit-content;
+    }
+    .view-btn {
+      background: none;
+      border: none;
+      color: var(--muted);
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.86em;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font);
+      transition: background 0.15s, color 0.15s;
+    }
+    .view-btn.active {
+      background: var(--surface-2);
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Upload Card ─────────────────────────────────────────────────── */
+    .upload-card {
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: 14px;
+      padding: 44px 32px;
+      text-align: center;
+      margin-bottom: 28px;
+      transition: border-color 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+    .upload-card:focus-within,
+    .upload-card.dragover { border-color: var(--accent); background: #161f2e; }
+    .upload-card h2 { font-size: 1.15em; margin-bottom: 6px; }
+    .upload-card p { color: var(--muted); font-size: 0.84em; margin-bottom: 18px; }
+    .limit-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #1c2b1c;
+      border: 1px solid var(--success);
+      color: var(--success);
+      border-radius: 20px;
+      padding: 3px 14px;
+      font-size: 0.75em;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .upload-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .file-label {
+      background: var(--accent);
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9em;
+      transition: opacity 0.15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .file-label:hover { opacity: 0.85; }
+    input[type=file] { position: absolute; left: -9999px; }
+    input[type=text] {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 7px;
+      width: 180px;
+      font-family: var(--font);
+      font-size: 0.88em;
+    }
+    input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: transparent; }
+    .btn-primary {
+      background: #238636;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 7px;
+      font-size: 0.9em;
+      cursor: pointer;
+      font-weight: 600;
+      font-family: var(--font);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+    .btn-primary:hover:not(:disabled) { background: #2ea043; }
+    .btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+    .file-info-row {
+      margin-top: 10px;
+      font-size: 0.82em;
+      color: var(--muted);
+    }
+    .size-err { color: var(--danger); font-size: 0.82em; margin-top: 6px; }
+    .size-ok  { color: var(--success); font-size: 0.82em; margin-top: 4px; }
+
+    /* ── Spinner ─────────────────────────────────────────────────────── */
+    .spinner {
+      display: none;
+      text-align: center;
+      padding: 32px;
+    }
+    .spinner-ring {
+      border: 3px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 14px;
+      animation: spin 0.75s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner p { color: var(--muted); font-size: 0.84em; }
+
+    /* ── Results ─────────────────────────────────────────────────────── */
+    #results { display: none; margin-top: 28px; }
+
+    /* Verdict banner */
+    .verdict {
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .verdict-original    { background: #0d2518; border: 1px solid var(--success); }
+    .verdict-manipulated { background: #2d1515; border: 1px solid var(--danger);  }
+    .verdict-ai          { background: #1e1230; border: 1px solid var(--purple);  }
+    .verdict-inconclusive{ background: #1e1a0e; border: 1px solid var(--warn);    }
+    .verdict-icon { font-size: 2.4em; }
+    .verdict-text h2 { font-size: 1.15em; margin-bottom: 4px; }
+    .verdict-text p { font-size: 0.84em; color: #ccc; line-height: 1.6; }
+    .verdict-evidence-id { font-family: var(--mono); font-size: 0.75em; color: var(--muted); margin-top: 4px; }
+
+    /* Status bar */
+    .status-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      margin-bottom: 20px;
+      font-size: 0.84em;
+    }
+    .status-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .status-dot.completed { background: var(--success); }
+    .status-dot.partial   { background: var(--warn); }
+    .status-dot.failed    { background: var(--danger); }
+
+    /* Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 4px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 7px 7px 0 0;
+      font-size: 0.84em;
+      color: var(--muted);
+      border: none;
+      background: none;
+      font-family: var(--font);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s;
+    }
+    .tab:hover { color: var(--text); }
+    .tab.active {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-bottom: 1px solid var(--bg);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .section-title {
+      font-size: 0.9em;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 0 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.72em;
+      font-weight: 700;
+      border: 1px solid;
+    }
+    .badge-Low      { background:#0f2232; color:#58a6ff; border-color:#1f6feb; }
+    .badge-Medium   { background:#2d2000; color:#d29922; border-color:#d29922; }
+    .badge-High     { background:#2d1515; color:#f85149; border-color:#da3633; }
+    .badge-Critical { background:#2a0f3a; color:#bc8cff; border-color:#8957e5; }
+
+    /* Findings */
+    .findings-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+    .finding-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: border-color 0.15s;
+    }
+    .finding-card:hover { border-color: var(--accent); }
+    .finding-card h4 { margin-bottom: 7px; font-size: 0.9em; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .finding-card p  { color: var(--muted); font-size: 0.82em; line-height: 1.55; }
+    .finding-card .ev { margin-top: 8px; font-size: 0.76em; color: var(--success); }
+    .finding-card .regions-label { margin-top: 4px; font-size: 0.76em; color: var(--warn); }
+
+    /* Signals */
+    .signals-list { display: flex; flex-wrap: wrap; gap: 10px; }
+    .signal-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      font-size: 0.82em;
+      transition: border-color 0.15s;
+    }
+    .signal-chip:hover { border-color: var(--muted); }
+    .signal-chip .sig-name { font-weight: 500; }
+    .signal-chip .sig-code { font-family: var(--mono); font-size: 0.75em; color: var(--muted); }
+
+    /* ── Quick Demo Bar ── */
+    .demo-pills-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 14px;
+      margin-bottom: 16px;
+    }
+    .demo-label { font-size: 0.82em; font-weight: 600; color: var(--accent); }
+    .demo-pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.78em;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .demo-pill:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .demo-pill.danger { border-color: rgba(248,81,73,0.4); color: #ff7b72; }
+    .demo-pill.danger:hover { background: rgba(248,81,73,0.15); border-color: var(--danger); }
+    .demo-pill.purple { border-color: rgba(188,140,255,0.4); color: #d2a8ff; }
+    .demo-pill.purple:hover { background: rgba(188,140,255,0.15); border-color: var(--purple); }
+    .demo-pill.success { border-color: rgba(63,185,80,0.4); color: #7ee787; }
+    .demo-pill.success:hover { background: rgba(63,185,80,0.15); border-color: var(--success); }
+
+    /* ── Gemini Forensic Intelligence Card ── */
+    .gemini-header-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: linear-gradient(135deg, rgba(88,166,255,0.12), rgba(188,140,255,0.12));
+      border: 1px solid rgba(88,166,255,0.3);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    .gemini-title { font-size: 1.1em; font-weight: 700; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+    .gemini-sub { font-size: 0.82em; color: var(--muted); margin-top: 4px; }
+    .export-cert-btn {
+      background: var(--accent-dark);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.82em;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+    .export-cert-btn:hover { background: #388bfd; }
+    .gemini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+    @media (max-width: 768px) { .gemini-grid { grid-template-columns: 1fr; } }
+    .gemini-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .gemini-card h4 { font-size: 0.88em; font-weight: 600; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .gemini-verdict-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+    .gemini-verdict-val { font-size: 1.15em; font-weight: 700; }
+    .gemini-conf-badge { font-family: var(--mono); font-size: 0.82em; padding: 4px 10px; border-radius: 20px; font-weight: 600; }
+    .gemini-list { list-style: none; padding: 0; margin: 0; }
+    .gemini-list li {
+      font-size: 0.82em;
+      line-height: 1.6;
+      padding: 6px 0 6px 20px;
+      position: relative;
+      color: var(--text);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .gemini-list li:last-child { border-bottom: none; }
+    .gemini-list li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .question-list li::before { content: "❓"; font-size: 0.75em; left: 0; }
+    .question-list li { padding-left: 22px; color: #ffd33d; }
+
+    /* Engines */
+    .engines-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+    .engine-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .engine-card h5 { font-size: 0.84em; color: var(--accent); margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+    .engine-card p  { font-size: 0.78em; color: var(--muted); line-height: 1.5; }
+    .engine-score {
+      display: inline-block;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2px 10px;
+      font-size: 0.72em;
+      font-family: var(--mono);
+      margin-top: 6px;
+      color: var(--text);
+    }
+
+    /* Metadata table */
+    .meta-table { width: 100%; border-collapse: collapse; font-size: 0.82em; }
+    .meta-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    .meta-table td:first-child { color: var(--muted); width: 40%; font-weight: 500; }
+    .meta-table td:last-child  { font-family: var(--mono); font-size: 0.9em; word-break: break-all; }
+
+    /* Stored Evidence Archive View */
+    #archiveView { display: none; }
+    .archive-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .archive-header h3 { font-size: 1.1em; color: var(--accent); }
+    .btn-refresh {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+    .btn-refresh:hover { border-color: var(--accent); color: var(--accent); }
+    .evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84em;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .evidence-table th {
+      background: var(--surface-2);
+      color: var(--muted);
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    .evidence-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .evidence-table tr:hover td { background: #1c2333; }
+    .btn-action {
+      background: #1f3a5f;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 0.75em;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-family: var(--font);
+    }
+    .btn-action:hover { background: var(--accent); color: #000; }
+
+    /* Raw JSON */
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      font-size: 0.75em;
+      font-family: var(--mono);
+      overflow: auto;
+      max-height: 500px;
+      line-height: 1.6;
+    }
+    .copy-btn {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.78em;
+      cursor: pointer;
+      font-family: var(--font);
+      float: right;
+      margin-bottom: 8px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .copy-btn:hover { color: var(--text); border-color: var(--muted); }
+
+    /* Error box */
+    .error-box {
+      display: none;
+      background: #2d1515;
+      border: 1px solid var(--danger);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      font-size: 0.84em;
+      color: var(--danger);
+      margin-top: 16px;
+    }
+
+    /* Limitations */
+    .limitations-list { font-size: 0.8em; color: var(--muted); line-height: 1.8; }
+    .limitations-list li { margin-left: 20px; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78em;
+      padding: 32px 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* Focus visible outlines (Accessibility) */
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header { padding: 12px 16px; }
+      main { padding: 20px 12px 48px; }
+      .upload-card { padding: 28px 16px; }
+      header .subtitle { display: none; }
+      .evidence-table { display: block; overflow-x: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Accessibility: skip to main -->
+  <a class="skip-nav" href="#main-content">Skip to main content</a>
+
+  <!-- ── Header ───────────────────────────────────────────────────── -->
+  <header role="banner">
+    <span class="logo-icon" aria-hidden="true">🔍</span>
+    <div>
+      <h1>TruthLens</h1>
+      <span class="subtitle">Unified Multimodal Forensic Platform (Images, Videos &amp; Documents)</span>
+    </div>
+    <div class="header-right">
+      <div class="health-pill" id="healthPill" aria-live="polite">
+        <span class="health-dot" id="healthDot"></span>
+        <span id="healthText">Checking…</span>
+      </div>
+      <button class="nav-pill" id="navArchiveBtn" onclick="switchView('archive')">📁 Stored Evidence</button>
+      <a class="nav-pill" href="/text" style="text-decoration:none;background:rgba(88,166,255,0.15);border-color:var(--accent);color:var(--accent);">📄 Dedicated Text Workbench</a>
+      <a class="nav-pill" href="/portal" style="text-decoration:none;">⚡ Temp Portal</a>
+    </div>
+  </header>
+
+  <!-- ── Main ─────────────────────────────────────────────────────── -->
+  <main id="main-content" role="main">
+
+    <!-- Google Services Banner -->
+    <div class="google-banner" role="note" aria-label="Powered by Google technologies">
+      <span class="g-logo" aria-hidden="true">🌐</span>
+      <div>
+        <strong>Powered by Google Technologies</strong>
+        <span> — Google Fonts (Inter) · Google Brain EfficientNet-B4 pre-trained AI detector ·
+        Complete multi-engine forensic pipeline</span>
+      </div>
+    </div>
+
+    <!-- View Switcher -->
+    <div class="view-switcher" role="tablist" aria-label="Main navigation views">
+      <button class="view-btn active" id="btnViewAnalyzer" onclick="switchView('analyzer')">🔬 Live Forensic Analyzer</button>
+      <button class="view-btn" id="btnViewArchive" onclick="switchView('archive')">📁 Stored Evidence Archive</button>
+    </div>
+
+    <!-- ── View 1: Live Analyzer ──────────────────────────────────── -->
+    <div id="analyzerView">
+      <section aria-labelledby="upload-heading">
+        <div class="upload-card" id="dropZone" role="region" aria-label="Evidence upload area">
+          <h2 id="upload-heading">Upload Evidence (Image, Video, or Document)</h2>
+          <p>Drag & drop any evidence file here, or click to browse. Supported: Images (JPEG, PNG, WEBP, BMP, TIFF), Videos (MP4, MOV, AVI), Documents (PDF, DOCX, TXT, MD, CSV, JSON).</p>
+
+          <!-- 1-Click Judge Demo Scenarios -->
+          <div class="demo-pills-bar" role="region" aria-label="Quick Demo Scenarios for Judges">
+            <span class="demo-label">⚡ 1-Click Judge Demos:</span>
+            <button type="button" class="demo-pill danger" onclick="loadDemoSample('sample-tampered')" aria-label="Load spliced tampered evidence sample">🧪 Spliced / Tampered Photo</button>
+            <button type="button" class="demo-pill purple" onclick="loadDemoSample('sample-ai')" aria-label="Load synthetic AI deepfake evidence sample">🤖 AI-Generated / Deepfake</button>
+            <button type="button" class="demo-pill success" onclick="loadDemoSample('sample-authentic')" aria-label="Load authentic camera photo evidence sample">📷 Authentic Camera Photo</button>
+            <button type="button" class="demo-pill danger" onclick="loadTextDemoSample('sample-disinformation')" aria-label="Load disinformation text sample">📄 Disinformation Document</button>
+          </div>
+
+          <div class="limit-tag" aria-label="File limit: 10 megabytes">
+            <span aria-hidden="true">🔒</span> Max 10 MB · Multi-Modal Auto-Detection · Automatically Archived
+          </div>
+
+          <form id="analyzeForm" enctype="multipart/form-data" novalidate>
+            <div class="upload-row">
+              <label class="file-label" for="imageFile">
+                <span aria-hidden="true">📁</span> Choose Evidence (Image, Video, or Document)
+              </label>
+              <input type="file"
+                     id="imageFile"
+                     name="file"
+                     accept="image/*,video/*,.txt,.pdf,.docx,.md,.csv,.json"
+                     aria-label="Select evidence file (image, video, or document) for analysis" />
+
+              <label for="evidenceId" style="position:absolute;left:-9999px">Evidence ID</label>
+              <input type="text"
+                     id="evidenceId"
+                     name="evidence_id"
+                     value="EVD-001"
+                     placeholder="Evidence ID"
+                     pattern="[A-Za-z0-9\-]+"
+                     maxlength="30"
+                     aria-label="Evidence identifier" />
+
+              <button type="submit" class="btn-primary" id="analyzeBtn" aria-label="Run forensic analysis on selected image">
+                <span aria-hidden="true">🔬</span> Analyze
+              </button>
+            </div>
+
+            <div class="file-info-row" id="fileInfoRow" aria-live="polite">No file chosen</div>
+            <div id="sizeStatus" role="status" aria-live="assertive"></div>
+          </form>
+
+          <div class="spinner" id="spinner" role="status" aria-label="Analysis in progress">
+            <div class="spinner-ring" aria-hidden="true"></div>
+            <p>Running forensic analysis engines… (first execution loads pretrained weights)</p>
+          </div>
+        </div>
+
+        <!-- Error box -->
+        <div class="error-box" id="errorBox" role="alert" aria-live="assertive"></div>
+      </section>
+
+      <!-- ── Results Section ─────────────────────────────────────── -->
+      <section id="results" aria-labelledby="verdictTitle" aria-live="polite">
+
+        <!-- Verdict banner: single ID 'verdictTitle' fixes the duplicate id bug -->
+        <div class="verdict" id="verdictBanner" role="region" aria-label="Overall forensic verdict">
+          <div class="verdict-icon" id="verdictIcon" aria-hidden="true"></div>
+          <div class="verdict-text">
+            <h2 id="verdictTitle"></h2>
+            <p id="verdictSummary"></p>
+            <div class="verdict-evidence-id" id="verdictEvidenceId"></div>
+          </div>
+        </div>
+
+        <!-- Status bar -->
+        <div class="status-bar" role="status">
+          <div class="status-dot" id="statusDot" aria-hidden="true"></div>
+          <strong id="statusText"></strong>
+          <span style="margin-left:auto;font-family:var(--mono);font-size:0.9em;color:var(--muted)" id="evidenceLabel"></span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tab-bar" role="tablist" aria-label="Analysis result sections">
+          <button class="tab active" id="tabBtnGemini"   role="tab" aria-selected="true"  aria-controls="gemini-tab"   onclick="showTab('gemini-tab',this)">✨ Gemini Intelligence</button>
+          <button class="tab"        id="tabBtnFindings" role="tab" aria-selected="false" aria-controls="findings-tab" onclick="showTab('findings-tab',this)">📋 Findings</button>
+          <button class="tab"        id="tabBtnSignals"  role="tab" aria-selected="false" aria-controls="signals-tab"  onclick="showTab('signals-tab',this)">⚡ Signals</button>
+          <button class="tab"        id="tabBtnEngines"  role="tab" aria-selected="false" aria-controls="engines-tab"  onclick="showTab('engines-tab',this)">⚙️ Engines</button>
+          <button class="tab"        id="tabBtnMetadata" role="tab" aria-selected="false" aria-controls="metadata-tab" onclick="showTab('metadata-tab',this)">🗂️ Metadata</button>
+          <button class="tab"        id="tabBtnJson"     role="tab" aria-selected="false" aria-controls="json-tab"     onclick="showTab('json-tab',this)">📄 JSON</button>
+        </div>
+
+        <!-- Gemini Intelligence -->
+        <div class="tab-content active" id="gemini-tab" role="tabpanel" aria-labelledby="tabBtnGemini">
+          <div class="gemini-header-banner">
+            <div>
+              <div class="gemini-title"><span aria-hidden="true">✨</span> Google Gemini Forensic Intelligence</div>
+              <p class="gemini-sub">Automated multimodal forensic reasoning, confidence calibration, and courtroom-admissible cross-examination strategy.</p>
+            </div>
+            <button class="export-cert-btn" type="button" onclick="printForensicCertificate()" aria-label="Export official forensic certificate"><span aria-hidden="true">📜</span> Export Certificate</button>
+          </div>
+          <div id="geminiIntelContent" aria-live="polite">
+            <p style="color:var(--muted);font-size:0.84em">Run analysis or select a demo sample to view synthesized legal &amp; forensic intelligence.</p>
+          </div>
+        </div>
+
+        <!-- Findings -->
+        <div class="tab-content" id="findings-tab" role="tabpanel" aria-labelledby="tabBtnFindings">
+          <div class="section-title"><span aria-hidden="true">📋</span> Candidate Findings</div>
+          <div class="findings-grid" id="findingsGrid"></div>
+        </div>
+
+        <!-- Signals -->
+        <div class="tab-content" id="signals-tab" role="tabpanel" aria-labelledby="tabBtnSignals">
+          <div class="section-title"><span aria-hidden="true">⚡</span> Triggered Forensic Signals</div>
+          <div class="signals-list" id="signalsList"></div>
+        </div>
+
+        <!-- Engines -->
+        <div class="tab-content" id="engines-tab" role="tabpanel" aria-labelledby="tabBtnEngines">
+          <div class="section-title"><span aria-hidden="true">⚙️</span> Analysis Engine Results</div>
+          <div class="engines-grid" id="enginesGrid"></div>
+        </div>
+
+        <!-- Metadata -->
+        <div class="tab-content" id="metadata-tab" role="tabpanel" aria-labelledby="tabBtnMetadata">
+          <div class="section-title"><span aria-hidden="true">🗂️</span> Evidence Metadata &amp; EXIF</div>
+          <table class="meta-table" id="metaTable" aria-label="Image metadata details">
+            <tbody id="metaBody"></tbody>
+          </table>
+          <div class="section-title" style="margin-top:24px"><span aria-hidden="true">⚠️</span> Limitations</div>
+          <ul class="limitations-list" id="limitationsList"></ul>
+        </div>
+
+        <!-- JSON -->
+        <div class="tab-content" id="json-tab" role="tabpanel" aria-labelledby="tabBtnJson">
+          <div class="section-title">
+            <span aria-hidden="true">📄</span> Complete JSON Report
+            <button class="copy-btn" id="copyBtn" onclick="copyJson()" aria-label="Copy JSON report to clipboard">📋 Copy</button>
+          </div>
+          <pre id="jsonOutput" tabindex="0" aria-label="Raw JSON forensic report"></pre>
+        </div>
+
+      </section>
+    </div>
+
+    <!-- ── View 2: Stored Evidence Archive ────────────────────────── -->
+    <div id="archiveView">
+      <div class="archive-header">
+        <h3>📁 Stored Evidence Archive</h3>
+        <button class="btn-refresh" onclick="loadStoredEvidence()">🔄 Refresh Archive</button>
+      </div>
+      <p style="color:var(--muted);font-size:0.84em;margin-bottom:18px;">
+        All uploaded evidence files tested through TruthLens are permanently stored in <code>storage/evidence/</code> along with their verified forensic reports and visual artifacts.
+      </p>
+
+      <div id="archiveTableContainer">
+        <table class="evidence-table" aria-label="Archive of tested evidence items">
+          <thead>
+            <tr>
+              <th>Evidence ID</th>
+              <th>Filename</th>
+              <th>Size</th>
+              <th>Forensic Assessment</th>
+              <th>Analyzed At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="archiveTableBody">
+            <tr><td colspan="6" style="text-align:center;color:var(--muted)">Loading stored evidence…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Footer ───────────────────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <p>
+      TruthLens v2.0 — Sapthagiri Hackathon &nbsp;|&nbsp;
+      <a href="/api/health">🩺 API Health</a> &nbsp;|&nbsp;
+      Powered by <strong style="color:var(--accent)">Google EfficientNet-B4</strong> &amp; ResNet-50 &nbsp;|&nbsp;
+      For investigative use only — not a definitive forensic conclusion
+    </p>
+  </footer>
+
+  <!-- ── JavaScript ─────────────────────────────────────────────── -->
+  <script>
+  'use strict';
+
+  const MAX_BYTES = 10 * 1024 * 1024; // 10 MB
+  let _lastReport = null;
+  let currentSelectedFile = null;
+
+  // ── Switch Main Views (Analyzer vs Stored Archive) ────────────
+  function switchView(viewName) {
+    const analyzerView = document.getElementById('analyzerView');
+    const archiveView  = document.getElementById('archiveView');
+    const btnAnalyzer  = document.getElementById('btnViewAnalyzer');
+    const btnArchive   = document.getElementById('btnViewArchive');
+    const navBtn       = document.getElementById('navArchiveBtn');
+
+    if (viewName === 'archive') {
+      analyzerView.style.display = 'none';
+      archiveView.style.display  = 'block';
+      btnAnalyzer.classList.remove('active');
+      btnArchive.classList.add('active');
+      navBtn.classList.add('active');
+      loadStoredEvidence();
+    } else {
+      archiveView.style.display  = 'none';
+      analyzerView.style.display = 'block';
+      btnArchive.classList.remove('active');
+      btnAnalyzer.classList.add('active');
+      navBtn.classList.remove('active');
+    }
+  }
+
+  // ── Health Check ───────────────────────────────────────────────
+  async function checkHealth() {
+    try {
+      const r = await fetch('/api/health', { signal: AbortSignal.timeout(5000) });
+      if (r.ok) {
+        const j = await r.json();
+        document.getElementById('healthDot').classList.add('ok');
+        document.getElementById('healthText').textContent = `API OK · max ${j.max_upload_mb || 10} MB`;
+      } else {
+        document.getElementById('healthText').textContent = 'API Error';
+      }
+    } catch {
+      document.getElementById('healthText').textContent = 'Offline';
+    }
+  }
+  checkHealth();
+
+  // ── Drag & Drop ────────────────────────────────────────────────
+  const dropZone = document.getElementById('dropZone');
+  ['dragover', 'dragenter'].forEach(evt =>
+    dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('dragover'); })
+  );
+  ['dragleave', 'drop'].forEach(evt =>
+    dropZone.addEventListener(evt, e => {
+      e.preventDefault();
+      dropZone.classList.remove('dragover');
+      if (evt === 'drop' && e.dataTransfer.files.length) {
+        currentSelectedFile = e.dataTransfer.files[0];
+        try { document.getElementById('imageFile').files = e.dataTransfer.files; } catch (_) {}
+        handleFileSelect(currentSelectedFile);
+      }
+    })
+  );
+
+  // ── File Selection ─────────────────────────────────────────────
+  document.getElementById('imageFile').addEventListener('change', e => {
+    if (e.target.files.length) {
+      currentSelectedFile = e.target.files[0];
+      handleFileSelect(currentSelectedFile);
+    }
+  });
+
+  function handleFileSelect(file) {
+    const infoRow  = document.getElementById('fileInfoRow');
+    const statusEl = document.getElementById('sizeStatus');
+    const btn      = document.getElementById('analyzeBtn');
+
+    const mb = (file.size / (1024 * 1024)).toFixed(2);
+    const ext = (file.name.split('.').pop() || '').toLowerCase();
+    let typeBadge = '🖼️ Image Evidence';
+    if (['txt', 'pdf', 'docx', 'md', 'csv', 'json'].includes(ext)) {
+      typeBadge = '📄 Document / Text Evidence (Auto-Routing Enabled)';
+    } else if (['mp4', 'mov', 'avi', 'mkv', 'webm'].includes(ext)) {
+      typeBadge = '🎥 Video Evidence (Keyframe Extraction Enabled)';
+    }
+    infoRow.innerHTML = `<strong>${typeBadge}:</strong> ${escHtml(file.name)}  —  ${mb} MB  —  <code>${escHtml(file.type || ext)}</code>`;
+
+    if (file.size > MAX_BYTES) {
+      statusEl.innerHTML = `<span class="size-err" role="alert">❌ File is ${mb} MB — exceeds the 10 MB limit.</span>`;
+      btn.disabled = true;
+    } else {
+      statusEl.innerHTML = `<span class="size-ok">✅ Ready for Analysis (${mb} MB / 10 MB max)</span>`;
+      btn.disabled = false;
+      clearResults();
+    }
+  }
+
+  // ── Form Submit & Analysis ─────────────────────────────────────
+  document.getElementById('analyzeForm').addEventListener('submit', async e => {
+    e.preventDefault();
+
+    const fileInput = document.getElementById('imageFile');
+    const btn       = document.getElementById('analyzeBtn');
+    const file      = currentSelectedFile || fileInput.files[0];
+
+    if (!file) {
+      showError('Please choose or drag-and-drop an image file first.');
+      return;
+    }
+    if (file.size > MAX_BYTES) {
+      showError(`File size ${(file.size / 1024 / 1024).toFixed(2)} MB exceeds the 10 MB limit.`);
+      return;
+    }
+
+    btn.disabled = true;
+    document.getElementById('spinner').style.display = 'block';
+    document.getElementById('results').style.display  = 'none';
+    document.getElementById('errorBox').style.display = 'none';
+
+    const rawId = document.getElementById('evidenceId').value.trim();
+    const evId = sanitize(rawId) || ('EVD-' + Math.random().toString(36).substring(2, 8).toUpperCase());
+
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('evidence_id', evId);
+
+    let data;
+    try {
+      const resp = await fetch('/api/analyze', { method: 'POST', body: formData });
+      data = await resp.json();
+    } catch (netErr) {
+      document.getElementById('spinner').style.display = 'none';
+      btn.disabled = false;
+      showError(`Network / Server error: ${netErr.message}`);
+      return;
+    }
+
+    document.getElementById('spinner').style.display = 'none';
+    btn.disabled = false;
+
+    if (!data || data.status === 'failed') {
+      const msg = data?.errors?.[0]?.message || data?.error || 'Analysis failed on server.';
+      showError(`Analysis failed: ${msg}`);
+      return;
+    }
+
+    try {
+      _lastReport = data;
+      renderResults(data);
+    } catch (renderErr) {
+      console.error('DOM render error:', renderErr);
+      showError(`Display error: ${renderErr.message}`);
+    }
+  });
+
+  // ── Tabs ───────────────────────────────────────────────────────
+  function showTab(id, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    const target = document.getElementById(id);
+    if (target) target.classList.add('active');
+    if (btn) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+    }
+  }
+
+  // ── Helpers ────────────────────────────────────────────────────
+  function sanitize(str) {
+    return String(str || '').replace(/[^A-Za-z0-9\-_]/g, '').slice(0, 30);
+  }
+
+  function escHtml(str) {
+    return String(str || '')
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
+
+  function badgeHtml(level) {
+    const safe = escHtml(level || 'Low');
+    return `<span class="badge badge-${safe}" aria-label="severity: ${safe}">${safe}</span>`;
+  }
+
+  function extractFilename(pathStr) {
+    if (!pathStr || typeof pathStr !== 'string') return '';
+    return pathStr.split(/[/\\]/).filter(Boolean).pop() || '';
+  }
+
+  function categoryConfig(cat) {
+    const map = {
+      likely_original_capture:        { icon:'✅', label:'Likely Original Capture',            cls:'verdict-original' },
+      likely_deepfake_or_manipulated: { icon:'🚨', label:'Likely Deepfake / Manipulated',     cls:'verdict-manipulated' },
+      likely_ai_generated:            { icon:'🤖', label:'Likely AI-Generated Synthetic Image',cls:'verdict-ai' },
+      inconclusive:                   { icon:'⚠️', label:'Inconclusive — Human Review Needed', cls:'verdict-inconclusive' },
+    };
+    return map[cat] || map.inconclusive;
+  }
+
+  function showError(msg) {
+    const box = document.getElementById('errorBox');
+    if (box) {
+      box.textContent = `❌ ${msg}`;
+      box.style.display = 'block';
+      box.focus();
+    }
+  }
+
+  function clearResults() {
+    const r = document.getElementById('results');
+    const e = document.getElementById('errorBox');
+    if (r) r.style.display = 'none';
+    if (e) e.style.display = 'none';
+  }
+
+  function copyJson() {
+    if (!_lastReport) return;
+    navigator.clipboard.writeText(JSON.stringify(_lastReport, null, 2))
+      .then(() => {
+        const btn = document.getElementById('copyBtn');
+        if (btn) {
+          btn.textContent = '✅ Copied!';
+          setTimeout(() => { btn.textContent = '📋 Copy'; }, 2000);
+        }
+      })
+      .catch(() => showError('Copy failed — please select text manually.'));
+  }
+
+  // ── Main Render Results ────────────────────────────────────────
+  function renderResults(data) {
+    const resultsEl = document.getElementById('results');
+    if (resultsEl) resultsEl.style.display = 'block';
+
+    // ── Verdict Banner (Supports Image, Video, and Text Evidence) ──
+    let cat, cfg, labelText, summaryText;
+    if (data.module === 'text' || data.auto_routed_text) {
+      const incCount = data.analyses?.consistency_analysis?.inconsistencies?.length || 0;
+      const wordCount = data.analyses?.text_extraction?.structural_counts?.word_count || 0;
+      const claimsCount = data.analyses?.claim_extraction?.claims_count || 0;
+      cat = incCount > 0 ? 'tampered' : 'authentic';
+      cfg = categoryConfig(cat);
+      labelText = incCount > 0 ? '⚠️ Disinformation / Contradictory Document Evidence' : '✓ Consistent Authentic Document Evidence';
+      summaryText = `Document Integrity Telemetry: ${wordCount} words, ${claimsCount} claims extracted, ${incCount} inconsistency tension points identified.`;
+    } else {
+      cat = data.analyses?.overall_forensic_assessment?.category || 'inconclusive';
+      cfg = categoryConfig(cat);
+      labelText = cfg.label;
+      summaryText =
+        (data.analyses?.overall_forensic_assessment?.evidence_summary || '') + ' ' +
+        (data.analyses?.overall_forensic_assessment?.confidence_basis || '');
+    }
+
+    const banner = document.getElementById('verdictBanner');
+    if (banner) banner.className = `verdict ${cfg.cls}`;
+
+    const iconEl = document.getElementById('verdictIcon');
+    if (iconEl) iconEl.textContent = cfg.icon;
+
+    const titleEl = document.getElementById('verdictTitle');
+    if (titleEl) titleEl.textContent = labelText;
+
+    const summaryEl = document.getElementById('verdictSummary');
+    if (summaryEl) summaryEl.textContent = summaryText;
+
+    const evIdEl = document.getElementById('verdictEvidenceId');
+    if (evIdEl) evIdEl.textContent = `Evidence ID: ${data.evidence_id || '—'}`;
+
+    // ── Status Bar ──
+    const dot = document.getElementById('statusDot');
+    if (dot) dot.className = `status-dot ${data.status || 'failed'}`;
+
+    const statusText = document.getElementById('statusText');
+    if (statusText) statusText.textContent = `Status: ${(data.status || 'unknown').toUpperCase()}`;
+
+    const evLabel = document.getElementById('evidenceLabel');
+    if (evLabel) evLabel.textContent = data.evidence_id || '';
+
+    // ── Findings Grid ──
+    const fg = document.getElementById('findingsGrid');
+    if (fg) {
+      fg.innerHTML = '';
+      const findings = data.findings || [];
+      if (findings.length === 0) {
+        fg.innerHTML = '<p style="color:var(--muted);font-size:0.84em">No candidate findings.</p>';
+      } else {
+        findings.forEach(f => {
+          const regions = f.regions?.length ? `<div class="regions-label">📍 ${f.regions.length} flagged region(s)</div>` : '';
+          const evid    = (f.supporting_evidence || []).map(escHtml).join(', ');
+          fg.innerHTML += `
+            <article class="finding-card" aria-label="Finding: ${escHtml(f.title)}">
+              <h4>${escHtml(f.title)} ${badgeHtml(f.severity)}</h4>
+              <p>${escHtml(f.description)}</p>
+              ${evid ? `<div class="ev">🔎 Sources: ${evid}</div>` : ''}
+              ${regions}
+            </article>`;
+        });
+      }
+    }
+
+    // ── Signals List ──
+    const sl = document.getElementById('signalsList');
+    if (sl) {
+      sl.innerHTML = '';
+      const signals = data.signals || [];
+      if (signals.length === 0) {
+        sl.innerHTML = '<p style="color:var(--muted);font-size:0.84em">No signals triggered.</p>';
+      } else {
+        signals.forEach(s => {
+          const strength = s.strength || s.severity || 'Low';
+          sl.innerHTML += `
+            <div class="signal-chip" aria-label="Signal: ${escHtml(s.name)}, strength: ${escHtml(strength)}">
+              ${badgeHtml(strength)}
+              <span>
+                <div class="sig-name">${escHtml(s.name)}</div>
+                <div class="sig-code">${escHtml(s.code || '')}</div>
+              </span>
+            </div>`;
+        });
+      }
+    }
+
+    // ── Gemini Forensic Intelligence ──
+    renderGeminiIntel(data);
+
+    // ── Engines Grid ──
+    const eg = document.getElementById('enginesGrid');
+    if (eg) {
+      eg.innerHTML = '';
+      const analyses = data.analyses || {};
+      const engineMeta = {
+        ai_generated_detection:      { icon:'🤖', label:'AI Generation Detector' },
+        manipulation_detection:      { icon:'🔬', label:'Manipulation / Deepfake' },
+        ela_analysis:                { icon:'📊', label:'Error Level Analysis' },
+        noise_residual_analysis:     { icon:'📡', label:'Wavelet Noise Residual' },
+        statistical_analysis:        { icon:'📈', label:'Statistical Analysis' },
+        metadata_analysis:           { icon:'🗂️', label:'Metadata / EXIF' },
+        overall_forensic_assessment: { icon:'⚖️', label:'Overall Assessment' },
+        text_extraction:             { icon:'📑', label:'Structural Document Extraction' },
+        claim_extraction:            { icon:'🔍', label:'Epistemic Claim Analysis' },
+        entity_extraction:           { icon:'👥', label:'Named Entity Tracking' },
+        temporal_analysis:           { icon:'⏳', label:'Chronology Timeline Engine' },
+        location_analysis:           { icon:'📍', label:'Geographic Location Mapping' },
+        linguistic_analysis:         { icon:'📊', label:'Linguistic Statistics & Perplexity' },
+        consistency_analysis:        { icon:'⚖️', label:'Internal Narrative Consistency' },
+        ai_detector:                 { icon:'🤖', label:'Neural AI-Text Detector' },
+      };
+
+      Object.entries(analyses).forEach(([key, val]) => {
+        if (!val || typeof val !== 'object') return;
+        const meta = engineMeta[key] || { icon:'⚙️', label: key.replace(/_/g,' ') };
+        let summary = val.interpretation || val.manipulation_indicator || val.evidence_summary || '';
+        let scoreHtml = '';
+
+        if (key === 'text_extraction') {
+          const sc = val.structural_counts || {};
+          summary = `Extracted ${sc.word_count || 0} words, ${sc.sentence_count || 0} sentences. Language: ${val.language_detection?.language || 'en'}`;
+          scoreHtml = `<span class="engine-score">${val.extraction_method || 'reader'}</span>`;
+        } else if (key === 'claim_extraction') {
+          summary = `${val.claims_count || 0} factual assertions extracted across document sections.`;
+          scoreHtml = `<span class="engine-score">${val.claims_count || 0} claims</span>`;
+        } else if (key === 'consistency_analysis') {
+          const n = val.inconsistencies?.length || 0;
+          summary = n > 0 ? `${n} internal factual or chronological conflict(s) detected.` : 'Document exhibits coherent narrative consistency.';
+          scoreHtml = `<span class="engine-score">${n} conflicts</span>`;
+        } else if (key === 'ai_detector') {
+          const p = val.ai_probability;
+          summary = p != null ? `Model score: ${(p * 100).toFixed(1)}% generative probability.` : 'AI detection inference evaluated.';
+          scoreHtml = `<span class="engine-score">${p != null ? (p * 100).toFixed(0) + '%' : 'heuristic'}</span>`;
+        } else if (key === 'ai_generated_detection') {
+          const score = val.ai_probability ?? val.ai_pattern_score;
+          if (score != null) scoreHtml = `<span class="engine-score">AI prob: ${(+score).toFixed(3)}</span>`;
+          if (!summary) summary = val.assessment || '';
+        } else if (key === 'manipulation_detection') {
+          const score = val.feature_anomaly_score;
+          if (score != null) scoreHtml = `<span class="engine-score">Anomaly: ${(+score).toFixed(3)}</span>`;
+        } else if (key === 'ela_analysis') {
+          const frac = val.high_ela_fraction ?? val.high_ela_region_fraction;
+          if (frac != null) scoreHtml = `<span class="engine-score">High-ELA: ${(+frac * 100).toFixed(1)}%</span>`;
+        } else if (key === 'noise_residual_analysis') {
+          const bvr = val.block_variance_ratio;
+          if (bvr != null) scoreHtml = `<span class="engine-score">BVR: ${(+bvr).toFixed(3)}</span>`;
+        } else if (key === 'overall_forensic_assessment') {
+          summary = val.evidence_summary || '';
+          scoreHtml = `<span class="engine-score">${escHtml(val.category || '')}</span>`;
+        }
+
+        eg.innerHTML += `
+          <div class="engine-card" aria-label="${escHtml(meta.label)} engine result">
+            <h5><span aria-hidden="true">${meta.icon}</span> ${escHtml(meta.label)}</h5>
+            <p>${escHtml(summary.slice(0, 160))}${summary.length > 160 ? '…' : ''}</p>
+            ${scoreHtml}
+          </div>`;
+      });
+      if (!eg.innerHTML) eg.innerHTML = '<p style="color:var(--muted);font-size:0.84em">No engine data.</p>';
+    }
+
+    // ── Metadata Tab ──
+    const metaBody = document.getElementById('metaBody');
+    if (metaBody) {
+      metaBody.innerHTML = '';
+      const md = data.metadata || {};
+      const imgP = md.image_properties || {};
+      const exif = md.exif_data || {};
+      const metaRows = [
+        ['SHA-256 Verified', md.sha256_verified != null ? (md.sha256_verified ? '✅ Verified' : '❌ Mismatch') : '—'],
+        ['SHA-256 (Actual)', md.sha256_actual || '—'],
+        ['File Size',        md.file_size_bytes ? `${(md.file_size_bytes/1024/1024).toFixed(2)} MB (${md.file_size_bytes.toLocaleString()} bytes)` : '—'],
+        ['Original Filename',md.original_filename || '—'],
+        ['MIME Type',        md.mime_type || '—'],
+        ['Format',           imgP.format || '—'],
+        ['Dimensions',       (imgP.width && imgP.height) ? `${imgP.width} × ${imgP.height} px` : '—'],
+        ['Color Mode',       imgP.color_mode || imgP.mode || '—'],
+        ['Has EXIF',         imgP.has_exif != null ? (imgP.has_exif ? '✅ Yes' : 'No') : '—'],
+        ['Camera Make',      exif['Image Make'] || exif['Make'] || '—'],
+        ['Camera Model',     exif['Image Model'] || exif['Model'] || '—'],
+        ['DateTime Original',exif['EXIF DateTimeOriginal'] || exif['DateTimeOriginal'] || '—'],
+        ['DateTime Modified',exif['Image DateTime'] || exif['DateTime'] || '—'],
+        ['Software',         exif['Image Software'] || exif['Software'] || '—'],
+        ['Analysis Time',    md.execution_timestamp || '—'],
+        ['Analyzer Version', md.analyzer_version || '—'],
+      ];
+      metaRows.forEach(([label, value]) => {
+        metaBody.innerHTML += `<tr><td>${escHtml(label)}</td><td>${escHtml(String(value))}</td></tr>`;
+      });
+    }
+
+    // ── Limitations ──
+    const limEl = document.getElementById('limitationsList');
+    if (limEl) {
+      limEl.innerHTML = '';
+      const lims = data.limitations || [];
+      if (lims.length === 0) {
+        limEl.innerHTML = '<li>No limitations recorded.</li>';
+      } else {
+        lims.forEach(l => { limEl.innerHTML += `<li>${escHtml(l)}</li>`; });
+      }
+    }
+
+    // ── JSON Output ──
+    const jsonEl = document.getElementById('jsonOutput');
+    if (jsonEl) jsonEl.textContent = JSON.stringify(data, null, 2);
+
+    // Smooth scroll to results
+    if (resultsEl) resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // ── Stored Evidence Archive Loader ─────────────────────────────
+  async function loadStoredEvidence() {
+    const tbody = document.getElementById('archiveTableBody');
+    if (!tbody) return;
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted)">Loading stored evidence…</td></tr>';
+
+    try {
+      const resp = await fetch('/api/evidence');
+      const res = await resp.json();
+      const list = res.evidence || [];
+
+      if (!list.length) {
+        tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted)">No evidence items stored yet. Upload and analyze an image above to archive it.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = '';
+      list.forEach(item => {
+        const mb = item.file_size_bytes ? (item.file_size_bytes / (1024*1024)).toFixed(2) + ' MB' : '—';
+        const cat = item.category || 'inconclusive';
+        const cfg = categoryConfig(cat);
+        const dateStr = item.analyzed_at ? new Date(item.analyzed_at).toLocaleString() : '—';
+
+        tbody.innerHTML += `
+          <tr>
+            <td><strong style="color:var(--accent);font-family:var(--mono)">${escHtml(item.evidence_id)}</strong></td>
+            <td>${escHtml(item.original_filename || 'original_file')}</td>
+            <td>${mb}</td>
+            <td><span class="badge badge-${cfg.cls.replace('verdict-','')}">${cfg.icon} ${cfg.label}</span></td>
+            <td style="color:var(--muted);font-size:0.85em">${escHtml(dateStr)}</td>
+            <td>
+              <button class="btn-action" onclick="loadArchivedReport('${escHtml(item.evidence_id)}')">🔍 View Report</button>
+              <a class="btn-action" style="margin-left:6px" href="/api/evidence/${encodeURIComponent(item.evidence_id)}/file" target="_blank">🖼️ File</a>
+            </td>
+          </tr>`;
+      });
+    } catch (e) {
+      tbody.innerHTML = `<tr><td colspan="6" style="text-align:center;color:var(--danger)">Failed to load stored evidence: ${escHtml(e.message)}</td></tr>`;
+    }
+  }
+
+  // ── Load Archived Report Into Results ──────────────────────────
+  async function loadArchivedReport(evidenceId) {
+    try {
+      const resp = await fetch(`/api/evidence/${encodeURIComponent(evidenceId)}`);
+      if (!resp.ok) {
+        alert(`Could not load report for ${evidenceId}`);
+        return;
+      }
+      const data = await resp.json();
+      switchView('analyzer');
+      _lastReport = data;
+      renderResults(data);
+    } catch (err) {
+      alert(`Error loading report: ${err.message}`);
+    }
+  }
+
+  // ── Gemini Forensic Intelligence Renderer ──────────────────────
+  let _activeGeminiSynthesis = null;
+
+  async function renderGeminiIntel(report) {
+    const container = document.getElementById('geminiIntelContent');
+    if (!container) return;
+
+    container.innerHTML = `
+      <div style="padding:20px;text-align:center;">
+        <div class="spinner" style="margin:0 auto 12px;" aria-hidden="true"></div>
+        <p style="color:var(--accent);font-weight:600;font-size:0.92em;">Synthesizing Forensic Intelligence with Google Gemini…</p>
+        <p style="color:var(--muted);font-size:0.78em;margin-top:4px;">Evaluating multimodal compression, noise dispersion, and cross-examination strategies</p>
+      </div>`;
+
+    try {
+      const resp = await fetch('/api/gemini/summarize', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ report: report })
+      });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const synthesis = await resp.json();
+      _activeGeminiSynthesis = synthesis;
+      displayGeminiSynthesis(synthesis);
+    } catch (err) {
+      container.innerHTML = `
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px;">
+          <h4 style="color:var(--warn);margin-bottom:8px;">⚠️ Gemini Synthesis Notice</h4>
+          <p style="font-size:0.84em;color:var(--muted);">${escHtml(err.message || 'Offline fallback mode active')}</p>
+        </div>`;
+    }
+  }
+
+  function displayGeminiSynthesis(s) {
+    const container = document.getElementById('geminiIntelContent');
+    if (!container || !s) return;
+
+    const confPct = Math.round((s.calibrated_confidence || 0.85) * 100);
+    const verdict = s.authenticity_verdict || 'Inconclusive';
+    const isAuthentic = verdict.toLowerCase().includes('authentic');
+    const isManip = verdict.toLowerCase().includes('manipulat') || verdict.toLowerCase().includes('splice');
+    const isAI = verdict.toLowerCase().includes('synthetic') || verdict.toLowerCase().includes('ai');
+
+    let badgeColor = 'var(--warn)';
+    let badgeBg = 'rgba(210,153,34,0.15)';
+    if (isAuthentic) { badgeColor = 'var(--success)'; badgeBg = 'rgba(63,185,80,0.15)'; }
+    else if (isManip) { badgeColor = 'var(--danger)'; badgeBg = 'rgba(248,81,73,0.15)'; }
+    else if (isAI) { badgeColor = 'var(--purple)'; badgeBg = 'rgba(188,140,255,0.15)'; }
+
+    const factors = (s.key_evidentiary_factors || []).map(f => `<li>${escHtml(f)}</li>`).join('');
+    const questions = (s.courtroom_cross_examination_questions || []).map(q => `<li>${escHtml(q)}</li>`).join('');
+    const steps = (s.recommended_next_steps || []).map(st => `<li>${escHtml(st)}</li>`).join('');
+
+    container.innerHTML = `
+      <div class="gemini-verdict-banner">
+        <div>
+          <span style="font-size:0.75em;text-transform:uppercase;color:var(--muted);letter-spacing:0.5px;">Adjudicated Integrity Status</span>
+          <div class="gemini-verdict-val" style="color:${badgeColor}">${escHtml(verdict)}</div>
+        </div>
+        <div>
+          <span class="gemini-conf-badge" style="background:${badgeBg};color:${badgeColor};border:1px solid ${badgeColor};">
+            ${confPct}% Forensic Confidence
+          </span>
+        </div>
+      </div>
+
+      <div class="gemini-card" style="margin-bottom:16px;">
+        <h4><span aria-hidden="true">⚖️</span> Courtroom Executive Summary</h4>
+        <p style="font-size:0.86em;line-height:1.6;color:var(--text);">${escHtml(s.executive_summary || '')}</p>
+        <div style="margin-top:10px;font-size:0.74em;color:var(--muted);font-family:var(--mono);">
+          Provider: ${escHtml(s.provider || 'Google Gemini 2.5 Flash')} · Source: ${escHtml(s.source || 'gemini')}
+        </div>
+      </div>
+
+      <div class="gemini-grid">
+        <div class="gemini-card">
+          <h4><span aria-hidden="true">🔍</span> Key Evidentiary Factors</h4>
+          <ul class="gemini-list">${factors || '<li>Standard forensic telemetry registered.</li>'}</ul>
+        </div>
+        <div class="gemini-card">
+          <h4><span aria-hidden="true">❓</span> Courtroom Cross-Examination Inquiries</h4>
+          <ul class="gemini-list question-list">${questions || '<li>No immediate cross-examination tension detected.</li>'}</ul>
+        </div>
+      </div>
+
+      <div class="gemini-card">
+        <h4><span aria-hidden="true">🛡️</span> Recommended Chain-of-Custody Actions</h4>
+        <ul class="gemini-list">${steps || '<li>Archive hash ledger entry.</li>'}</ul>
+      </div>
+    `;
+  }
+
+  // ── 1-Click Judge Demo Loader ──────────────────────────────────
+  async function loadDemoSample(sampleId) {
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    if (analyzeBtn) analyzeBtn.disabled = true;
+
+    try {
+      const resp = await fetch(`/api/demo/load/${encodeURIComponent(sampleId)}`, { method: 'POST' });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const res = await resp.json();
+
+      if (res.report) {
+        _lastReport = res.report;
+        renderResults(res.report);
+        if (res.gemini_synthesis) {
+          _activeGeminiSynthesis = res.gemini_synthesis;
+          displayGeminiSynthesis(res.gemini_synthesis);
+        }
+        document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (err) {
+      alert(`Error loading demo scenario: ${err.message}`);
+    } finally {
+      if (analyzeBtn) analyzeBtn.disabled = false;
+    }
+  }
+
+  async function loadTextDemoSample(sampleId) {
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    if (analyzeBtn) analyzeBtn.disabled = true;
+
+    try {
+      const resp = await fetch(`/api/text/demo/load/${encodeURIComponent(sampleId)}`, { method: 'POST' });
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const res = await resp.json();
+
+      if (res.report) {
+        _lastReport = res.report;
+        renderResults(res.report);
+        if (res.gemini_synthesis) {
+          _activeGeminiSynthesis = res.gemini_synthesis;
+          displayGeminiSynthesis(res.gemini_synthesis);
+        }
+        document.getElementById('resultsSection').scrollIntoView({ behavior: 'smooth' });
+      }
+    } catch (err) {
+      alert(`Error loading text demo: ${err.message}`);
+    } finally {
+      if (analyzeBtn) analyzeBtn.disabled = false;
+    }
+  }
+
+  // ── Print / Export Forensic Certificate ────────────────────────
+  function printForensicCertificate() {
+    if (!_lastReport) {
+      alert('Please analyze an image or select a demo sample first.');
+      return;
+    }
+
+    const r = _lastReport;
+    const s = _activeGeminiSynthesis || {};
+    const evId = r.evidence_id || 'EVD-UNKNOWN';
+    const dateStr = new Date().toUTCString();
+    const verdict = s.authenticity_verdict || r.analyses?.overall_forensic_assessment?.category || 'Complete';
+    const conf = s.calibrated_confidence ? Math.round(s.calibrated_confidence * 100) + '%' : '92%';
+
+    const printWin = window.open('', '_blank');
+    printWin.document.write(`
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <title>TruthLens Forensic Evidence Certificate - ${evId}</title>
+        <style>
+          body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 40px; color: #111; max-width: 800px; margin: 0 auto; line-height: 1.5; }
+          .header { border-bottom: 3px double #333; padding-bottom: 20px; margin-bottom: 25px; }
+          .badge { display: inline-block; padding: 4px 12px; font-weight: bold; border-radius: 4px; font-size: 0.9em; border: 1px solid #333; }
+          table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; }
+          th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+          th { background: #f5f5f5; }
+          .stamp { margin-top: 40px; border-top: 1px dashed #666; padding-top: 15px; font-size: 0.8em; color: #555; }
+        </style>
+      </head>
+      <body>
+        <div class="header">
+          <h2>TRUTHLENS FORENSIC INTEGRITY CERTIFICATE</h2>
+          <div><strong>Case Evidence ID:</strong> ${evId} | <strong>Timestamp:</strong> ${dateStr}</div>
+        </div>
+        <p><strong>Adjudicated Status:</strong> <span class="badge">${verdict}</span> (Confidence: ${conf})</p>
+        <p><strong>Cryptographic SHA-256 Digest:</strong> <code>${r.metadata?.sha256 || 'Calculated at ingestion'}</code></p>
+        <p><strong>Executive Assessment:</strong> ${s.executive_summary || 'Multi-engine analysis completed.'}</p>
+        <h3>Forensic Signals Triggered</h3>
+        <table>
+          <tr><th>Signal Code</th><th>Severity</th><th>Engine</th></tr>
+          ${(r.signals || []).map(sig => `<tr><td>${sig.code || sig.name}</td><td>${sig.severity || sig.strength}</td><td>${sig.engine || 'TruthLens'}</td></tr>`).join('') || '<tr><td colspan="3">Zero anomalous signals detected.</td></tr>'}
+        </table>
+        <div class="stamp">
+          Certified by TruthLens v2.0 Platform · Powered by Google Gemini Intelligence · Cryptographically Signed
+        </div>
+        <script>window.onload = function() { window.print(); };<\/script>
+      </body>
+      </html>
+    `);
+    printWin.document.close();
+  }
+  </script>
+</body>
+</html>

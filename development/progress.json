@@ -1,0 +1,232 @@
+{
+  "project_name": "TruthLens",
+  "current_phase": "Phase 2 — Complete Audio Analyzer",
+  "current_task": "Clear Evidence Registry control and verification",
+  "overall_percentage": 100,
+  "last_update": "2026-11-19T16:24:30+05:30",
+  "overall_status": "completed",
+  "inspection": {
+    "workspace": "Empty directory; not a Git repository",
+    "backend": "None detected",
+    "database": "None detected",
+    "storage": "None detected",
+    "existing_ingestion": "None detected",
+    "dependencies": "No project manifests or dependency files detected",
+    "architecture_decision": "Create a self-contained FastAPI service backed by atomic JSON registry and local evidence storage; Streamlit monitor reads actual files and calls API for ingestion.",
+    "audio_architecture": "No Main Pipeline or Image Analyzer exists. Analyzer consumes INGEST exact eight-field contract through reusable module and API route."
+  },
+  "tasks": [
+    {
+      "id": "repository_inspection",
+      "name": "Repository inspection",
+      "status": "completed",
+      "notes": "Workspace empty; no repository or existing infrastructure found."
+    },
+    {
+      "id": "architecture_identification",
+      "name": "Architecture identification",
+      "status": "completed",
+      "notes": "No existing framework, database, storage, APIs, or ingestion code; standalone architecture selected."
+    },
+    {
+      "id": "ingest_service",
+      "name": "Ingest service implementation",
+      "status": "completed",
+      "notes": "Retained streaming original-byte SHA-256, duplicate handling, persistent registry and EVD sequence; adds accepted evidence/analysis eligibility separation and fault-tolerant multimodal extraction."
+    },
+    {
+      "id": "validation",
+      "name": "File validation",
+      "status": "completed",
+      "notes": "Only requested formats enabled; modality content signatures/decoders checked where available; corrupt supported evidence is preserved and marked unreadable/not ready; batch cap is 10 files/200 MiB."
+    },
+    {
+      "id": "hashing",
+      "name": "SHA-256 hashing",
+      "status": "completed",
+      "notes": "Implementation added; verification underway."
+    },
+    {
+      "id": "metadata",
+      "name": "Metadata extraction",
+      "status": "completed",
+      "notes": "Added image, FFmpeg/OpenCV video, WAV/Mutagen audio, streaming text, pypdf PDF, DOCX XML, CSV and JSON metadata; extraction failures do not abort registration."
+    },
+    {
+      "id": "evidence_ids",
+      "name": "Evidence ID generation",
+      "status": "completed",
+      "notes": "Implementation added; verification underway."
+    },
+    {
+      "id": "registry",
+      "name": "Evidence registry persistence",
+      "status": "completed",
+      "notes": "Verified persisted registry had 5 before new unique uploads and 8 afterward; EVD-001 through EVD-005 remain intact; fresh IngestService and fresh Uvicorn process both loaded all 8."
+    },
+    {
+      "id": "duplicates",
+      "name": "Duplicate detection",
+      "status": "completed",
+      "notes": "Implementation added; verification underway."
+    },
+    {
+      "id": "api",
+      "name": "Ingest API integration",
+      "status": "completed",
+      "notes": "Added per-record readiness, all-record readiness, and analyzer-input routes; request caps enforced; diagnostics retained."
+    },
+    {
+      "id": "monitor",
+      "name": "Streamlit monitor implementation",
+      "status": "completed",
+      "notes": "Registry shows readiness, structured metadata, developer storage path, selected real eight-field analyzer-input preview, and refresh; existing history/current upload sections remain."
+    },
+    {
+      "id": "ingest_ui",
+      "name": "Ingest UI implementation",
+      "status": "completed",
+      "notes": "Current upload results replace prior session, identify NEW/DUPLICATE/FAILED, preserve full hash, and stay separate from Ingestion History; registry uses readable columns and expandable metadata."
+    },
+    {
+      "id": "unit_tests",
+      "name": "Unit testing",
+      "status": "completed",
+      "notes": "20 tests pass, including valid/invalid modality fixtures, duration/size/character boundaries, metadata-tool absence, document parsing, integrity, contract shape and batch limits."
+    },
+    {
+      "id": "integration_tests",
+      "name": "Integration testing",
+      "status": "completed",
+      "notes": "Live API registry=9; all-record readiness=9; 8 input contracts passed file size/SHA verification; EVD-009 video is NOT_READY for >10s."
+    },
+    {
+      "id": "verification",
+      "name": "Final verification",
+      "status": "completed",
+      "notes": "Full pytest 20 passed; compileall passed; Streamlit AppTest no exceptions and both registry dataframes rendered 9 records."
+    },
+    {
+      "id": "audio_analyzer",
+      "name": "Audio Analyzer implementation",
+      "status": "completed",
+      "notes": "Added contract-validated WAV/MP3/M4A signal analysis, structured metrics/signals/findings/timeline, Pillow PNG artifacts, API routes, and Streamlit tab. No model is configured; speech activity remains a documented heuristic. Original evidence and ingest ID/duplicate workflows are preserved."
+    },
+    {
+      "id": "video_metadata_readiness",
+      "name": "Video metadata extraction and upload readiness fix",
+      "status": "completed",
+      "notes": "Verified existing EVD-010 is valid video+audio and over duration limit; EVD-013 is audio-only MP4. Added decoded-frame stream verification, structured stream metadata, distinct validation/eligibility UI, readiness result consistency with current-file integrity, and UI message deduplication. Existing originals and eligibility limit were preserved."
+    },
+    {
+      "id": "complete_audio_analyzer",
+      "name": "Audio Analyzer orchestration, ASR, and synthetic-audio detection",
+      "status": "completed",
+      "notes": "Existing signal forensics retained. Added lazy optional Whisper tiny and pinned quantized Wav2Vec2 ONNX inference, module status and partial-failure handling, transcript segments, unified timeline, retrieval APIs, and investigator UI. Fixed duplicate upload metadata attribution and duplicate self-ID presentation. Exact Analyzer Input contract and originals remain unchanged."
+    },
+    {
+      "id": "clear_evidence_registry",
+      "name": "Clear Evidence Registry control",
+      "status": "completed",
+      "notes": "Added exact-phrase confirmed Streamlit admin control and guarded reset API. Removes registered originals and known EVD-scoped audio artifacts, preserves persistent ingestion history and unrelated files, reports partial failures, refuses unsafe paths and malformed registries, and clears stale analyzer/upload UI state."
+    }
+  ],
+  "test_results": [
+    {
+      "command": "python -m pytest -q",
+      "result": "20 passed, 1 upstream Starlette/HTTPX deprecation warning",
+      "timestamp": "2026-11-19T14:52:12.8593849+05:30"
+    },
+    {
+      "command": "python -m compileall -q app monitor tests",
+      "result": "passed",
+      "timestamp": "2026-11-19T14:52:12.8593849+05:30"
+    },
+    {
+      "command": "live API readiness and Analyzer Input Contract checks",
+      "result": "Registry/API/readiness=9; 8 READY contracts returned exact eight fields and passed file-size and SHA-256 verification; existing EVD-009 preserved and NOT_READY because duration >10 seconds.",
+      "timestamp": "2026-11-19T14:51:32.299132+05:30"
+    },
+    {
+      "command": "Streamlit AppTest",
+      "result": "No exceptions; both registry tables rendered 9 rows and 10 columns; refresh button present.",
+      "timestamp": "2026-11-19T14:51:32.299132+05:30"
+    },
+    {
+      "command": "python -m pytest -q",
+      "result": "25 passed; one existing upstream Starlette/HTTPX deprecation warning. Audio-specific coverage includes WAV silence/clipping/stereo/voiced heuristic, MP3/M4A decode, contract integrity, original preservation, artifacts, and API serving.",
+      "timestamp": "2026-11-19T15:18:37+05:30"
+    },
+    {
+      "command": "python -m py_compile app/analyzers/audio.py app/analyzers/config.py app/main.py monitor/app.py; Streamlit AppTest",
+      "result": "Compile passed; Streamlit AppTest had 0 exceptions.",
+      "timestamp": "2026-11-19T15:18:37+05:30"
+    },
+    {
+      "command": "python -m pytest -q",
+      "result": "29 passed, 1 existing Starlette/HTTPX deprecation warning.",
+      "timestamp": "2026-11-19T15:43:32+05:30"
+    },
+    {
+      "command": "python -m compileall -q app monitor tests; Streamlit AppTest",
+      "result": "Compile passed; AppTest reported 0 exceptions.",
+      "timestamp": "2026-11-19T15:43:32+05:30"
+    },
+    {
+      "command": "python -m pytest -q",
+      "result": "38 passed; one existing upstream Starlette/HTTPX deprecation warning.",
+      "timestamp": "2026-11-19T16:11:33+05:30"
+    },
+    {
+      "command": "python -m compileall -q app monitor tests; Streamlit AppTest",
+      "result": "Compile passed; Streamlit AppTest reported 0 exceptions.",
+      "timestamp": "2026-11-19T16:11:33+05:30"
+    },
+    {
+      "command": "Real local model end-to-end smoke with generated English TTS via exact INGEST Analyzer Input Contract",
+      "result": "Both models loaded and inferred on CPU. Whisper tiny returned 1 segment (0.0-5.0s): “Truth-lens audio analysis verifies time-stamped speech.” Detected language en. Wav2Vec2 ONNX returned real=0.9096/fake=0.0904 softmax-normalized uncalibrated scores on this TTS input. Analysis COMPLETED; all 6 artifacts existed. This is an execution smoke check, not a model accuracy evaluation.",
+      "timestamp": "2026-11-19T16:11:33+05:30"
+    },
+    {
+      "command": "python -m pytest -q",
+      "result": "39 passed; 1 existing upstream Starlette/HTTPX TestClient deprecation warning.",
+      "timestamp": "2026-11-19T16:12:30+05:30"
+    },
+    {
+      "command": "python -m compileall -q app monitor tests; Streamlit AppTest",
+      "result": "Compile passed; AppTest reported 0 exceptions.",
+      "timestamp": "2026-11-19T16:12:30+05:30"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "One existing Starlette/HTTPX TestClient deprecation warning; all tests pass.",
+    "No pretrained audio deepfake detector is configured; analyzer does not provide model scores or definitive speech/deepfake attribution.",
+    "Existing Starlette/HTTPX TestClient deprecation warning remains upstream."
+  ],
+  "latest_activity": "Final verification complete: 39 tests passed, compileall passed, Streamlit AppTest had no exceptions; local model smoke checks completed.",
+  "root_cause": "Previously supported broad extensions and a global upload cap, but lacked actual content validation, modality-specific metadata/analysis eligibility, and Analyzer Input Contract/readiness services. The existing registry and duplicate logic were retained.",
+  "files_modified": [
+    "app/ingest/config.py",
+    "app/ingest/metadata.py",
+    "app/ingest/service.py",
+    "app/main.py",
+    "monitor/app.py",
+    "monitor/results.py",
+    "requirements.txt",
+    "README.md",
+    "tests/test_ingest.py",
+    "tests/test_multimodal_ingest.py",
+    "development/progress.json",
+    "development/activity.json",
+    "app/analyzers/__init__.py",
+    "app/analyzers/config.py",
+    "app/analyzers/audio.py",
+    "tests/test_audio_analyzer.py",
+    "tests/test_video_ui.py",
+    "app/analyzers/audio_models.py",
+    "requirements-audio-ml.txt",
+    "tests/test_audio_models.py",
+    "tests/test_monitor_results.py"
+  ]
+}

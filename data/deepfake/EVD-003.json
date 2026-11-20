@@ -1,0 +1,34 @@
+{
+  "evidence_id": "EVD-003",
+  "status": "Completed",
+  "result": "DEEPFAKE DETECTED",
+  "score": 0.6195,
+  "model_name": "Wav2Vec2 audio spoof classifier (ONNX int4)",
+  "explanation": "Synthetic speech / audio spoof indicators detected with a model score of 0.62 (threshold: 0.55).",
+  "score_interpretation": "softmax-normalized class scores from model logits; not calibrated probabilities",
+  "details": {
+    "class_scores": {
+      "real": 0.3804973596359736,
+      "fake": 0.6195026403640265
+    },
+    "prediction": "fake",
+    "raw_logits": [
+      -0.25646185874938965,
+      0.23097586631774902
+    ],
+    "calibration_status": "not_calibrated",
+    "decision_thresholds": {
+      "deepfake_detected_min": 0.55,
+      "deepfake_not_detected_max": 0.45,
+      "inconclusive_range": [
+        0.45,
+        0.55
+      ]
+    },
+    "limitations": [
+      "Model card metrics are self-reported on a balanced ASVspoof 2021 PA subset.",
+      "Performance may change across codecs, languages, environments, compression, and audio domains.",
+      "This output is an indicator and not proof of authenticity or manipulation."
+    ]
+  }
+}

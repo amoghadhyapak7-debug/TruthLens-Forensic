@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "sentence_length_distribution": {
+    "min": 8.0,
+    "max": 14.0,
+    "mean": 11,
+    "median": 11,
+    "std_dev": 3.0
+  },
+  "word_length_distribution": {
+    "min": 2.0,
+    "max": 13.0,
+    "mean": 6.31,
+    "std_dev": 3.66
+  },
+  "vocabulary_diversity": {
+    "type_token_ratio": 0.931,
+    "hapax_legomena_ratio": 0.8621,
+    "total_tokens": 29,
+    "unique_types": 27
+  },
+  "repetition_metrics": {
+    "repeated_phrases": {
+      "bigrams": [],
+      "trigrams": [],
+      "fourgrams": []
+    },
+    "repeated_sentence_starters": []
+  },
+  "punctuation_patterns": {
+    "counts": {
+      ".": 3,
+      ",": 2
+    },
+    "multiple_exclamations": 0,
+    "multiple_ellipses": 0,
+    "mixed_quote_styles": false,
+    "unusual_punctuation_flag": false
+  },
+  "capitalization_patterns": {
+    "uppercase_char_ratio": 0.0273,
+    "all_caps_word_count": 0,
+    "sample_all_caps": [],
+    "excessive_caps_flag": false
+  },
+  "readability_scores": {
+    "flesch_reading_ease": 27.82,
+    "flesch_kincaid_grade": 11.78,
+    "total_syllables": 58,
+    "avg_words_per_sentence": 9.67
+  },
+  "paragraph_metrics": {
+    "paragraph_count": 1,
+    "mean_paragraph_word_count": 32,
+    "paragraph_length_variance": 0.0
+  },
+  "section_shifts": [],
+  "errors": [],
+  "limitations": [
+    "Linguistic metrics are statistical descriptors calculated over the full text.",
+    "Statistical variations, high repetition, or grade-level changes are contextual markers and never treated as standalone proof of deception."
+  ]
+}

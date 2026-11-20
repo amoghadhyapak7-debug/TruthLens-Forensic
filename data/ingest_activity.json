@@ -1,0 +1,2934 @@
+[
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "6imagin.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "6imagin.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "6imagin.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "6imagin.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "6imagin.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "6imagin.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "08760b8d98fb6cc83ea549cb53642997e6be99e70b1c16bf40c0a6425d6409af"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "image3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "image3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "image3.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "image3.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "image3.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "image3.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "26098401fdccfda5f4a7b9f513c87eaf1bef7abb5dd02189025805f47f840f35"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "imagenormal3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "imagenormal3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "imagenormal3.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "imagenormal3.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "imagenormal3.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "imagenormal3.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-003",
+    "details": {
+      "sha256": "1d83a248e01580272c9a1f9b72b730dca023b9c521782efac5a1503e50bdf429"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "testimg4.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "testimg4.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "testimg4.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "testimg4.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "testimg4.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T12:54:50+05:30",
+    "filename": "testimg4.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-004",
+    "details": {
+      "sha256": "bc458cddf47857ada1a482c245d8f45b9eb3ce4b9c1ffcdb04f1d56ddc5a76a6"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:01:24+05:30",
+    "filename": "imagenormal3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:01:24+05:30",
+    "filename": "imagenormal3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:01:24+05:30",
+    "filename": "imagenormal3.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "1d83a248e01580272c9a1f9b72b730dca023b9c521782efac5a1503e50bdf429"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:01:24+05:30",
+    "filename": "imagenormal3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:01:24+05:30",
+    "filename": "imagenormal3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:01:25+05:30",
+    "filename": "imagenormal3.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "1d83a248e01580272c9a1f9b72b730dca023b9c521782efac5a1503e50bdf429"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-005",
+    "details": {
+      "sha256": "08c3b4fc83fb8b5afe43ad3e8bfce8f3f2e33d21b053935a67cafbc2d88c7643"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:08:06+05:30",
+    "filename": "9digit.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-005",
+    "details": {
+      "sha256": "08c3b4fc83fb8b5afe43ad3e8bfce8f3f2e33d21b053935a67cafbc2d88c7643"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:47:10+05:30",
+    "filename": "image3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:47:10+05:30",
+    "filename": "image3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:47:10+05:30",
+    "filename": "image3.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-002",
+    "details": {
+      "sha256": "26098401fdccfda5f4a7b9f513c87eaf1bef7abb5dd02189025805f47f840f35"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:47:10+05:30",
+    "filename": "imagenormal3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:47:10+05:30",
+    "filename": "imagenormal3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:47:10+05:30",
+    "filename": "imagenormal3.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "1d83a248e01580272c9a1f9b72b730dca023b9c521782efac5a1503e50bdf429"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:50:21+05:30",
+    "filename": "image3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:50:21+05:30",
+    "filename": "image3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:50:21+05:30",
+    "filename": "image3.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-002",
+    "details": {
+      "sha256": "26098401fdccfda5f4a7b9f513c87eaf1bef7abb5dd02189025805f47f840f35"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:50:21+05:30",
+    "filename": "image3.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:50:21+05:30",
+    "filename": "image3.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:50:21+05:30",
+    "filename": "image3.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-002",
+    "details": {
+      "sha256": "26098401fdccfda5f4a7b9f513c87eaf1bef7abb5dd02189025805f47f840f35"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-new.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-new.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-new.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-new.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-new.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-new.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-006",
+    "details": {
+      "sha256": "8040e5e6beb88c7fa683b07f09114b78c8adadb9989191bf065e38cce45e8061"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-copy.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-copy.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-copy.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-006",
+    "details": {
+      "sha256": "8040e5e6beb88c7fa683b07f09114b78c8adadb9989191bf065e38cce45e8061"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-a.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-a.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-a.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-a.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-a.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-a.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-007",
+    "details": {
+      "sha256": "e79d7ee51e584fb8d59c4fba6f91cb5ff8f504e9773557fbcff80e122c84f360"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-b.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-b.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-b.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-b.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:00+05:30",
+    "filename": "registry-check-distinct-b.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T13:58:01+05:30",
+    "filename": "registry-check-distinct-b.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-008",
+    "details": {
+      "sha256": "70be5e96b05e2eaefe92e293a1d17d4aac77acb234481638e0e45ec11e71dd93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:03:55+05:30",
+    "filename": "2026-10-15 15-36-14.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:03:55+05:30",
+    "filename": "2026-10-15 15-36-14.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:03:55+05:30",
+    "filename": "2026-10-15 15-36-14.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:03:55+05:30",
+    "filename": "2026-10-15 15-36-14.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:03:55+05:30",
+    "filename": "2026-10-15 15-36-14.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:03:55+05:30",
+    "filename": "2026-10-15 15-36-14.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-009",
+    "details": {
+      "sha256": "3e92cbb4dfa54d441a0482f1cb8154b2f9da540f78adf200613b5a78771d37df"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:55:56+05:30",
+    "filename": "2026-09-26 22-37-11.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:55:56+05:30",
+    "filename": "2026-09-26 22-37-11.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:55:56+05:30",
+    "filename": "2026-09-26 22-37-11.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:55:56+05:30",
+    "filename": "2026-09-26 22-37-11.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:55:56+05:30",
+    "filename": "2026-09-26 22-37-11.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:55:56+05:30",
+    "filename": "2026-09-26 22-37-11.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-010",
+    "details": {
+      "sha256": "f26c02bb2375f858c6c8a8697826a28ee092c23c300386f39494489e1d8f6ae1"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:56:11+05:30",
+    "filename": "1st MODULE PSM-3rd SEM QB.pdf",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:11+05:30",
+    "filename": "1st MODULE PSM-3rd SEM QB.pdf",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:11+05:30",
+    "filename": "1st MODULE PSM-3rd SEM QB.pdf",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:11+05:30",
+    "filename": "1st MODULE PSM-3rd SEM QB.pdf",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:11+05:30",
+    "filename": "1st MODULE PSM-3rd SEM QB.pdf",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:11+05:30",
+    "filename": "1st MODULE PSM-3rd SEM QB.pdf",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-011",
+    "details": {
+      "sha256": "81a0d9832d4d2fa18b61db72f7010ee0d407c3c0133e082f54450350d7db8bd9"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T14:56:38+05:30",
+    "filename": "CN_1_Qn Bank.docx",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:38+05:30",
+    "filename": "CN_1_Qn Bank.docx",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:38+05:30",
+    "filename": "CN_1_Qn Bank.docx",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:38+05:30",
+    "filename": "CN_1_Qn Bank.docx",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:38+05:30",
+    "filename": "CN_1_Qn Bank.docx",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T14:56:38+05:30",
+    "filename": "CN_1_Qn Bank.docx",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-012",
+    "details": {
+      "sha256": "9e1f948edc625621ebf783e62bdd6afc19dab4f132923b5965c00433b2e98032"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T15:36:51+05:30",
+    "filename": "test audio one.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:36:51+05:30",
+    "filename": "test audio one.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:36:51+05:30",
+    "filename": "test audio one.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:36:51+05:30",
+    "filename": "test audio one.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:36:51+05:30",
+    "filename": "test audio one.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:36:51+05:30",
+    "filename": "test audio one.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-013",
+    "details": {
+      "sha256": "a7e0fb2ff1f88cc5b0d2de1e549ce2ab90948d719e2a9a1141bfa15a0b122ebe"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T15:46:23+05:30",
+    "filename": "test audio one.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:46:23+05:30",
+    "filename": "test audio one.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T15:46:23+05:30",
+    "filename": "test audio one.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-013",
+    "details": {
+      "sha256": "a7e0fb2ff1f88cc5b0d2de1e549ce2ab90948d719e2a9a1141bfa15a0b122ebe"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:14:33+05:30",
+    "filename": "test audio one.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:14:33+05:30",
+    "filename": "test audio one.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:14:33+05:30",
+    "filename": "test audio one.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-013",
+    "details": {
+      "sha256": "a7e0fb2ff1f88cc5b0d2de1e549ce2ab90948d719e2a9a1141bfa15a0b122ebe"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:25:35+05:30",
+    "filename": "test audio one.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:25:35+05:30",
+    "filename": "test audio one.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:25:35+05:30",
+    "filename": "test audio one.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-013",
+    "details": {
+      "sha256": "a7e0fb2ff1f88cc5b0d2de1e549ce2ab90948d719e2a9a1141bfa15a0b122ebe"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:34:13+05:30",
+    "filename": "test audio one.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:34:13+05:30",
+    "filename": "test audio one.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:34:13+05:30",
+    "filename": "test audio one.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:34:13+05:30",
+    "filename": "test audio one.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:34:13+05:30",
+    "filename": "test audio one.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:34:13+05:30",
+    "filename": "test audio one.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "a7e0fb2ff1f88cc5b0d2de1e549ce2ab90948d719e2a9a1141bfa15a0b122ebe"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:36:13+05:30",
+    "filename": "test audio two.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:36:13+05:30",
+    "filename": "test audio two.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:36:13+05:30",
+    "filename": "test audio two.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:36:13+05:30",
+    "filename": "test audio two.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:36:13+05:30",
+    "filename": "test audio two.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:36:13+05:30",
+    "filename": "test audio two.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "93c024e9c5f7689750e80e44de8cffd6b48fce88471b00e996a4f343c788f594"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:39:17+05:30",
+    "filename": "test audio two.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:17+05:30",
+    "filename": "test audio two.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:17+05:30",
+    "filename": "test audio two.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:17+05:30",
+    "filename": "test audio two.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:17+05:30",
+    "filename": "test audio two.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:17+05:30",
+    "filename": "test audio two.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "93c024e9c5f7689750e80e44de8cffd6b48fce88471b00e996a4f343c788f594"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:39:32+05:30",
+    "filename": "test audio two.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:32+05:30",
+    "filename": "test audio two.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:39:32+05:30",
+    "filename": "test audio two.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-001",
+    "details": {
+      "sha256": "93c024e9c5f7689750e80e44de8cffd6b48fce88471b00e996a4f343c788f594"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:41:38+05:30",
+    "filename": "test audio two.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:41:38+05:30",
+    "filename": "test audio two.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:41:38+05:30",
+    "filename": "test audio two.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-001",
+    "details": {
+      "sha256": "93c024e9c5f7689750e80e44de8cffd6b48fce88471b00e996a4f343c788f594"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T16:43:21+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:43:21+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:43:21+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:43:21+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:43:21+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T16:43:21+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:07:35+05:30",
+    "filename": "test_voice.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:07:35+05:30",
+    "filename": "test_voice.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:07:35+05:30",
+    "filename": "test_voice.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:07:35+05:30",
+    "filename": "test_voice.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:07:35+05:30",
+    "filename": "test_voice.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:07:35+05:30",
+    "filename": "test_voice.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-003",
+    "details": {
+      "sha256": "e857c49ba5874a1acb9df9f9012868633d29b0708d41acc3207be7839abf72df"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:18:11+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:18:11+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:18:11+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:18:11+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:18:11+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:18:11+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:22:43+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:22:43+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:22:43+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:23:22+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:23:22+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:23:22+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:23:22+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:23:22+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:23:22+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:46:50+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:46:51+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:46:51+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:47:13+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:13+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:14+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:14+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:14+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:14+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T17:47:53+05:30",
+    "filename": "test audio two.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:53+05:30",
+    "filename": "test audio two.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:53+05:30",
+    "filename": "test audio two.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:53+05:30",
+    "filename": "test audio two.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:53+05:30",
+    "filename": "test audio two.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T17:47:53+05:30",
+    "filename": "test audio two.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "93c024e9c5f7689750e80e44de8cffd6b48fce88471b00e996a4f343c788f594"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T18:13:40+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:13:41+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:13:41+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T18:14:03+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:14:03+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:14:03+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:14:03+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:14:03+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:14:03+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T18:18:41+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:18:41+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:18:41+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:18:41+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:18:41+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T18:18:41+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "90ce3b7c9dfcce6aafcb2dcfc3fc496dab6ba8106b61531b05d2c57a4be1640e"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T19:42:40+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:40+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:40+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-002",
+    "details": {
+      "sha256": "90ce3b7c9dfcce6aafcb2dcfc3fc496dab6ba8106b61531b05d2c57a4be1640e"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T19:42:58+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:58+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:58+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:58+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:58+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:42:58+05:30",
+    "filename": "file_example_MP3_1MG.mp3",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "90ce3b7c9dfcce6aafcb2dcfc3fc496dab6ba8106b61531b05d2c57a4be1640e"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T19:43:10+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:43:10+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:43:10+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:43:10+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:43:10+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T19:43:10+05:30",
+    "filename": "sample-5s-360p.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "d385179acb9e43d7ff87d0e8fbff2074fb29bc2363b64206128383a17ca534a8"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T20:54:27+05:30",
+    "filename": "demo ai audio.mpeg",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:54:27+05:30",
+    "filename": "demo ai audio.mpeg",
+    "status": "FAILED",
+    "message": "Unsupported file type: .mpeg",
+    "details": {
+      "stage": "FAILED"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T20:56:01+05:30",
+    "filename": "demo ai audio.mpeg",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:56:01+05:30",
+    "filename": "demo ai audio.mpeg",
+    "status": "FAILED",
+    "message": "Unsupported file type: .mpeg",
+    "details": {
+      "stage": "FAILED"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T20:56:43+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:56:43+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:56:43+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:56:43+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:56:43+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:56:43+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "d850f42e1a146f12491aa9000611c63459187269cfa968d238f796409544f330"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T20:57:43+05:30",
+    "filename": "test audio one.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:57:43+05:30",
+    "filename": "test audio one.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:57:43+05:30",
+    "filename": "test audio one.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:57:44+05:30",
+    "filename": "test audio one.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:57:44+05:30",
+    "filename": "test audio one.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:57:44+05:30",
+    "filename": "test audio one.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "a7e0fb2ff1f88cc5b0d2de1e549ce2ab90948d719e2a9a1141bfa15a0b122ebe"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T20:58:54+05:30",
+    "filename": "test audio two.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:58:54+05:30",
+    "filename": "test audio two.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:58:54+05:30",
+    "filename": "test audio two.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:58:54+05:30",
+    "filename": "test audio two.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:58:54+05:30",
+    "filename": "test audio two.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T20:58:54+05:30",
+    "filename": "test audio two.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-003",
+    "details": {
+      "sha256": "93c024e9c5f7689750e80e44de8cffd6b48fce88471b00e996a4f343c788f594"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T21:00:06+05:30",
+    "filename": "test audio two.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:00:06+05:30",
+    "filename": "test audio two.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:00:06+05:30",
+    "filename": "test audio two.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:00:06+05:30",
+    "filename": "test audio two.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:00:06+05:30",
+    "filename": "test audio two.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:00:06+05:30",
+    "filename": "test audio two.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-004",
+    "details": {
+      "sha256": "e882f5e87193b1ac02ff059d136ca573868832d11da4054b8a2dd87b97b8ac93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T21:11:06+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:06+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:06+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:06+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:06+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:06+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "d850f42e1a146f12491aa9000611c63459187269cfa968d238f796409544f330"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T21:11:59+05:30",
+    "filename": "test audio two.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:59+05:30",
+    "filename": "test audio two.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:59+05:30",
+    "filename": "test audio two.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:59+05:30",
+    "filename": "test audio two.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:59+05:30",
+    "filename": "test audio two.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:11:59+05:30",
+    "filename": "test audio two.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "e882f5e87193b1ac02ff059d136ca573868832d11da4054b8a2dd87b97b8ac93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T21:41:36+05:30",
+    "filename": "test audio two.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:36+05:30",
+    "filename": "test audio two.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:36+05:30",
+    "filename": "test audio two.wav",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-002",
+    "details": {
+      "sha256": "e882f5e87193b1ac02ff059d136ca573868832d11da4054b8a2dd87b97b8ac93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T21:41:51+05:30",
+    "filename": "test audio two.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:51+05:30",
+    "filename": "test audio two.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:51+05:30",
+    "filename": "test audio two.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:51+05:30",
+    "filename": "test audio two.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:51+05:30",
+    "filename": "test audio two.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T21:41:51+05:30",
+    "filename": "test audio two.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "e882f5e87193b1ac02ff059d136ca573868832d11da4054b8a2dd87b97b8ac93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T23:18:20+05:30",
+    "filename": "test audio two.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:20+05:30",
+    "filename": "test audio two.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:20+05:30",
+    "filename": "test audio two.wav",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-001",
+    "details": {
+      "sha256": "e882f5e87193b1ac02ff059d136ca573868832d11da4054b8a2dd87b97b8ac93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T23:18:56+05:30",
+    "filename": "test audio two.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:56+05:30",
+    "filename": "test audio two.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:56+05:30",
+    "filename": "test audio two.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:56+05:30",
+    "filename": "test audio two.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:56+05:30",
+    "filename": "test audio two.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:18:56+05:30",
+    "filename": "test audio two.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-001",
+    "details": {
+      "sha256": "e882f5e87193b1ac02ff059d136ca573868832d11da4054b8a2dd87b97b8ac93"
+    }
+  },
+  {
+    "timestamp": "2026-11-19T23:19:34+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:19:34+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:19:34+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:19:34+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:19:34+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-19T23:19:34+05:30",
+    "filename": "demo ai audio.mpeg.wav",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-002",
+    "details": {
+      "sha256": "d850f42e1a146f12491aa9000611c63459187269cfa968d238f796409544f330"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "case_notes.txt",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "case_notes.txt",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "case_notes.txt",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "case_notes.txt",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-003",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "suspect_photo.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "suspect_photo.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "suspect_photo.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T01:59:54+05:30",
+    "filename": "suspect_photo.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-004",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:00:23+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:00:23+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:00:23+05:30",
+    "filename": "case_notes.txt",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:00:30+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:00:30+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:00:30+05:30",
+    "filename": "suspect_photo.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-004",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:03:56+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:03:56+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:03:56+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:03:56+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:03:56+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:03:56+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-005",
+    "details": {
+      "sha256": "f31eaf818da14663f11074a956000afeceef2964dc27ccc049f441cba0687421"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:04:10+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:04:10+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:04:10+05:30",
+    "filename": "case_notes.txt",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:04:15+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:04:15+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:04:15+05:30",
+    "filename": "suspect_photo.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-004",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:04:21+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:04:21+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:04:21+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-005",
+    "details": {
+      "sha256": "f31eaf818da14663f11074a956000afeceef2964dc27ccc049f441cba0687421"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:13:18+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:13:18+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:13:18+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:13:18+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:13:18+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:13:18+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-006",
+    "details": {
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:24:08+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:24:08+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:24:08+05:30",
+    "filename": "case_notes.txt",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:24:13+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:24:13+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:24:13+05:30",
+    "filename": "suspect_photo.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-004",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:24:19+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:24:19+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:24:19+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-005",
+    "details": {
+      "sha256": "f31eaf818da14663f11074a956000afeceef2964dc27ccc049f441cba0687421"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "test_scene.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "test_scene.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "test_scene.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "test_scene.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "test_scene.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "test_scene.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-007",
+    "details": {
+      "sha256": "943e9567b3ed759f2f4f75a8f6f859ba516a2cbdbb1bdc20e30436be8de75380"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "witness_testimony.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "witness_testimony.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "witness_testimony.txt",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "witness_testimony.txt",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "witness_testimony.txt",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "witness_testimony.txt",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-008",
+    "details": {
+      "sha256": "cde76f00780a759090cd4e276b85a055b0178593aa0dff929b0c035af0b12119"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "surveillance_clip.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "surveillance_clip.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:25:41+05:30",
+    "filename": "surveillance_clip.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-005",
+    "details": {
+      "sha256": "f31eaf818da14663f11074a956000afeceef2964dc27ccc049f441cba0687421"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:39:47+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:39:47+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:39:47+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-006",
+    "details": {
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:48:55+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:48:55+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:48:55+05:30",
+    "filename": "case_notes.txt",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:49:03+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:49:03+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:49:03+05:30",
+    "filename": "suspect_photo.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-004",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:49:10+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:49:10+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:49:10+05:30",
+    "filename": "df_fake_swap_std.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-005",
+    "details": {
+      "sha256": "f31eaf818da14663f11074a956000afeceef2964dc27ccc049f441cba0687421"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:58:42+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:58:42+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:58:42+05:30",
+    "filename": "case_notes.txt",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-003",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T02:58:48+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:58:48+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T02:58:48+05:30",
+    "filename": "suspect_photo.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-004",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T03:01:40+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:01:40+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:01:40+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-006",
+    "details": {
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T03:20:42+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:20:42+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:20:42+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-006",
+    "details": {
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T03:21:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:21:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:21:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 3.00.56 PM.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-006",
+    "details": {
+      "sha256": "ef57bfd068f3a0a26002f8bee951b89e4390041caac332c2d2273f72cef78f6e"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T03:24:41+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:24:41+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:24:41+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:24:41+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:24:41+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T03:24:41+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-007",
+    "details": {
+      "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T04:02:43+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:43+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:43+05:30",
+    "filename": "case_notes.txt",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:43+05:30",
+    "filename": "case_notes.txt",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:43+05:30",
+    "filename": "case_notes.txt",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:43+05:30",
+    "filename": "case_notes.txt",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-008",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T04:02:50+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:50+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:50+05:30",
+    "filename": "suspect_photo.png",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:50+05:30",
+    "filename": "suspect_photo.png",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:50+05:30",
+    "filename": "suspect_photo.png",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:02:50+05:30",
+    "filename": "suspect_photo.png",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-009",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T04:19:13+05:30",
+    "filename": "case_notes.txt",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:19:13+05:30",
+    "filename": "case_notes.txt",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:19:13+05:30",
+    "filename": "case_notes.txt",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-008",
+    "details": {
+      "sha256": "c3710b6b413ca9a10705b36f538c564b019d18fae62345b4891810e6ed487535"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T04:19:20+05:30",
+    "filename": "suspect_photo.png",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:19:20+05:30",
+    "filename": "suspect_photo.png",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:19:20+05:30",
+    "filename": "suspect_photo.png",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-009",
+    "details": {
+      "sha256": "f3afd141c15ab9ec908ee966872aa79e7df5b46b480a2a46093ab2360f768765"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T04:51:21+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:51:21+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:51:21+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.27.34 PM.mp4",
+    "status": "DUPLICATE",
+    "message": "Matches existing evidence EVD-007",
+    "details": {
+      "sha256": "e52dacb140e8629d54e4ef31c683c20763925be67c77fbf89d586907372b6d9b"
+    }
+  },
+  {
+    "timestamp": "2026-11-20T04:53:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.45.30 PM.mp4",
+    "status": "VALIDATING",
+    "message": "Validating started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:53:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.45.30 PM.mp4",
+    "status": "HASHING",
+    "message": "Hashing started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:53:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.45.30 PM.mp4",
+    "status": "METADATA_EXTRACTION",
+    "message": "Metadata Extraction started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:53:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.45.30 PM.mp4",
+    "status": "STORAGE",
+    "message": "Storage started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:53:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.45.30 PM.mp4",
+    "status": "REGISTRATION",
+    "message": "Registration started",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-11-20T04:53:05+05:30",
+    "filename": "WhatsApp Video 2026-11-19 at 4.45.30 PM.mp4",
+    "status": "COMPLETED",
+    "message": "Registered as EVD-010",
+    "details": {
+      "sha256": "f1e386711113b59c7de9260f95db798361c73a2de7b0f722b8e340ad410b7585"
+    }
+  }
+]

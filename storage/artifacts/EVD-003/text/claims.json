@@ -1,0 +1,85 @@
+{
+  "status": "completed",
+  "claims_count": 3,
+  "claim_types_distribution": {
+    "event_claim": 1,
+    "numerical_claim": 2
+  },
+  "claims": [
+    {
+      "claim_id": "816021fe",
+      "statement": "Artificial intelligence and deepfake technologies have advanced significantly.",
+      "category": "event_claim",
+      "secondary_tags": [],
+      "entities": [],
+      "dates": [],
+      "numbers": [],
+      "locations": [],
+      "source_span": {
+        "start_char": 0,
+        "end_char": 79,
+        "paragraph_index": 0,
+        "sentence_index": 0,
+        "context": "Artificial intelligence and deepfake technologies have advanced significantly."
+      },
+      "extraction_status": "completed"
+    },
+    {
+      "claim_id": "fdd2bd4b",
+      "statement": "The suspect claimed he was in Chicago on the night of November 15, 2024.",
+      "category": "numerical_claim",
+      "secondary_tags": [
+        "quantitative",
+        "time_stamped"
+      ],
+      "entities": [
+        "Chicago",
+        "November 15, 2024"
+      ],
+      "dates": [
+        "November 15, 2024"
+      ],
+      "numbers": [],
+      "locations": [
+        "Chicago"
+      ],
+      "source_span": {
+        "start_char": 79,
+        "end_char": 152,
+        "paragraph_index": 0,
+        "sentence_index": 1,
+        "context": "The suspect claimed he was in Chicago on the night of November 15, 2024."
+      },
+      "extraction_status": "completed"
+    },
+    {
+      "claim_id": "649cd207",
+      "statement": "Financial transactions indicate $500,000 was transferred to an offshore account.",
+      "category": "numerical_claim",
+      "secondary_tags": [
+        "quantitative"
+      ],
+      "entities": [
+        "$500,000"
+      ],
+      "dates": [],
+      "numbers": [
+        "$500,000"
+      ],
+      "locations": [],
+      "source_span": {
+        "start_char": 152,
+        "end_char": 232,
+        "paragraph_index": 0,
+        "sentence_index": 2,
+        "context": "Financial transactions indicate $500,000 was transferred to an offshore account."
+      },
+      "extraction_status": "completed"
+    }
+  ],
+  "errors": [],
+  "limitations": [
+    "Claims represent statements asserted inside the text itself and are extracted for forensic tracking.",
+    "Categorization indicates the semantic nature of the claim, not an external factual verification."
+  ]
+}

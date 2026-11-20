@@ -1,0 +1,7 @@
+{
+  "evidence_id": "EVD-001",
+  "status": "VERIFIED",
+  "notes": "Forensic audit confirmed visual artifacts match known GAN synthesis patterns.",
+  "examiner": "Lead Examiner #42",
+  "updated_at": "2026-11-19T22:49:26.600278Z"
+}

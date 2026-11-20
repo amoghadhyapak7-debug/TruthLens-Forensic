@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "items_count": 0,
+  "inconsistencies": [],
+  "errors": [],
+  "limitations": [
+    "Consistency analysis performs intra-document cross-referencing and factual coherence checks.",
+    "Only statements exhibiting clear semantic opposition or numerical incompatibility are classified as contradictory."
+  ]
+}

@@ -1,0 +1,1151 @@
+{
+  "evidence_id": "EVD-010",
+  "video": {
+    "evidence_id": "EVD-010",
+    "media_type": "video",
+    "status": "completed",
+    "metadata": {
+      "file_name": "f28cbb0b31954ddfb864a7003a74a2fb.mp4",
+      "file_extension": ".mp4",
+      "file_size_bytes": 2099328,
+      "file_size_mb": 2.0,
+      "sha256": "f1e386711113b59c7de9260f95db798361c73a2de7b0f722b8e340ad410b7585",
+      "resolution": {
+        "width": 352,
+        "height": 640,
+        "aspect_ratio": "352:640"
+      },
+      "frame_rate": 19.0,
+      "total_frames": 127,
+      "duration_seconds": 6.68,
+      "duration_formatted": "00:06",
+      "codec_fourcc": "h264",
+      "streams": [
+        "Stream #0:0[0x1](und): Video: h264 (Constrained Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 352x640, 2303 kb/s, 19 fps, 19 tbr, 31750 tbn (default)",
+        "Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 205 kb/s (default)"
+      ],
+      "encoder": null,
+      "creation_time": null,
+      "file_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\evidence\\f28cbb0b31954ddfb864a7003a74a2fb.mp4"
+    },
+    "assessment": {
+      "classification": "potentially_manipulated",
+      "verdict": "DEEPFAKE DETECTED",
+      "reliability": "High",
+      "reliability_note": "Strong manipulation evidence supported by neural models (74.5%) across 32 tracked face frames.",
+      "evidence_score": 69.0,
+      "manipulation_score_pct": 74.5,
+      "original_score_pct": 25.5,
+      "ai_generation_score_pct": null,
+      "ai_peak_score_pct": null,
+      "ai_authentic_score_pct": null,
+      "ai_flagged_frames_count": 0,
+      "ai_model_name": "disabled",
+      "ai_model_status": "disabled",
+      "ai_frame_predictions": [],
+      "model_name": "GenD CLIP ViT-L/14",
+      "face_detector": "yunet_cnn",
+      "total_faces_detected": 34,
+      "frames_with_faces": 32,
+      "total_frames_examined": 0,
+      "suspicious_frames_count": 23,
+      "confidence": null,
+      "basis": [
+        "Neural face forgery detector (GenD CLIP ViT-L/14) identified manipulation probability of 74.5% (authenticity: 25.5%) across 32 face frame(s).",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 91.6%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.00s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 85.7%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.21s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 92.0%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.42s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 70.9%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.63s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 81.3%). Generalizable deepfake detector identified latent manipulation artifacts. at 0.84s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 69.6%). Generalizable deepfake detector identified latent manipulation artifacts. at 1.26s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 91.3%). Generalizable deepfake detector identified latent manipulation artifacts. at 1.47s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 87.4%). Generalizable deepfake detector identified latent manipulation artifacts. at 1.68s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 79.7%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.10s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 92.4%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.32s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.1%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.53s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.9%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.74s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 94.1%). Generalizable deepfake detector identified latent manipulation artifacts. at 2.95s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.5%). Generalizable deepfake detector identified latent manipulation artifacts. at 3.16s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 76.8%). Generalizable deepfake detector identified latent manipulation artifacts. at 4.42s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 94.5%). Generalizable deepfake detector identified latent manipulation artifacts. at 4.63s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.0%). Generalizable deepfake detector identified latent manipulation artifacts. at 4.84s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 98.6%). Generalizable deepfake detector identified latent manipulation artifacts. at 5.05s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 96.4%). Generalizable deepfake detector identified latent manipulation artifacts. at 5.26s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 84.9%). Generalizable deepfake detector identified latent manipulation artifacts. at 5.89s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 86.8%). Generalizable deepfake detector identified latent manipulation artifacts. at 6.11s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 71.7%). Generalizable deepfake detector identified latent manipulation artifacts. at 6.32s",
+        "[Signal \u00d73.0] GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 89.3%). Generalizable deepfake detector identified latent manipulation artifacts. at 6.53s"
+      ],
+      "what_would_change_verdict": [],
+      "gend_status": "loaded_and_active",
+      "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+      "gend_mean_fake_pct": 74.5,
+      "gend_max_fake_pct": 98.6,
+      "gend_mean_real_pct": 25.5,
+      "mesonet_mean_fake_pct": 48.7
+    },
+    "verdict": "DEEPFAKE DETECTED",
+    "deepfake_metrics": {
+      "signal_name": "deepfake_neural_inference",
+      "model_name": "GenD CLIP ViT-L/14",
+      "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+      "face_detector": "yunet_cnn",
+      "model_status": "loaded_and_active",
+      "frames_with_faces": 32,
+      "total_faces_detected": 34,
+      "mean_manipulation_score": 0.7448,
+      "mean_manipulation_pct": 74.5,
+      "max_manipulation_score": 0.9861,
+      "mean_original_score": 0.2552,
+      "mean_original_pct": 25.5,
+      "mesonet_mean_fake_pct": 48.7,
+      "suspicious_face_frames_count": 0,
+      "gend_status": "loaded_and_active",
+      "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+      "gend_mean_fake_pct": 74.5,
+      "gend_max_fake_pct": 98.6,
+      "gend_mean_real_pct": 25.5
+    },
+    "findings": [
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 91.6%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 0.0,
+        "frame_reference": "frame_000000_0.00s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9161, Real score: 0.0839, BBox: (129, 158, 49, 62)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 85.7%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 0.211,
+        "frame_reference": "frame_000004_0.21s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.8566, Real score: 0.1434, BBox: (137, 159, 47, 62)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 92.0%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 0.421,
+        "frame_reference": "frame_000008_0.42s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9202, Real score: 0.0798, BBox: (137, 152, 49, 65)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 70.9%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 0.632,
+        "frame_reference": "frame_000012_0.63s.jpg",
+        "severity": "medium",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.7092, Real score: 0.2908, BBox: (136, 157, 50, 64)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 81.3%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 0.842,
+        "frame_reference": "frame_000016_0.84s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.8126, Real score: 0.1874, BBox: (139, 154, 49, 65)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 69.6%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 1.263,
+        "frame_reference": "frame_000024_1.26s.jpg",
+        "severity": "medium",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.6963, Real score: 0.3037, BBox: (130, 160, 50, 64)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 91.3%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 1.474,
+        "frame_reference": "frame_000028_1.47s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9132, Real score: 0.0868, BBox: (109, 163, 52, 66)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 87.4%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 1.684,
+        "frame_reference": "frame_000032_1.68s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.8735, Real score: 0.1265, BBox: (85, 146, 52, 72)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 79.7%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 2.105,
+        "frame_reference": "frame_000040_2.10s.jpg",
+        "severity": "medium",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.7971, Real score: 0.2029, BBox: (58, 143, 56, 75)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 92.4%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 2.316,
+        "frame_reference": "frame_000044_2.32s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9239, Real score: 0.0761, BBox: (68, 143, 58, 77)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.1%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 2.526,
+        "frame_reference": "frame_000048_2.53s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9713, Real score: 0.0287, BBox: (91, 148, 54, 73)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.9%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 2.737,
+        "frame_reference": "frame_000052_2.74s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9790, Real score: 0.0210, BBox: (112, 160, 57, 73)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 94.1%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 2.947,
+        "frame_reference": "frame_000056_2.95s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9408, Real score: 0.0592, BBox: (142, 163, 58, 82)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.5%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 3.158,
+        "frame_reference": "frame_000060_3.16s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9751, Real score: 0.0249, BBox: (164, 160, 63, 86)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 76.8%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 4.421,
+        "frame_reference": "frame_000084_4.42s.jpg",
+        "severity": "medium",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.7677, Real score: 0.2323, BBox: (196, 179, 59, 80)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 94.5%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 4.631,
+        "frame_reference": "frame_000088_4.63s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9455, Real score: 0.0545, BBox: (173, 171, 61, 72)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 97.0%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 4.842,
+        "frame_reference": "frame_000092_4.84s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9702, Real score: 0.0298, BBox: (136, 162, 60, 69)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 98.6%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 5.052,
+        "frame_reference": "frame_000096_5.05s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9861, Real score: 0.0139, BBox: (110, 188, 58, 68)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 96.4%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 5.263,
+        "frame_reference": "frame_000100_5.26s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.9643, Real score: 0.0357, BBox: (104, 228, 51, 62)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 84.9%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 5.895,
+        "frame_reference": "frame_000112_5.89s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.8493, Real score: 0.1507, BBox: (134, 200, 48, 62)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 86.8%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 6.105,
+        "frame_reference": "frame_000116_6.11s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.8683, Real score: 0.1317, BBox: (142, 172, 50, 65)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 71.7%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 6.316,
+        "frame_reference": "frame_000120_6.32s.jpg",
+        "severity": "medium",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.7168, Real score: 0.2832, BBox: (156, 162, 54, 71)"
+      },
+      {
+        "indicator_name": "facial_deepfake_forgery_detected",
+        "description": "GenD CLIP ViT-L/14 detected face forgery artifacts (manipulation probability: 89.3%). Generalizable deepfake detector identified latent manipulation artifacts.",
+        "timestamp": 6.526,
+        "frame_reference": "frame_000124_6.53s.jpg",
+        "severity": "high",
+        "method_used": "gend_clip_vit_l14",
+        "supporting_observations": "GenD Fake score: 0.8934, Real score: 0.1066, BBox: (179, 172, 53, 70)"
+      }
+    ],
+    "signals": [
+      {
+        "signal_name": "ai_generated_video_detection",
+        "model_name": "CIFAKE-EfficientNet-B0 (disabled)",
+        "model_status": "disabled",
+        "frames_analyzed": 0,
+        "mean_ai_generated_pct": null,
+        "peak_ai_generated_pct": null,
+        "mean_authentic_pct": null,
+        "flagged_synthetic_frames_count": 0,
+        "frame_predictions": [],
+        "findings": []
+      },
+      {
+        "signal_name": "deepfake_neural_inference",
+        "model_name": "GenD CLIP ViT-L/14",
+        "model_version": "GenD CLIP ViT-L/14 (WACV 2026) / MesoNet-4 (Afchar 2018)",
+        "face_detector": "yunet_cnn",
+        "model_status": "loaded_and_active",
+        "frames_with_faces": 32,
+        "total_faces_detected": 34,
+        "mean_manipulation_score": 0.7448,
+        "mean_manipulation_pct": 74.5,
+        "max_manipulation_score": 0.9861,
+        "mean_original_score": 0.2552,
+        "mean_original_pct": 25.5,
+        "mesonet_mean_fake_pct": 48.7,
+        "suspicious_face_frames_count": 0,
+        "gend_status": "loaded_and_active",
+        "gend_model_name": "GenD CLIP ViT-L/14 (WACV 2026)",
+        "gend_mean_fake_pct": 74.5,
+        "gend_max_fake_pct": 98.6,
+        "gend_mean_real_pct": 25.5
+      },
+      {
+        "signal_name": "temporal_continuity",
+        "mean_interframe_difference": 0.0799,
+        "interframe_std_dev": 0.0211,
+        "anomalies_detected": 0
+      },
+      {
+        "signal_name": "sensor_noise_profile",
+        "mean_residual_variance": 20.69,
+        "noise_consistency": "natural"
+      },
+      {
+        "signal_name": "lighting_chrominance_stability",
+        "mean_luminance": 146.02,
+        "mean_saturation": 61.13,
+        "lighting_instabilities_detected": 0
+      },
+      {
+        "signal_name": "gradient_sharpness",
+        "sequence_mean_laplacian": 297.87,
+        "sharpness_anomalies": 0
+      },
+      {
+        "signal_name": "compression_artifact_profile",
+        "mean_dct_blockiness_ratio": 1.245,
+        "blockiness_std": 0.088,
+        "compression_anomalies": 0
+      },
+      {
+        "signal_name": "channel_correlation",
+        "mean_rgb_correlation": 0.9061,
+        "correlation_std": 0.0057,
+        "channel_anomalies": 0
+      }
+    ],
+    "source_matching_features": {
+      "evidence_id": "EVD-010",
+      "sha256": "f1e386711113b59c7de9260f95db798361c73a2de7b0f722b8e340ad410b7585",
+      "duration_seconds": 6.68,
+      "resolution": {
+        "width": 352,
+        "height": 640,
+        "aspect_ratio": "352:640"
+      },
+      "total_frames_fingerprinted": 32,
+      "keyframe_signatures": [
+        {
+          "timestamp": 0.0,
+          "frame_reference": "frame_000000_0.00s.jpg",
+          "dhash": "1010101101011001000110111110001111100111111001101101011111111110",
+          "ahash": "0101111111111111111011111111111111111011111100110000000000000000"
+        },
+        {
+          "timestamp": 0.211,
+          "frame_reference": "frame_000004_0.21s.jpg",
+          "dhash": "1010100101111001000110110111001111100011111001101100011111111110",
+          "ahash": "0101111111111111111011111111111111111011111110110000000000000000"
+        },
+        {
+          "timestamp": 0.421,
+          "frame_reference": "frame_000008_0.42s.jpg",
+          "dhash": "1010100101111001010110110111000111100011101001101100011111111111",
+          "ahash": "0001111111111111111011111111111111111011111110110000000000000000"
+        },
+        {
+          "timestamp": 0.632,
+          "frame_reference": "frame_000012_0.63s.jpg",
+          "dhash": "1010100101111001010110110111000111110011110001101100011111111111",
+          "ahash": "0101111111111111111011111111111111111011111100110000000000000000"
+        },
+        {
+          "timestamp": 0.842,
+          "frame_reference": "frame_000016_0.84s.jpg",
+          "dhash": "1011100101111001010010110111000111110011110001101101011111111111",
+          "ahash": "0101111111111111111011111111111111111011111100110000000000000000"
+        },
+        {
+          "timestamp": 1.053,
+          "frame_reference": "frame_000020_1.05s.jpg",
+          "dhash": "1010100101111001010110010111000111110011110001111101011111011111",
+          "ahash": "0101111111111111111011111111111111111011111100110000000000000000"
+        },
+        {
+          "timestamp": 1.263,
+          "frame_reference": "frame_000024_1.26s.jpg",
+          "dhash": "1010100101111001000110110101100111110011110001111101011111011111",
+          "ahash": "0101111111111111111011111111111111111011111100110000000000000000"
+        },
+        {
+          "timestamp": 1.474,
+          "frame_reference": "frame_000028_1.47s.jpg",
+          "dhash": "1010101101111001000110110111000101100011111001111101011111010110",
+          "ahash": "0101111111111111110011111111111111111011111100110000000000000000"
+        },
+        {
+          "timestamp": 1.684,
+          "frame_reference": "frame_000032_1.68s.jpg",
+          "dhash": "1011100100111001000110111111000111100111110001111101011110011110",
+          "ahash": "0111111110111111110011111111111101111011111100010000000000000000"
+        },
+        {
+          "timestamp": 1.895,
+          "frame_reference": "frame_000036_1.90s.jpg",
+          "dhash": "1010100101111001001100111110001111000111110001101101011110011110",
+          "ahash": "0001111110011111100111111111111111110111111100000000000000000000"
+        },
+        {
+          "timestamp": 2.105,
+          "frame_reference": "frame_000040_2.10s.jpg",
+          "dhash": "0011110100111000001110011010110111001101100011111001011110011111",
+          "ahash": "1001111110011111100111111111111111110111111100110000000000000000"
+        },
+        {
+          "timestamp": 2.316,
+          "frame_reference": "frame_000044_2.32s.jpg",
+          "dhash": "0011110000111100000101001000010011001100110001101101011111011111",
+          "ahash": "1100111111011111110111111111111111110111011100110000000000000000"
+        },
+        {
+          "timestamp": 2.526,
+          "frame_reference": "frame_000048_2.53s.jpg",
+          "dhash": "1011101010011110000111001100011011000110110001101101011111001010",
+          "ahash": "1100111111011111110011111111101101110011011100110000000000000000"
+        },
+        {
+          "timestamp": 2.737,
+          "frame_reference": "frame_000052_2.74s.jpg",
+          "dhash": "1001111010011110100011101100001011000110110001111101001101001010",
+          "ahash": "1100111111111111111011110111101101110011011100010010000000000000"
+        },
+        {
+          "timestamp": 2.947,
+          "frame_reference": "frame_000056_2.95s.jpg",
+          "dhash": "1001111010011110100011101010001011100011111100111110001001101011",
+          "ahash": "1100111111111111111001110111111101111011001110000000100000000000"
+        },
+        {
+          "timestamp": 3.158,
+          "frame_reference": "frame_000060_3.16s.jpg",
+          "dhash": "1001101010001110100001101001100011110001111100011110100101101011",
+          "ahash": "1100111111111111111001111111111101111101001110000001100000000000"
+        },
+        {
+          "timestamp": 3.368,
+          "frame_reference": "frame_000064_3.37s.jpg",
+          "dhash": "1001101010001110100011101001110010011001111110011111100101101001",
+          "ahash": "1100111111111111111000111111111101111101001111000001100000000000"
+        },
+        {
+          "timestamp": 3.579,
+          "frame_reference": "frame_000068_3.58s.jpg",
+          "dhash": "1001101010001110100011101001110010011001111110011110100101101101",
+          "ahash": "1100111111110111111000111111111101111111001111000000000000000000"
+        },
+        {
+          "timestamp": 3.789,
+          "frame_reference": "frame_000072_3.79s.jpg",
+          "dhash": "1001101010001110100001101001010011110001111110011110100101101101",
+          "ahash": "1101111111110111111000111111111101111111001111000000000000000000"
+        },
+        {
+          "timestamp": 4.0,
+          "frame_reference": "frame_000076_4.00s.jpg",
+          "dhash": "1001101010001110100001101111000011110011111000011110101101101011",
+          "ahash": "1100111111111111111001111111111101111001001111010000000000000000"
+        },
+        {
+          "timestamp": 4.21,
+          "frame_reference": "frame_000080_4.21s.jpg",
+          "dhash": "1001101010001110100011101011001011110011111000111110101101101011",
+          "ahash": "1100111111110111111101111111111101111011001110000000000000000000"
+        },
+        {
+          "timestamp": 4.421,
+          "frame_reference": "frame_000084_4.42s.jpg",
+          "dhash": "1001101010011110100011101001001111110001111100011111000101110100",
+          "ahash": "1100111111111111111100111111111101111100001111000001110000000000"
+        },
+        {
+          "timestamp": 4.631,
+          "frame_reference": "frame_000088_4.63s.jpg",
+          "dhash": "1001101010011110100011101001010011110001111110011110100101101101",
+          "ahash": "1100111111111111111001111111111101111101001111000001010000000000"
+        },
+        {
+          "timestamp": 4.842,
+          "frame_reference": "frame_000092_4.84s.jpg",
+          "dhash": "1001101010011110100011001011001110110011111100111111001101101010",
+          "ahash": "1101111111111111111001111111111101111011001110000000100000000000"
+        },
+        {
+          "timestamp": 5.052,
+          "frame_reference": "frame_000096_5.05s.jpg",
+          "dhash": "1001111010011110100011101001101011100110111001111100011101010011",
+          "ahash": "1111111111111111111011110111111101110011001100110001000000000000"
+        },
+        {
+          "timestamp": 5.263,
+          "frame_reference": "frame_000100_5.26s.jpg",
+          "dhash": "1001111010011110100111101001101010110110111001101110011111100110",
+          "ahash": "1111111111111111111011110110111101111111001100110011000000000000"
+        },
+        {
+          "timestamp": 5.474,
+          "frame_reference": "frame_000104_5.47s.jpg",
+          "dhash": "1001111010011110100011101000101011110110111001101110011101100110",
+          "ahash": "1111111111111111111011110111111101111011001100110011000000000000"
+        },
+        {
+          "timestamp": 5.684,
+          "frame_reference": "frame_000108_5.68s.jpg",
+          "dhash": "1001111010011110100011101100001011100110111001101110011101110010",
+          "ahash": "1111111111111111111001110111111101111011001100110001000000000000"
+        },
+        {
+          "timestamp": 5.895,
+          "frame_reference": "frame_000112_5.89s.jpg",
+          "dhash": "1001111010011110110011101100001011110010111101101110011101100110",
+          "ahash": "1111111111111111111001110111111101111011001110110011000000000000"
+        },
+        {
+          "timestamp": 6.105,
+          "frame_reference": "frame_000116_6.11s.jpg",
+          "dhash": "1001111010011110110011101100001011100110111001101111001101101010",
+          "ahash": "1111111111111111111101110111101101111011001100110001000000000000"
+        },
+        {
+          "timestamp": 6.316,
+          "frame_reference": "frame_000120_6.32s.jpg",
+          "dhash": "1001111010011110110001101110001011100011111000111101001101001010",
+          "ahash": "1111111111111111111101110111111101111011001110010000000000000000"
+        },
+        {
+          "timestamp": 6.526,
+          "frame_reference": "frame_000124_6.53s.jpg",
+          "dhash": "1001111010011110100001101011001011110001111000011100100111001011",
+          "ahash": "1100111111111111111101110111111101111101001110010000000000000000"
+        }
+      ],
+      "color_profile_vector": [
+        0.6126489639282227,
+        0.1291363686323166,
+        0.018401550129055977,
+        0.0037599350325763226,
+        0.068415567278862,
+        0.0022168459836393595,
+        0.00010228739120066166,
+        1.1248768714722246e-05,
+        0.024770423769950867,
+        9.360178955830634e-05,
+        9.259439138986636e-06,
+        4.442002591531491e-06,
+        0.02157106250524521,
+        0.00021354193449951708,
+        1.4813181223871652e-06,
+        0.0,
+        0.10948064923286438,
+        0.005036860704421997,
+        0.002565226750448346,
+        0.001306532765738666,
+        0.2923946678638458,
+        0.0011741277994588017,
+        0.003450085874646902,
+        0.004392287693917751,
+        0.16482336819171906,
+        0.004865865223109722,
+        0.00479486957192421,
+        0.0015306435525417328,
+        0.33503663539886475,
+        0.5457338690757751,
+        0.21280422806739807,
+        0.09950961172580719
+      ]
+    },
+    "video_relationships": [],
+    "errors": [],
+    "limitations": [
+      "Forensic classification represents automated signal measurements and neural inference scores; not judicial proof.",
+      "Keyframe sampling inspects periodic intervals across the video rather than 100% of video frames.",
+      "Google Gemini API understanding was not active (API key missing or request bypassed)."
+    ],
+    "extracted_frames_summary": {
+      "total_extracted": 32,
+      "output_directory": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames",
+      "scene_changes_timestamps": [],
+      "duplicate_frames_timestamps": [],
+      "keyframe_paths": [
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000004_0.21s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000008_0.42s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.63s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000016_0.84s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000020_1.05s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.26s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000028_1.47s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000032_1.68s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_1.90s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000040_2.10s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000044_2.32s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_2.53s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000052_2.74s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000056_2.95s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_3.16s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000064_3.37s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000068_3.58s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_3.79s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000076_4.00s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000080_4.21s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000084_4.42s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000088_4.63s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000092_4.84s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000096_5.05s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000100_5.26s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000104_5.47s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000108_5.68s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000112_5.89s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000116_6.11s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000120_6.32s.jpg",
+        "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000124_6.53s.jpg"
+      ],
+      "keyframes": [
+        {
+          "frame_index": 0,
+          "timestamp": 0.0,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000000_0.00s.jpg",
+          "file_name": "frame_000000_0.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 335.4,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 4,
+          "timestamp": 0.211,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000004_0.21s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000004_0.21s.jpg",
+          "file_name": "frame_000004_0.21s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 354.01,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 8,
+          "timestamp": 0.421,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000008_0.42s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000008_0.42s.jpg",
+          "file_name": "frame_000008_0.42s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 353.55,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 12,
+          "timestamp": 0.632,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.63s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000012_0.63s.jpg",
+          "file_name": "frame_000012_0.63s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 354.93,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 16,
+          "timestamp": 0.842,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000016_0.84s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000016_0.84s.jpg",
+          "file_name": "frame_000016_0.84s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 350.71,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 20,
+          "timestamp": 1.053,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000020_1.05s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000020_1.05s.jpg",
+          "file_name": "frame_000020_1.05s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 354.29,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 24,
+          "timestamp": 1.263,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.26s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000024_1.26s.jpg",
+          "file_name": "frame_000024_1.26s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 379.46,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 28,
+          "timestamp": 1.474,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000028_1.47s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000028_1.47s.jpg",
+          "file_name": "frame_000028_1.47s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 243.26,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 32,
+          "timestamp": 1.684,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000032_1.68s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000032_1.68s.jpg",
+          "file_name": "frame_000032_1.68s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 194.44,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 36,
+          "timestamp": 1.895,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_1.90s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000036_1.90s.jpg",
+          "file_name": "frame_000036_1.90s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 281.17,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 40,
+          "timestamp": 2.105,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000040_2.10s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000040_2.10s.jpg",
+          "file_name": "frame_000040_2.10s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 260.85,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 44,
+          "timestamp": 2.316,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000044_2.32s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000044_2.32s.jpg",
+          "file_name": "frame_000044_2.32s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 282.01,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 48,
+          "timestamp": 2.526,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_2.53s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000048_2.53s.jpg",
+          "file_name": "frame_000048_2.53s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 288.69,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 52,
+          "timestamp": 2.737,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000052_2.74s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000052_2.74s.jpg",
+          "file_name": "frame_000052_2.74s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 292.44,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 56,
+          "timestamp": 2.947,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000056_2.95s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000056_2.95s.jpg",
+          "file_name": "frame_000056_2.95s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 256.14,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 60,
+          "timestamp": 3.158,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_3.16s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000060_3.16s.jpg",
+          "file_name": "frame_000060_3.16s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 257.29,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 64,
+          "timestamp": 3.368,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000064_3.37s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000064_3.37s.jpg",
+          "file_name": "frame_000064_3.37s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 291.62,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 68,
+          "timestamp": 3.579,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000068_3.58s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000068_3.58s.jpg",
+          "file_name": "frame_000068_3.58s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 314.47,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 72,
+          "timestamp": 3.789,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_3.79s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000072_3.79s.jpg",
+          "file_name": "frame_000072_3.79s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 300.4,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 76,
+          "timestamp": 4.0,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000076_4.00s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000076_4.00s.jpg",
+          "file_name": "frame_000076_4.00s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 290.65,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 80,
+          "timestamp": 4.21,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000080_4.21s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000080_4.21s.jpg",
+          "file_name": "frame_000080_4.21s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 285.43,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 84,
+          "timestamp": 4.421,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000084_4.42s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000084_4.42s.jpg",
+          "file_name": "frame_000084_4.42s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 287.28,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 88,
+          "timestamp": 4.631,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000088_4.63s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000088_4.63s.jpg",
+          "file_name": "frame_000088_4.63s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 263.92,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 92,
+          "timestamp": 4.842,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000092_4.84s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000092_4.84s.jpg",
+          "file_name": "frame_000092_4.84s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 273.82,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 96,
+          "timestamp": 5.052,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000096_5.05s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000096_5.05s.jpg",
+          "file_name": "frame_000096_5.05s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 276.85,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 100,
+          "timestamp": 5.263,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000100_5.26s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000100_5.26s.jpg",
+          "file_name": "frame_000100_5.26s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 300.18,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 104,
+          "timestamp": 5.474,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000104_5.47s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000104_5.47s.jpg",
+          "file_name": "frame_000104_5.47s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 300.74,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 108,
+          "timestamp": 5.684,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000108_5.68s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000108_5.68s.jpg",
+          "file_name": "frame_000108_5.68s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 313.19,
+          "is_suspicious": false,
+          "suspicion_reasons": []
+        },
+        {
+          "frame_index": 112,
+          "timestamp": 5.895,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000112_5.89s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000112_5.89s.jpg",
+          "file_name": "frame_000112_5.89s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 306.34,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 116,
+          "timestamp": 6.105,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000116_6.11s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000116_6.11s.jpg",
+          "file_name": "frame_000116_6.11s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 292.43,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 120,
+          "timestamp": 6.316,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000120_6.32s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000120_6.32s.jpg",
+          "file_name": "frame_000120_6.32s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 295.14,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        },
+        {
+          "frame_index": 124,
+          "timestamp": 6.526,
+          "relative_path": "data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000124_6.53s.jpg",
+          "absolute_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\video\\EVD-010\\frames\\frame_000124_6.53s.jpg",
+          "file_name": "frame_000124_6.53s.jpg",
+          "is_scene_change": false,
+          "is_duplicate": false,
+          "laplacian_variance": 300.71,
+          "is_suspicious": true,
+          "suspicion_reasons": [
+            "facial_deepfake_forgery_detected"
+          ]
+        }
+      ]
+    }
+  },
+  "audio": {
+    "status": "completed",
+    "parent_video_evidence_id": "EVD-010",
+    "audio_source": "extracted_from_video",
+    "wav_path": "C:\\Users\\Amogh P Adhyapak\\Downloads\\truthlens_unified\\data\\artifacts\\EVD-010\\extracted_audio\\EVD-010_extracted.wav",
+    "inference": {
+      "status": "completed",
+      "detector_name": "Wav2Vec2 audio spoof classifier (ONNX int4)",
+      "model_id": "ai8shiro/deepfake-audio-wav2vec2-ONNX",
+      "model_version": "78a7991b7f413bd6ce15efd7cb27000736acc78a",
+      "model_revision": "78a7991b7f413bd6ce15efd7cb27000736acc78a",
+      "license": "MIT (model card)",
+      "training_domain": "ASVspoof 2021 PA speech anti-spoofing (model-card statement)",
+      "input_preprocessing": {
+        "target_sample_rate_hz": 16000,
+        "channels": "mono",
+        "max_duration_seconds": 20.0,
+        "resampling": "linear interpolation 16000 Hz to 16000 Hz",
+        "model_input_sample_rate_hz": 16000,
+        "device": "CPUExecutionProvider",
+        "quantization": "int4 ONNX",
+        "normalization": "per-clip mean/standard-deviation per model feature extractor"
+      },
+      "raw_logits": [
+        0.20041504502296448,
+        -0.23471222817897797
+      ],
+      "class_scores": {
+        "real": 0.6070973469824762,
+        "fake": 0.3929026530175238
+      },
+      "score_interpretation": "softmax-normalized class scores from model logits; not calibrated probabilities",
+      "calibration_status": "not_calibrated",
+      "prediction": "real",
+      "error": null,
+      "limitations": [
+        "Model card metrics are self-reported on a balanced ASVspoof 2021 PA subset.",
+        "Performance may change across codecs, languages, environments, compression, and audio domains.",
+        "This output is an indicator and not proof of authenticity or manipulation."
+      ]
+    },
+    "result": "NO STRONG SYNTHETIC INDICATORS DETECTED",
+    "synthetic_score": 0.3929
+  },
+  "audio_extraction_status": "extracted"
+}
