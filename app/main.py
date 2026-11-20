@@ -12,7 +12,7 @@ from typing import Annotated
 import numpy as np
 from fastapi import FastAPI, File, Form, HTTPException, Query, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, HTMLResponse, Response
 from pydantic import BaseModel
 from app.analyzers.audio import AudioAnalyzer
 from app.analyzers.audio import _read_compressed, _read_wav
@@ -62,6 +62,42 @@ ingest_service = IngestService()
 
 class RegistryResetRequest(BaseModel):
     confirmation: str
+
+
+@app.get("/", response_class=HTMLResponse)
+def root_index():
+    return """<!DOCTYPE html>
+<html>
+<head>
+    <title>TruthLens Multi-Modal Forensics API</title>
+    <style>
+        body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 40px; max-width: 600px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        h1 { color: #58a6ff; margin-top: 0; font-size: 2rem; }
+        p { color: #8b949e; line-height: 1.6; }
+        .badge { display: inline-block; background: #238636; color: #fff; padding: 4px 12px; border-radius: 20px; font-weight: 600; font-size: 0.85rem; margin-bottom: 20px; }
+        .btn { display: inline-block; background: #238636; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; margin-top: 20px; transition: 0.2s; }
+        .btn:hover { background: #2ea043; }
+        .endpoints { text-align: left; background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 16px; margin-top: 24px; font-family: monospace; font-size: 0.85rem; }
+        .endpoints div { margin: 6px 0; color: #79c0ff; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="badge">TruthLens v2.0 Live</div>
+        <h1>TruthLens Forensic API</h1>
+        <p>Court-ready digital forensics platform for tamper-evident multi-modal evidence intake, deepfake detection, cross-modality correlation, examiner review, and reporting.</p>
+        <a href="/docs" class="btn">Explore Interactive API Docs (Swagger UI)</a>
+        <div class="endpoints">
+            <div>GET /api/v1/health &bull; Service Health Check</div>
+            <div>GET /api/v1/evidence &bull; Ingested Evidence Registry</div>
+            <div>POST /api/v1/ingest &bull; Multi-Modal Evidence Upload</div>
+            <div>GET /api/v1/correlation/case &bull; Cross-Modal Synthesis</div>
+            <div>GET /api/v1/report/all?format=pdf &bull; Forensic Report</div>
+        </div>
+    </div>
+</body>
+</html>"""
 
 
 @app.get("/api/v1/health")

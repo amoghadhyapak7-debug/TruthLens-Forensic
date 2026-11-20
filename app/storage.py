@@ -37,7 +37,8 @@ from typing import Optional
 ROOT = Path(__file__).resolve().parents[1]
 
 # Base storage directory (can be overridden by TRUTHLENS_STORAGE_DIR)
-STORAGE_DIR = Path(os.getenv("TRUTHLENS_STORAGE_DIR", ROOT / "storage")).resolve()
+_default_storage = Path("/tmp/storage") if os.getenv("VERCEL") else (ROOT / "storage")
+STORAGE_DIR = Path(os.getenv("TRUTHLENS_STORAGE_DIR", str(_default_storage))).resolve()
 
 # Database
 DATABASE_DIR = STORAGE_DIR / "database"

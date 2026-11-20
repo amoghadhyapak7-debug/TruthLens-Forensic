@@ -1,0 +1,3 @@
+# Additional requirements for running the Streamlit desktop/local monitor UI
+-r requirements.txt
+streamlit

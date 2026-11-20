@@ -1,0 +1,29 @@
+# Vercel Deployment Exclusions to stay strictly under the 500 MB Lambda size limit
+truthlens_video/models/xception-b5690688.pth
+truthlens_video/models/*.pth
+truthlens_video/models/cifake/model.onnx.data
+truthlens_video/models/*.onnx.data
+truthlens_video/models/gend_clip_vit_l14.safetensors
+truthlens_video/models/*.safetensors
+truthlens_video/models/gend_cache/
+truthlens_video/models/.locks/
+
+# Omit local storage, test media, and large datasets from lambda bundle
+data/
+storage/
+tests/
+monitor/
+development/
+
+# Media formats
+*.mp4
+*.wav
+*.avi
+*.mkv
+*.mov
+*.zip
+
+# Caches
+.pytest_cache/
+__pycache__/
+*.pyc
