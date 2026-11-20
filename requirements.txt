@@ -11,3 +11,4 @@ mutagen
 pypdf
 pytest
 httpx
+reportlab

@@ -39,6 +39,43 @@ ACTIVITY_PATH = ROOT / "development" / "activity.json"
 API_URL = os.getenv("TRUTHLENS_API_URL", "http://127.0.0.1:8000").rstrip("/")
 
 
+@st.cache_resource
+def _ensure_backend_started() -> bool:
+    """Ensure the FastAPI backend service is running locally if deployed as a self-contained application."""
+    try:
+        r = requests.get(f"{API_URL}/api/v1/health", timeout=1)
+        if r.status_code == 200:
+            return True
+    except Exception:
+        pass
+
+    if "127.0.0.1" in API_URL or "localhost" in API_URL:
+        import subprocess
+        import time
+
+        env = os.environ.copy()
+        env["PYTHONPATH"] = str(ROOT)
+        subprocess.Popen(
+            [sys.executable, "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8000"],
+            cwd=str(ROOT),
+            env=env,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        for _ in range(15):
+            time.sleep(0.5)
+            try:
+                r = requests.get(f"{API_URL}/api/v1/health", timeout=1)
+                if r.status_code == 200:
+                    return True
+            except Exception:
+                pass
+    return False
+
+
+_ensure_backend_started()
+
+
 def read_json(path: Path, default):
     try:
         return json.loads(path.read_text(encoding="utf-8-sig"))
