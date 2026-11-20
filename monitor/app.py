@@ -36,14 +36,23 @@ except ImportError:
 
 PROGRESS_PATH = ROOT / "development" / "progress.json"
 ACTIVITY_PATH = ROOT / "development" / "activity.json"
-API_URL = os.getenv("TRUTHLENS_API_URL", "http://127.0.0.1:8000").rstrip("/")
+
+# Resolve centralized backend URL
+_raw_backend = (os.getenv("BACKEND_URL") or os.getenv("TRUTHLENS_API_URL") or "http://127.0.0.1:8000").strip()
+if _raw_backend and not (_raw_backend.startswith("http://") or _raw_backend.startswith("https://")):
+    _port = os.getenv("BACKEND_PORT", "10000").strip()
+    if ":" in _raw_backend:
+        _raw_backend = f"http://{_raw_backend}"
+    else:
+        _raw_backend = f"http://{_raw_backend}:{_port}"
+API_URL = _raw_backend.rstrip("/")
 
 
 @st.cache_resource
 def _ensure_backend_started() -> bool:
     """Ensure the FastAPI backend service is running locally if deployed as a self-contained application."""
     try:
-        r = requests.get(f"{API_URL}/api/v1/health", timeout=1)
+        r = requests.get(f"{API_URL}/api/v1/health", timeout=3)
         if r.status_code == 200:
             return True
     except Exception:

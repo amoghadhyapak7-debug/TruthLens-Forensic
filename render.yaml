@@ -1,0 +1,39 @@
+services:
+  # 1. TruthLens Backend Service (FastAPI)
+  - type: web
+    name: truthlens-backend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: TRUTHLENS_STORAGE_DIR
+        value: ./storage
+      - key: TRUTHLENS_CORS_ORIGINS
+        value: "*"
+
+  # 2. TruthLens Frontend Service (Streamlit)
+  - type: web
+    name: truthlens-frontend
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt -r requirements-monitor.txt
+    startCommand: streamlit run monitor/app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: truthlens-backend
+          property: host
+      - key: BACKEND_PORT
+        fromService:
+          type: web
+          name: truthlens-backend
+          property: port
